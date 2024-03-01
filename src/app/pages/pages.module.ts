@@ -5,7 +5,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { RecommendedComponent } from './recommended/recommended.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
-
+import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,8 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
   imports: [
     CommonModule,
     PagesRoutingModule,
-    MaterialModule
+    MaterialModule, 
+    MatStepperModule
   ]
 })
 export class PagesModule { }
