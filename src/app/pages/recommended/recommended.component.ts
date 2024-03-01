@@ -19,6 +19,6 @@ export class RecommendedComponent {
     });
    }
    viewRecipeDetails(recipeId: any) {
-    this.router.navigate(['/viewRecipes', recipeId]);
+    this.router.navigate(['/recipe', recipeId]);
     }
 }
