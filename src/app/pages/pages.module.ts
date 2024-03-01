@@ -3,11 +3,15 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material/material.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { RecommendedComponent } from './recommended/recommended.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 
 
 @NgModule({
   declarations: [
-    LandingPageComponent
+    LandingPageComponent,
+    RecommendedComponent,
+    TestimonialsComponent
   ],
   imports: [
     CommonModule,
