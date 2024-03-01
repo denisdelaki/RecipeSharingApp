@@ -84,7 +84,7 @@ getErrorMessage() {
             this.authService.login();
             this.router.navigate(['/myprofile']);
             this.loading = false;
-          }, 1500);
+          }, 2000);
         } else {
           this.openSnackBar('Invalid Credentials', 'error-notification');
         }
@@ -93,7 +93,8 @@ getErrorMessage() {
 
     } else {
       // Form is invalid, handle validation errors
-      alert(" not logged in");
+      this.openSnackBar('Not logged in Check connection/Fill all the fields', 'error-notification');
+      
     }
   }
 //function to handle navigation to signup page if the user doesn't have an account yet

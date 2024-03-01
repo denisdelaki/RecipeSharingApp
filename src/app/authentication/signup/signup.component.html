@@ -1,0 +1,71 @@
+<div class="signupCard" *ngIf="!loading">
+    <mat-card >
+      <div class="logodiv">
+        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/1/15/Equity_Group_Logo.png" alt="logo"/>
+      </div>
+
+      <div class="cardContent">
+        <form [formGroup]="options" (submit)="onSubmit()" >
+          <!--Username label and input-->
+          <div>
+            <mat-form-field [floatLabel]="getFloatLabelValue()">
+              <mat-label>Username</mat-label>
+              <input matInput  placeholder="Username" 
+              name="username"
+              formControlName="username" 
+              type="text"  required>
+            </mat-form-field>
+          </div>
+
+           <!--Email label and input-->
+        <div>
+          <mat-form-field [floatLabel]="getFloatLabelValue()">
+            <mat-label>Email</mat-label>
+            <input matInput  placeholder="Email e.g user@gmail.com" 
+            name="email" 
+            formControlName="email" 
+             autocomplete="off" required>
+            <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+          </mat-form-field>
+        </div>
+
+         <!--Password label and input-->
+        <div>
+          <mat-form-field [floatLabel]="getFloatLabelValue()">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" placeholder="Password"
+             name="password"  
+             formControlName="password" 
+             autocomplete="off" required>
+          </mat-form-field>
+        </div>
+
+         <!--Password confirmation label and input-->
+        <div>
+           <!--floatLabel allows the labels to move up on focus of the input field-->
+            <mat-form-field [floatLabel]="getFloatLabelValue()">
+              <mat-label>Password Confirmation</mat-label>
+              <input matInput type="password" placeholder="confirm Password"
+               name="passwordconfirm" 
+               formControlName="passwordconfirm" 
+               autocomplete="off"  required>
+            </mat-form-field>
+            <p class="passmatch" *ngIf="options.hasError('mismatch')">
+              Passwords do not match.</p>
+          </div>
+        <div class="signupbutton">
+          <button mat-stroked-button >SignUp</button>       
+        </div>
+        <div class="footer">
+          <p>Already have an account?<span><a (click)="navigateToLogin()"> Login</a></span></p>
+        </div>
+        </form>
+  
+      </div>
+    </mat-card>
+  </div>
+  <div class="loading" *ngIf="loading">
+    <p>Loading...</p>
+  </div>
+  
+    
