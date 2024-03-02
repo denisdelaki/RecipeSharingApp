@@ -8,6 +8,7 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
 import { MyRecipeComponent } from './my-recipe/my-recipe.component';
 import { NewRecipeComponent } from './new-recipe/new-recipe.component';
 import { EditMyProfileComponent } from './edit-my-profile/edit-my-profile.component';
+import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
 
 
 
@@ -16,7 +17,8 @@ import { EditMyProfileComponent } from './edit-my-profile/edit-my-profile.compon
     MyProfileComponent,
     MyRecipeComponent,
     NewRecipeComponent,
-    EditMyProfileComponent
+    EditMyProfileComponent,
+    EditRecipeComponent
   ],
   imports: [
     CommonModule,
