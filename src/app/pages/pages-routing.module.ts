@@ -7,7 +7,7 @@ import { ViewRecipeComponentComponent } from './view-recipe-component/view-recip
 const routes: Routes = [
   //{path: '', component: LandingPageComponent},
   {path: 'landingpage', component: LandingPageComponent, pathMatch: "full"},
-  {path: '', component: AllRecipesComponent},
+  {path: 'allrecipes', component: AllRecipesComponent},
   {path: 'recipe/:id', component: ViewRecipeComponentComponent},
 ];
 

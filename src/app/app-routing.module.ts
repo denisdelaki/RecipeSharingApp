@@ -5,9 +5,12 @@ const routes: Routes = [
   { path: 'auth', loadChildren: () => import('./authentication/authentication.module')
         .then(m => m.AuthenticationModule)
   },
-  { path: '', loadChildren: () => import('./pages/pages.module')  
+  { path: 'pages', loadChildren: () => import('./pages/pages.module')  
   .then(m => m.PagesModule)
-}
+  },
+  { path: '', loadChildren: () => import('./recipe/recipe.module')  
+  .then(m => m.RecipeModule)
+  },
 
 ];
 
