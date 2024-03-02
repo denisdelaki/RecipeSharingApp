@@ -50,6 +50,7 @@ Categorys = [
       console.log(data);
       this.recipeData = data;
       this.cdr.detectChanges();
+      //window.location.reload()
       this.showSearchResults = this.SearchedRecipes && this.SearchedRecipes.length > 0;
       // this.showSearchResultsSubject.next(false);
     }, error => {
@@ -76,7 +77,7 @@ Categorys = [
   }
   edit(recipeId: any){
     console.log('editted recipe with ID:', recipeId);
-    this.router.navigate(['/editrecipe', recipeId]);
+    this.router.navigate(['/recipes/editrecipe', recipeId]);
   }
   deleteRe(recipeId: any){
     console.log('deleted recipe with ID:', recipeId);
@@ -85,7 +86,7 @@ Categorys = [
       this.openSnackBar('Recipe deleted successfully', 'success-notification');
       // Refresh recipe data after deleting 
       setTimeout(() => {        
-        this.router.navigate(['/myRecipes']);
+        this.router.navigate(['/recipes/myRecipes']);
       }, 1000);
     },
     (error) => {
@@ -93,7 +94,7 @@ Categorys = [
       console.error('Error deleting recipe:', error);
       this.openSnackBar('Error deleting recipe', 'error-notification');
     });
-    this.router.navigate(['/myRecipes']);
+    this.router.navigate(['/recipes/myRecipes']);
 }
   ViewRecipe(recipeId: any){
     console.log('viewed recipe with ID:', recipeId);
@@ -102,7 +103,7 @@ Categorys = [
  
   //add new recipe by pop up page 
   addRecipe(){
-    this.router.navigate(['/newrecipe'])
+    this.router.navigate(['/recipes/newrecipe'])
  }
 }
 

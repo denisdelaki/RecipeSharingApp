@@ -82,7 +82,7 @@ getErrorMessage() {
           setTimeout(() => {
             this.openSnackBar('Logged in successfully', 'success-notification');
             this.authService.login();
-            this.router.navigate(['/myprofile']);
+            this.router.navigate(['/recipes/myprofile']);
             this.loading = false;
           }, 2000);
         } else {
@@ -99,6 +99,6 @@ getErrorMessage() {
   }
 //function to handle navigation to signup page if the user doesn't have an account yet
 navigateToSignUp() {
-this.router.navigate(['/signup']);
+this.router.navigate(['/auth/signup']);
 }
 }

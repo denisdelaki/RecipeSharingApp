@@ -87,7 +87,7 @@ user:any ={
     this.loading = true;
     console.log("loading")
     setTimeout(() => {
-      this.router.navigate(['/login']);
+      this.router.navigate(['auth/login']);
       this.loading = false;
     }, 1000);
   }
@@ -131,7 +131,7 @@ user:any ={
               passwordconfirm: res.passwordconfirm})
               this.loading = true;
               this.openSnackBar('Signedup in successfully, Welcome', 'success-notification');
-              this.router.navigate(['/login'])
+              this.router.navigate(['/auth/login'])
         })
         
       }

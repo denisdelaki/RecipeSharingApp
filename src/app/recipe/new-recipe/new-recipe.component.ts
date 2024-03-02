@@ -89,19 +89,20 @@ Add(){
                 recipeUrl: response.recipeUrl
             })
             this.openSnackBar('Recipe created successfully', 'success-notification');
-            this.router.navigate(['/myRecipe'])
+            this.router.navigate(['/recipes/myrecipe'])
+            
           })
       }
   }else{
     console.log("invalid")
     this.openSnackBar('Invalid request', 'error-notification');
   }
-
+  //window.location.reload()
 }
 
 
 close() {
-  this.router.navigate(['/myRecipe'])
+  this.router.navigate(['/recipes/myrecipe'])
 }
 
 }

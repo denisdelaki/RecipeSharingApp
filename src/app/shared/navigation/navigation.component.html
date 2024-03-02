@@ -9,9 +9,9 @@
         <mat-toolbar>
           <mat-toolbar-row class="fixed-header">
             <div class="menunavs">
-              <a mat-button [routerLink]="['/myprofile']" routerLinkActive="router-link-active">MyProfile</a>
-              <a mat-button [routerLink]="['/myRecipes']" routerLinkActive="router-link-active">MyRecipes</a>
-              <a mat-button [routerLink]="['/allRecipes']" routerLinkActive="router-link-active">AllRecipes</a>
+              <a mat-button [routerLink]="['/recipes/myprofile']" routerLinkActive="router-link-active">MyProfile</a>
+              <a mat-button [routerLink]="['/recipes/myrecipe']" routerLinkActive="router-link-active">MyRecipes</a>
+              <a mat-button [routerLink]="['/allrecipes']" routerLinkActive="router-link-active">AllRecipes</a>
             </div>
             <div class="authbuttons">
               <button mat-stroked-button type="button" class="loginbutton" (click)="Logout()">Logout</button>

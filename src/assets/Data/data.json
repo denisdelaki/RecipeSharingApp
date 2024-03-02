@@ -130,6 +130,49 @@
       "instruction": "fry omena",
       "recipimgurl": "https://images.unsplash.com/photo-1577194509876-4bb24787a641?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "id": "ad2b"
+    },
+    {
+      "title": "kuku",
+      "category": "Lunch",
+      "ingredients": "chicken",
+      "instruction": "fry omena",
+      "recipimgurl": "https://images.unsplash.com/photo-1694579740719-0e601c5d2437?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "id": "9427"
+    },
+    {
+      "title": "masala, chicken",
+      "category": "Dinner",
+      "ingredients": "chicken, masala",
+      "instruction": "cook the chicken",
+      "recipimgurl": "https://images.unsplash.com/photo-1694579740719-0e601c5d2437?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "id": "3505"
+    },
+    {
+      "id": "c260",
+      "title": "kuku",
+      "category": "Dinner",
+      "ingredients": "Preheat the oven to 350 degrees F (175 degrees C). Lightly grease a large baking dish.",
+      "instruction": "fry chicken",
+      "recipeUrl": "https://images.unsplash.com/photo-1550513008-8cd1a9b590c8?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "userId": "31ac"
+    },
+    {
+      "id": "7f3a",
+      "title": "chips",
+      "category": "Snack",
+      "ingredients": "chips, chicken",
+      "instruction": "server fried chicken wings with chips",
+      "recipeUrl": "https://images.unsplash.com/photo-1580217593608-61931cefc821?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "userId": "31ac"
+    },
+    {
+      "id": "9424",
+      "title": "eggs",
+      "category": "Lunch",
+      "ingredients": "chips, chicken",
+      "instruction": "server fried chicken wings with chips",
+      "recipeUrl": "https://images.unsplash.com/photo-1580217593608-61931cefc821?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "userId": "31ac"
     }
   ],
   "testimonials": [

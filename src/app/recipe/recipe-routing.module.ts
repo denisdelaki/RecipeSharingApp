@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: 'newrecipe', component: NewRecipeComponent},
   {path: 'myrecipe', component: MyRecipeComponent},
   {path: 'editrecipe/:id', component: EditRecipeComponent},
-];
+]; 
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

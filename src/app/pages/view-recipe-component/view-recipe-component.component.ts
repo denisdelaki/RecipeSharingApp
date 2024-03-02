@@ -42,6 +42,6 @@ constructor(private route: ActivatedRoute,
     })
   }
   cancel(){
-    this.router.navigate(['/myRecipes'])
+    this.router.navigate(['/allrecipes'])
   }
 }

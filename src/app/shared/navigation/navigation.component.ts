@@ -12,7 +12,7 @@ export class NavigationComponent {
   }
     //logout 
     Logout(){
-     this.router.navigate(['/LandingPage']);
+     this.router.navigate(['/landingpage']);
    }
  }
  

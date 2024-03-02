@@ -64,12 +64,14 @@ fetchRecipeData(recipeId: any) {
   
 Edit() {
   if (this.editrecipeForm.valid){
+    const userId = localStorage.getItem('loggedInUserId');
     const updatedrecipeData = {
       title: this.editrecipeForm.value.title,
       category: this.editrecipeForm.value.category,
       ingredients: this.editrecipeForm.value.ingredients,
       instruction: this.editrecipeForm.value.instruction,
       recipimgurl: this.editrecipeForm.value.recipimgurl,
+      userId: userId
     }
     this.recipeservice.editRecipe(this.recipeId, updatedrecipeData).subscribe((res)=>{
       console.log(res);
@@ -77,7 +79,7 @@ Edit() {
       // Refresh recipe data after deleting 
       setTimeout(() => {
         window.location.reload();
-        this.router.navigate(['/myrecipe']);
+        this.router.navigate(['/recipes/myrecipe']);
       }, 1000);      
     },
     (error) => {
@@ -86,9 +88,9 @@ Edit() {
       this.openSnackBar('Error deleting recipe', 'error-notification');
     })    
   }
-  this.router.navigate(['/myrecipe']);
+  this.router.navigate(['/recipes/myrecipe']);
   }
   close() {
-    this.router.navigate(['/myRecipes'])
+    this.router.navigate(['/recipes/myRecipes'])
   }
 }
