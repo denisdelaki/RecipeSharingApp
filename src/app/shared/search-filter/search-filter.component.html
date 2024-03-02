@@ -1,1 +1,18 @@
-<p>search-filter works!</p>
+<div>
+    <form  [formGroup]="searchForm" >
+        <mat-form-field class="searchBy"appearance="outline">
+            <mat-label>Search By</mat-label>
+            <mat-select formControlName="searchBy">
+              <!-- <mat-option value="title">Title</mat-option>
+              <mat-option value="category">Category</mat-option> -->
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="searchterm" appearance="outline">
+              <mat-label>Search</mat-label>
+              <input matInput type="search" placeholder="Search..." id="search" name="searching" formControlName="searching">            
+          </mat-form-field>
+        <button type="submit" (click)="onSearch()" class="search">Search</button>
+        <button type="reset" (click)="reset()" class="search">Reset</button>
+    </form>
+    
+</div>

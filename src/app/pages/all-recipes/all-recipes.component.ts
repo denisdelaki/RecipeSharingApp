@@ -47,7 +47,7 @@ export class AllRecipesComponent implements OnInit {
     }
     
     Logout(){
-      this.router.navigate(['/LandingPage']);
+      this.router.navigate(['/landingpage']);
     }
     ViewRecipe(recipeId: any){
       console.log('viewed recipe with ID:', recipeId);

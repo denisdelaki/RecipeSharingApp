@@ -8,6 +8,7 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { MatStepperModule } from '@angular/material/stepper';
 import { AllRecipesComponent } from './all-recipes/all-recipes.component';
 import { ViewRecipeComponentComponent } from './view-recipe-component/view-recipe-component.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ViewRecipeComponentComponent } from './view-recipe-component/view-recip
     CommonModule,
     PagesRoutingModule,
     MaterialModule, 
-    MatStepperModule
+    MatStepperModule,
+    SharedModule
   ]
 })
 export class PagesModule { }

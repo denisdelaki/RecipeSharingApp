@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MaterialModule } from '../material/material.module';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
 import { NavigationComponent } from './navigation/navigation.component';
-
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { NavigationComponent } from './navigation/navigation.component';
     NavigationComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,MaterialModule,RouterModule
+  ],
+  exports:[NavigationComponent, SearchFilterComponent]
 })
 export class SharedModule { }

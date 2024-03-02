@@ -3,10 +3,14 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { FormBuilder,Validators, FormControl, FormsModule, ReactiveFormsModule, FormGroup } from '@angular/forms';
-import {FloatLabelType, MatFormFieldModule} from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule} from '@angular/material/form-field';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatInputModule} from '@angular/material/input';
+// import { MatSelectModule} from '@angular/material/select';
+// import { MatOptionModule } from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
 
 
 
@@ -20,7 +24,9 @@ import {MatInputModule} from '@angular/material/input';
     ReactiveFormsModule, 
    MatFormFieldModule,
    MatProgressSpinnerModule, 
-   MatInputModule
+   MatInputModule,
+   MatSelectModule,
+   MatOptionModule
   ],
   exports: [ 
     MatIconModule,

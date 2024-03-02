@@ -1,1 +1,23 @@
-<p>navigation works!</p>
+<div>
+    <div class="header">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Equity_Group_Logo.png" alt="logo">
+      </div>
+      <!-- Menu list -->
+      <div class="navigation"> 
+        <mat-toolbar>
+          <mat-toolbar-row class="fixed-header">
+            <div class="menunavs">
+              <a mat-button [routerLink]="['/myprofile']" routerLinkActive="router-link-active">MyProfile</a>
+              <a mat-button [routerLink]="['/myRecipes']" routerLinkActive="router-link-active">MyRecipes</a>
+              <a mat-button [routerLink]="['/allRecipes']" routerLinkActive="router-link-active">AllRecipes</a>
+            </div>
+            <div class="authbuttons">
+              <button mat-stroked-button type="button" class="loginbutton" (click)="Logout()">Logout</button>
+            </div>
+          </mat-toolbar-row>
+        </mat-toolbar>
+      </div>
+    </div>
+</div>
