@@ -1,0 +1,50 @@
+.recomcontainer {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  height: 50vh;
+  width: 90%;
+}
+
+.recomcardcontainer {
+  flex: 0 0 20%;
+  height: 70%;
+  margin: 15px;
+  box-shadow: 2px 2px 3px 2px maroon;
+}
+
+.recomcard {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border-radius: 20px;
+}
+
+.recoImg {
+  height: 80%;
+  width: 100%;
+}
+
+.viewmorebut {
+  background-color: maroon;
+  color: white;
+  border: none;
+  height: 25px;
+  width: 70%;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.description {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
+.recomcard:hover .description {
+  opacity: 1;
+}/*# sourceMappingURL=recommended.component.css.map */
