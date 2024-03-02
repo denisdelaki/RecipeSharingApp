@@ -31,7 +31,9 @@ import { MatOptionModule } from '@angular/material/core';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatProgressSpinnerModule,
-    MatInputModule
+    MatInputModule,    
+    MatSelectModule,
+    MatOptionModule
   ]
 })
 export class MaterialModule { }
