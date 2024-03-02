@@ -7,8 +7,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatInputModule} from '@angular/material/input';
-// import { MatSelectModule} from '@angular/material/select';
-// import { MatOptionModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 
@@ -17,16 +15,16 @@ import { MatOptionModule } from '@angular/material/core';
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatCardModule, 
-    ReactiveFormsModule, 
-   MatFormFieldModule,
-   MatProgressSpinnerModule, 
-   MatInputModule,
-   MatSelectModule,
-   MatOptionModule
+      CommonModule,
+      MatIconModule,
+      MatToolbarModule,
+      MatCardModule, 
+      ReactiveFormsModule, 
+      MatFormFieldModule,
+      MatProgressSpinnerModule, 
+      MatInputModule,
+      MatSelectModule,
+      MatOptionModule
   ],
   exports: [ 
     MatIconModule,
