@@ -1,19 +1,33 @@
-import { Component } from '@angular/core';
-import { TestimonialsService } from '../Pages_Services/testimonials.service';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs/internal/Subscription';
+import { TestimonialsService } from '../Pages_Services/testimonials.service';
+
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
-  styleUrl: './landing-page.component.scss'
+  styleUrls: ['./landing-page.component.scss']
 })
-export class LandingPageComponent {
+export class LandingPageComponent implements OnInit {
   testimonies: any[] = [];
   currentSlide = 0;
-  private sliderSubscription: Subscription | undefined;
-  constructor(private router: Router, private testimonials: TestimonialsService) {}
-  
- 
+
+  constructor(private router: Router, private testimonialsService: TestimonialsService) {}
+
+  ngOnInit() {
+    this.loadTestimonies();
+  }
+
+  loadTestimonies() {
+    this.testimonialsService.getData().subscribe(
+      (data: any[]) => {
+        this.testimonies = data;
+      },
+      (error) => {
+        console.error('Error loading testimonies:', error);
+      }
+    );
+  }
+
   SignUp(): void {
     this.router.navigate(['auth/signup']);
   }

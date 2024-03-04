@@ -23,20 +23,13 @@ export class TestimonialsComponent {
   });
   }
 
-  startAutoSlide(): void {
-    this.timer = setInterval(() => {
-      this.slideToNext();
-    }, 5000); 
-  }
-
-  slideToNext(): void {
+   slideToNext(): void {
     // Check if there is a next step, if not, go to the first step
     if (this.stepper.selectedIndex < this.reviews.length - 1) {
       this.stepper.selectedIndex++;
     } else {
       this.stepper.selectedIndex = 0;
     }
-    // this.startAutoSlide()
   }
 
   slideToPrev(): void {
@@ -46,6 +39,5 @@ export class TestimonialsComponent {
     } else {
       this.stepper.selectedIndex = this.reviews.length - 1;
     }
-    // this.startAutoSlide()
   }
 }

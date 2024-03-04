@@ -31,6 +31,13 @@
       "email": "denisdelaki@gmail.com",
       "password": "9999",
       "passwordconfirm": "9999"
+    },
+    {
+      "id": "d3f3",
+      "username": "Delhia",
+      "email": "delhia@gmail.com",
+      "password": "1234",
+      "passwordconfirm": "1234"
     }
   ],
   "recipes": [

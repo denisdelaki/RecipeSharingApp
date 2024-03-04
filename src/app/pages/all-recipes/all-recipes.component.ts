@@ -22,7 +22,8 @@ export class AllRecipesComponent implements OnInit {
     ngOnInit(): void {
       this.RecipesService.getData().pipe(takeUntil(this.destroy$)).subscribe((data: any) => {
         console.log(data);
-        this.recipeData = data;
+        //this.recipeData = data;
+        this.recipeData = data || [];
         //this.cdr.detectChanges();
         this.showSearchResults = this.SearchedRecipes && this.SearchedRecipes.length > 0;
         // this.showSearchResultsSubject.next(false);
