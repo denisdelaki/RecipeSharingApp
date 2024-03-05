@@ -98,7 +98,7 @@ Categorys = [
 }
   ViewRecipe(recipeId: any){
     console.log('viewed recipe with ID:', recipeId);
-    this.router.navigate(['/viewRecipes', recipeId]);
+    this.router.navigate(['/recipe', recipeId]);
   }
  
   //add new recipe by pop up page 

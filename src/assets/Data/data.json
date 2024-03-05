@@ -33,11 +33,28 @@
       "passwordconfirm": "9999"
     },
     {
-      "id": "d3f3",
       "username": "Delhia",
-      "email": "delhia@gmail.com",
-      "password": "1234",
-      "passwordconfirm": "1234"
+      "email": "denisdelaki@gmail.com",
+      "profile": {
+        "telephone": "0703103852",
+        "restaurant": "bonds",
+        "address": "33",
+        "profileurl": "https://images.unsplash.com/photo-1523307730650-594bc63f9d67?q=80&w=1527&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "facebook": "delhia"
+      },
+      "id": "d3f3"
+    },
+    {
+      "username": "emmanuel",
+      "email": "emmanuel@gmail.com",
+      "profile": {
+        "telephone": "+254703361342",
+        "restaurant": "bonds",
+        "address": "33",
+        "profileurl": "https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cHJvZmlsZSUyMHBpY3R1cmUlMjBvZmZpY2lhbHxlbnwwfHwwfHx8MA%3D%3D",
+        "facebook": "emmanuel"
+      },
+      "id": "927a"
     }
   ],
   "recipes": [
@@ -155,15 +172,6 @@
       "id": "3505"
     },
     {
-      "id": "c260",
-      "title": "kuku",
-      "category": "Dinner",
-      "ingredients": "Preheat the oven to 350 degrees F (175 degrees C). Lightly grease a large baking dish.",
-      "instruction": "fry chicken",
-      "recipeUrl": "https://images.unsplash.com/photo-1550513008-8cd1a9b590c8?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "userId": "31ac"
-    },
-    {
       "id": "7f3a",
       "title": "chips",
       "category": "Snack",
@@ -180,6 +188,24 @@
       "instruction": "server fried chicken wings with chips",
       "recipeUrl": "https://images.unsplash.com/photo-1580217593608-61931cefc821?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "userId": "31ac"
+    },
+    {
+      "title": "cheese burger",
+      "category": "Lunch",
+      "ingredients": "cheese",
+      "instruction": "server with soda",
+      "recipimgurl": "https://plus.unsplash.com/premium_photo-1672363353886-a106864f5cb9?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "userId": "927a",
+      "id": "0846"
+    },
+    {
+      "id": "50a5",
+      "title": "eggs",
+      "category": "Lunch",
+      "ingredients": "eggs",
+      "instruction": "fry",
+      "recipeUrl": "https://plus.unsplash.com/premium_photo-1672363353886-a106864f5cb9?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "userId": "927a"
     }
   ],
   "testimonials": [

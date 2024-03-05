@@ -10,10 +10,19 @@ mat-form-field {
     background-color: $primary-color2;
     border: none;
     color: $primary-color1;
-    font-size: large;
+    font-size: small;
     border-radius: 10px;
     height: 40px;
     width: 80px;
     margin-bottom: 10px;
     margin-right: 10px;
+}
+@media only screen and (max-width: 768) {
+    .searchform {
+        margin-top: 50px;
+    }
+    .search{
+    height: 20px;
+    width: 60px;
+    }
 }
