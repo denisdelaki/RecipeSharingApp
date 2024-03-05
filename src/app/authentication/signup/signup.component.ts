@@ -131,7 +131,7 @@ user:any ={
               passwordconfirm: res.passwordconfirm})
               this.loading = true;
               this.openSnackBar('Signedup in successfully, Welcome', 'success-notification');
-              this.router.navigate(['/auth/login'])
+              this.router.navigate(['/recipes/myprofile'])
         })
         
       }

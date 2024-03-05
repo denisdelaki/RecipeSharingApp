@@ -12,7 +12,9 @@ export class NavigationComponent {
   }
     //logout 
     Logout(){
+    localStorage.removeItem('loggedInUserId');
      this.router.navigate(['/landingpage']);
+
    }
  }
  

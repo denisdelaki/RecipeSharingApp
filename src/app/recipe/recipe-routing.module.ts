@@ -4,12 +4,12 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
 import { MyRecipeComponent } from './my-recipe/my-recipe.component';
 import { NewRecipeComponent } from './new-recipe/new-recipe.component';
 import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
-
+import { AuthGuard } from '../core/AuthGuard';
 const routes: Routes = [
-  {path: 'myprofile', component: MyProfileComponent},
-  {path: 'newrecipe', component: NewRecipeComponent},
-  {path: 'myrecipe', component: MyRecipeComponent},
-  {path: 'editrecipe/:id', component: EditRecipeComponent},
+  {path: 'myprofile', component: MyProfileComponent, canActivate: [AuthGuard]},
+  {path: 'newrecipe', component: NewRecipeComponent, canActivate: [AuthGuard]},
+  {path: 'myrecipe', component: MyRecipeComponent, canActivate: [AuthGuard]},
+  {path: 'editrecipe/:id', component: EditRecipeComponent, canActivate: [AuthGuard]},
 ]; 
 
 @NgModule({

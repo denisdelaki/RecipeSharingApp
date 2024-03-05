@@ -11,6 +11,7 @@ import { AuthService } from '../auth.service';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
+  hide = true;
  //declare user data 
  loginUser: any = {
   email: "",

@@ -55,6 +55,13 @@
         "facebook": "emmanuel"
       },
       "id": "927a"
+    },
+    {
+      "id": "2e1a",
+      "username": "delhia",
+      "email": "delhia@gmail.com",
+      "password": "0000",
+      "passwordconfirm": "0000"
     }
   ],
   "recipes": [
@@ -172,13 +179,12 @@
       "id": "3505"
     },
     {
-      "id": "7f3a",
       "title": "chips",
       "category": "Snack",
       "ingredients": "chips, chicken",
       "instruction": "server fried chicken wings with chips",
-      "recipeUrl": "https://images.unsplash.com/photo-1580217593608-61931cefc821?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "userId": "31ac"
+      "userId": "31ac",
+      "id": "7f3a"
     },
     {
       "id": "9424",

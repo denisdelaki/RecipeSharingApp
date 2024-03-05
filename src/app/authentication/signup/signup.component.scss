@@ -20,7 +20,7 @@ mat-card {
     margin: auto;
     margin-top: 7%;
     color: $primary-color2;
-    height: 75vh ;
+    height: 80vh ;
     //width: 30%;    
    }
 
@@ -105,8 +105,15 @@ mat-form-field {
 }
 @media only screen and (max-width: 360px) {
     mat-card {
+        width: 90%; 
+        height: 70vh ;
+    }
+    .cardContent{
         width: 80%; 
         height: 70vh ;
+    }
+    mat-mdc-form-field{
+        height: 1px;
     }
 }
 @media only screen and (max-width: 460px) {

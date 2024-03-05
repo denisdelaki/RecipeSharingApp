@@ -18,7 +18,7 @@
           </div>
 
            <!--Email label and input-->
-        <div>
+          <div>
           <mat-form-field [floatLabel]="getFloatLabelValue()">
             <mat-label>Email</mat-label>
             <input matInput  placeholder="Email e.g user@gmail.com" 
@@ -27,10 +27,10 @@
              autocomplete="off" required>
             <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
           </mat-form-field>
-        </div>
+          </div>
 
          <!--Password label and input-->
-        <div>
+          <div>
           <mat-form-field [floatLabel]="getFloatLabelValue()">
             <mat-label>Password</mat-label>
             <input matInput type="password" placeholder="Password"
@@ -38,10 +38,10 @@
              formControlName="password" 
              autocomplete="off" required>
           </mat-form-field>
-        </div>
+          </div>
 
          <!--Password confirmation label and input-->
-        <div>
+          <div>
            <!--floatLabel allows the labels to move up on focus of the input field-->
             <mat-form-field [floatLabel]="getFloatLabelValue()">
               <mat-label>Password Confirmation</mat-label>
@@ -52,7 +52,7 @@
             </mat-form-field>
             <p class="passmatch" *ngIf="options.hasError('mismatch')">
               Passwords do not match.</p>
-          </div>
+           </div>
         <div class="signupbutton">
           <button mat-stroked-button >SignUp</button>       
         </div>
