@@ -14,9 +14,9 @@ export class MyRecipeComponent implements OnInit {
  
   search!: FormGroup;
   filter!: FormGroup;
-recipeData: any;
-filteredRecipes: any;
-SearchedRecipes: any;
+  recipeData: any;
+  filteredRecipes: any;
+  SearchedRecipes: any;
 //category optons 
 Categorys = [
   {value: 'BreakFast', viewValue: 'BreakFast'},

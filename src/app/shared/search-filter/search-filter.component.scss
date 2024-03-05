@@ -1,11 +1,27 @@
 $primary-color1: white;
 $primary-color2: maroon;
 $primary-color3: black;
-
+.searchform {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between; 
+    align-items: center;
+}
 mat-form-field {
     margin-right: 10px;
 }
-
+.form-container{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center; 
+    width: 100%;
+    margin: auto;
+    height: 100;
+}
+.button-container{
+    display: flex;
+    align-items: center;
+}
 .search{
     background-color: $primary-color2;
     border: none;
@@ -17,12 +33,32 @@ mat-form-field {
     margin-bottom: 10px;
     margin-right: 10px;
 }
-@media only screen and (max-width: 768) {
+@media only screen and (max-width: 600px) {
     .searchform {
-        margin-top: 50px;
+        height: 15vh;
+        width: 60%;
+        margin: auto; 
     }
     .search{
-    height: 20px;
-    width: 60px;
+        height: 35px;
+        width: 60px;
     }
+}
+@media only screen and (max-width: 450px) {
+    .searchform {
+        height: 15vh;
+        width: 60%;
+        margin: auto;        
+    }
+
+    .mat-mdc-form-field{
+        width: 30%;
+        height: 1%;
+        font-size: 10px;
+    }
+
+    .search{
+        height: 30px;
+    }
+    
 }
