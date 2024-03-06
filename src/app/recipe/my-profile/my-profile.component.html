@@ -6,7 +6,7 @@
         <div class="sidediv" *ngIf="userData">
             <mat-card>
             <img mat-card-image [src]="userData?.profile?.profileurl || defaultprofile" alt="profilepic">      
-                <p> <mat-icon> email</mat-icon> {{userData?.email}}</p>
+                <p><span><mat-icon> email</mat-icon> {{userData?.email}}</span> </p>
                 <p><mat-icon> call</mat-icon> {{userData?.profile?.telephone}}</p>
                 <p><mat-icon> facebook</mat-icon> ~ {{userData?.profile?.facebook}}</p>
                 <button mat-stroked-button type="button" (click)="edit()" >Edit Profile</button>

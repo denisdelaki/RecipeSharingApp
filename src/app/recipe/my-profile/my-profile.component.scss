@@ -12,8 +12,7 @@ $primary-color3: black;
 //side div 
 .sidediv{
     width: 30%;
-    align-items: center;
-    
+    align-items: center;    
 }
 .sidediv mat-card{
     margin: 20px;
@@ -80,83 +79,39 @@ $primary-color3: black;
 .popupcard{
     height: 10vh;
 }
-@media only screen and (max-width: 600px) {
-    //side div 
+@media only screen and (max-width: 410px) {
+    .myprofile{
+        flex-direction: column; 
+        margin-top: 20px ;
+    }
     .sidediv{
-        width: 60%;
-        height: 60vh;
-        align-items: center;        
+        justify-content: flex-start;
+        width: 85%;
+        height: 35vh;
+        margin-bottom: 40px;
+    }
+    .sidediv mat-card{
+        width: 100%;
+        height: 100%;
     }
     .sidediv img{
-        height: 150px;
-        width: 150px;
+        height: 80px;
+        width: 80px;
+    }
+    .sidediv mat-card p{
+        padding: 1px;
+        font-size: small;
+    }
+    .sidediv mat-card p mat-icon {
+        font-size: small;
+    }
+    .summary, .bio{
+        width: 100%;
+        margin: 20px auto;
+        
     }
     .summarydiv{
-        width: 60%;
-        display: flex;
-        flex-direction: column;
-        margin-top: 20px;
+        width: 80%;
+        margin: auto;
     }
-    .summary{
-        margin: 15px ; 
-        height: 90%;
-        width: 90%;
-        padding-bottom: 20px;
-        border-radius: 17px;
-        box-shadow: 3px 3px 3px 3px $primary-color2;
-    }
-
-}
-@media only screen and (max-width: 768px) {
-    //side div 
-    .sidediv{
-        width: 50%;
-        height: 70vh;
-        align-items: center;        
-    }
-    .sidediv img {
-        height: 180px;
-        width: 180px;
-    }
-    .summarydiv {
-        width: 60% ;
-        display: flex ;
-        flex-direction: column ;
-        margin-top: 20px ;
-        margin-right: 20px;
-    }
-    .summary {
-        margin: 15px; 
-        height: 90% ;
-        width: 90% ;
-        padding-bottom: 20px;
-        border-radius: 17px;
-        box-shadow: 3px 3px 3px 3px $primary-color2;
-    }
-
-}
-@media only screen and (max-width: 768px) {
-    //side div 
-    .sidediv{
-        width: 60%;
-        height: 80vh;
-        align-items: center;        
-    }
-    .sidediv img {
-        height: 200px;
-        width: 200px;
-    }   
-}
-@media only screen and (max-width: 600px) {
-    //side div 
-    .sidediv{
-        width: 40%;
-        height: 60vh;
-        align-items: center; 
-        font-size: 10px;       
-    }
-    .sidediv img {
-        height: 120px;
-        width: 120px;
-    }   
 }
