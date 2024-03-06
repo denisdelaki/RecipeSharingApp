@@ -32,9 +32,9 @@
                   </table>
                 </div>
                 <div class="details">
-                  <mat-icon (click)="like(recipe.id)">star</mat-icon>
-                  <mat-icon (click)="edit(recipe.id)">edit</mat-icon>
-                  <mat-icon (click)="deleteRe(recipe.id)">delete</mat-icon>
+                  <mat-icon (click)="like(recipe.id)" matTooltip="Like" matTooltipClass="addrecipe">star</mat-icon>
+                  <mat-icon (click)="edit(recipe.id)" matTooltip="Edit" matTooltipClass="addrecipe">edit</mat-icon>
+                  <mat-icon (click)="deleteRe(recipe.id)" matTooltip="delete" matTooltipClass="addrecipe">delete</mat-icon>
                 </div>
               </div>
               <div class="recipedetailsect">

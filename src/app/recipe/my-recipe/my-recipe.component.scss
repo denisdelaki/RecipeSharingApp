@@ -24,10 +24,10 @@ $primary-color3: black;
   position: absolute;
   left: 10%;
 }
-// .mat-tooltip.addrecipe {
-//   color: maroon; 
-//   background-color: transparent; 
-// }
+.mat-tooltip.addrecipe {
+  color: maroon; 
+  background-color: transparent; 
+}
 //recipe rendering 
 .recipedisplay{
   display: flex;
@@ -154,14 +154,41 @@ $primary-color3: black;
   .addicon, .searchcontrol {
     width: 100%; 
   }
+  .addicon{
+    position: absolute;
+    right: 50px;
+    top: -25px;
+    margin-right: auto;
+  }
+
 .searchcontrol{
   position: absolute;
-  top: 10px;
   margin-bottom: 10px;
+}
+.details mat-icon {
+  margin: auto 8px;
+  font-size: large;
+  color: $primary-color2;
 }
   .newrecipe {
     color: $primary-color2;
     margin-right: 30px;
+  }
+  ///recipes 
+  .recipecard{
+    height: 25vh;
+    width: 35%;
+  }
+  .recipedisplay{
+    flex-direction: row;
+    margin: 5px 2px ;
+  }
+  td{
+    font-size: smaller;
+  }
+  .img{
+    width: 100%;
+    height: 50%;
   }
 }
 
