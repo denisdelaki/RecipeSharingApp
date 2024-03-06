@@ -42,3 +42,14 @@ mat-card {
     border: none;
     border-radius: 10px;
 }
+@media only screen and (max-width: 410px) {
+    mat-card {
+        margin-top: 5%;
+        height: 90vh ;
+        width: 100%;
+    }
+    .telfaceb,.addresta{
+        display: flex;
+        flex-direction: column;
+       }
+}
