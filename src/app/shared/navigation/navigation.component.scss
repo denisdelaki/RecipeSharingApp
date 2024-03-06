@@ -19,26 +19,28 @@ $primary-color3: black;
     height: 70px;
     width: 80px;
   }
+  .maticon{
+    display: none;
+  }
   mat-toolbar{
       background-color: $primary-color1;
       font-size: large;
   }
   .navigation{
-    width: 70%;
+    width: 90%;
     margin-left: auto;
-    padding-right: 20px;
   }
   .fixed-header{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin: 20px auto;
   }
   .menunavs{
-    display: flex;
+    display: flex;    
     align-items: center;
-    justify-content: space-between;
-    width: 80%;
+    justify-content: center;
+    width: 100%;
   }
   .menunavs a{
     color: $primary-color3;
@@ -68,46 +70,14 @@ $primary-color3: black;
     width: 80px;
     height: 40px;
     border: none;
-    border-radius: 17px;
+    border-radius: 10px;
     transition: background-color 0.3s ease;
     background-color: $primary-color2;
     color: $primary-color1;
   }
-  @media only screen and (max-width: 600px) {
-    .navigation{
-      width: 80%;
-      padding-right: 20px;
-      margin-right: 40px;
-    }
-
-    .logo {
-      display: flex;
-      margin: 10px 5px 10px 20px; 
-      height: 50px;
-      width: 60px;
-    }
-    .menunavs{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 80%;
-      margin-right: 50px;
-    }
-    .menunavs a{
-      color: $primary-color3;
-      margin-right: 10px;
-      font-weight: 500;
-    }
-    .loginbutton{
-      font-weight: bold;
-      font-size: 16px;
-    }
-    
-  }
-  
+ 
   @media only screen and (max-width: 768px) {
     .logo {
-      display: flex;
       margin: 10px 10px 10px 20px; 
       height: 60px;
       width: 70px;
@@ -122,42 +92,100 @@ $primary-color3: black;
       font-size: 16px;
     }
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 600px) and (min-width: 411px) {
     .logo {
-      display: flex;
-      margin: 10px 10px 10px 20px; 
-      height: 40px;
+      margin: 30px 5px 10px 20px; 
+      height: 30px;
       width: 50px;
     }
     .menunavs a{
       color: $primary-color3;
       margin-right: 25px;
       font-weight: 500;
-      font-size: 15px;
+      font-size: 12px;
     }
     .loginbutton{
-      font-weight: bold;
-      font-size: 15px;
+      font-size: 10px;
+      width: 60px;
+      height: 30px;
+      margin-left: 20px;
     }
-  }
-  @media only screen and (max-width: 400) {
-    .logo {
+    .navigation{
+      padding-right: 30px;
+      margin:0px 0px 10px 40;      
+      margin-right: 10px;
+    }
+    .maticon{
+      display: none;
+    }
+    .menunavs{
       display: flex;
-      margin: 10px 5px 10px 20px; 
-      height: 20px;
-      width: 40px;
+      align-items: center;
+      justify-content: space-between;
+      display: block;
+    }
+    
+  }
+  @media only screen and (max-width: 410px) {
+    .header{
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      max-height: max-content;
+    }
+    .logo {      
+      height: 40px;
+      width: 60px;
+      margin: auto;
+    }
+    img{
+      height: 100%;
+      width: 100%;
+    }
+    .navigation{
+      width: 20%;
+      margin-left: 0;
+      position: absolute;
+      bottom: -30px;
+    }
+    .logout{
+      width: 20%;
+      margin-left: auto;
+      position: absolute;
+      right: 20px;
+      top: 18%;
+    }
+    .maticon{
+      margin: 0 auto 0px auto;
+      height: 30px;
+      display: block;
+      color: $primary-color2;
+      background-color: white;
+      border-color: $primary-color2;
+      margin-left: 20px;
+    }
+    .menunavs
+    {
+      display: none;
+      
+    }
+    .menunavs.show-nav{
+      display: block;
+      margin-top: 80px;
     }
     .menunavs a{
       color: $primary-color3;
-      margin-right: 15px;
+      margin-right: 25px;
       font-weight: 300;
-    }
-    .authbuttons{
-      margin-right: 50px;
+      margin-top: 50px;
+      font-size: 12px;
+      //display: none;
     }
     .loginbutton{
-      font-weight: bold;
-      font-size: 10px;
+      height: 25px;
+      width: 50px;
+      font-size: 9px;
+      border-radius: 5px;
     }
   }
  

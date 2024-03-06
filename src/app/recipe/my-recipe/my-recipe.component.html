@@ -1,12 +1,16 @@
 <div>
-    <!-- <app-navigation></app-navigation> -->
+    <app-navigation></app-navigation>
     
     <!-- My recipe section -->
     <div class="recipes">
       <!-- Upper section -->
       <div class="recipecontrol">
-        <mat-icon class="newrecipe" (click)="addRecipe()" matTooltip="addrecipe" matTooltipClass="addrecipe">create_new_folder</mat-icon>
-        <app-search-filter></app-search-filter>
+        <div class="addicon">
+          <mat-icon class="newrecipe" (click)="addRecipe()" matTooltip="addrecipe" matTooltipClass="addrecipe">create_new_folder</mat-icon>
+        </div>
+        <div class="searchcontrol">
+          <app-search-filter></app-search-filter>
+        </div>
       </div>
       
       <!-- Recipes display section -->

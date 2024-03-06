@@ -4,7 +4,7 @@ import { MaterialModule } from '../material/material.module';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { RouterModule } from '@angular/router';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
     NavigationComponent
   ],
   imports: [
-    CommonModule,MaterialModule,RouterModule
+    CommonModule,MaterialModule,RouterModule,FlexLayoutModule
   ],
   exports:[NavigationComponent, SearchFilterComponent]
 })

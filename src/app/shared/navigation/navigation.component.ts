@@ -7,8 +7,13 @@ import { Router } from '@angular/router';
   styleUrl: './navigation.component.scss'
 })
 export class NavigationComponent {
-  constructor(private router:Router){
+  constructor(private router:Router){ }
+  ///navigations 
+  isNavVisible: boolean = false;
 
+  toggleNav() {
+    this.isNavVisible = !this.isNavVisible;
+    console.log(this.isNavVisible)
   }
     //logout 
     Logout(){
