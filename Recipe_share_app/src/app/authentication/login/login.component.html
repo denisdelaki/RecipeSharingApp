@@ -1,0 +1,48 @@
+<div id="loginbody" *ngIf="!loading">
+    <mat-card class="loginCard">
+      <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Equity_Group_Logo.png" alt="logo"/>
+      </div>
+      <div class="cardContent">
+        <form [formGroup]="options" (submit)="onSubmit()">
+        <div>
+          <mat-form-field [floatLabel]="getFloatLabelValue()">
+            <mat-label>Email</mat-label>
+                <input matInput  formControlName="email" 
+                class="pemail"  placeholder="Email e.g user@gmail.com"
+                name="email"
+                required>
+            <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+          </mat-form-field>
+        </div>
+        
+        <div>
+          <mat-form-field [floatLabel]="getFloatLabelValue()">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'"
+             placeholder="Password"
+             formControlName="password"
+              name="password" 
+             required>
+             <button  type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" class="hidepassword">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>        
+          </mat-form-field>
+        </div>
+        <div class="loginbutton">
+          <button mat-stroked-button type="submit" >Login</button>       
+        </div>
+        <div class="footer">
+          <!--Should navigate to signup page on click-->
+          <p>Don't have an account yet?<span><a (click)="navigateToSignUp()"> Sign up.</a></span></p>
+        </div>
+        </form>
+  
+      </div>
+    </mat-card>
+  </div>
+  <div class="loading" *ngIf="loading">
+    <mat-spinner ></mat-spinner>
+    <p>Please wait as we log you in</p>
+  </div>
+    

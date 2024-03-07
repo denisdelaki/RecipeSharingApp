@@ -1,0 +1,55 @@
+$primary-color1: white;
+$primary-color2: maroon;
+$primary-color3: black;
+
+
+mat-form-field  {
+margin: auto 20px;
+}
+
+mat-card {
+    margin: auto;
+    margin-top: 7%;
+    color: $primary-color2;
+    height: 75vh ;
+    width: 100%;
+   }
+   .telfaceb,.addresta{
+    display: flex;
+    flex-direction: row;
+   }
+   .footer{
+    display: flex;
+    justify-content: center;
+   align-items: stretch;
+}
+.footer button{
+    margin: 20px;
+}
+.close{
+    background-color: red;
+    color: $primary-color1;
+    height: 30px;
+    width: 60px;
+    border: none;
+    border-radius: 10px;
+}
+.save{
+    background-color: green;
+    color: $primary-color1;
+    height: 30px;
+    width: 60px;
+    border: none;
+    border-radius: 10px;
+}
+@media only screen and (max-width: 410px) {
+    mat-card {
+        margin-top: 5%;
+        height: 90vh ;
+        width: 100%;
+    }
+    .telfaceb,.addresta{
+        display: flex;
+        flex-direction: column;
+       }
+}

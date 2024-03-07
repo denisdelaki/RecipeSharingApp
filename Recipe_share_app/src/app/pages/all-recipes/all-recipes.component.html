@@ -1,0 +1,66 @@
+<div>
+    <app-navigation></app-navigation>
+    
+    <!-- My recipe section -->
+    <div class="recipes">
+      <!-- Upper section -->
+      <div class="recipecontrol">
+        <app-search-filter></app-search-filter>
+      </div>
+      
+      <!-- Recipes display section -->
+      <div >      
+        <!-- Display search results if available -->
+        <div *ngIf="showSearchResults"class="recipedisplay">
+          <div *ngFor="let recipe of SearchedRecipes" class="recipecard">
+            <mat-card class="recipeinfo" (click)="ViewRecipe(recipe.id)">
+              <div class="recipeimagesect">
+                <div class="img">
+                  <img mat-card-image [src]="recipe.recipeUrl" class="recipeimage" alt="Recipe Image">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td>Title: {{recipe.title}}</td>
+                        <td>Category: {{recipe.category}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="recipedetailsect">
+               
+              </div>
+            </mat-card>
+          </div>
+        </div>
+  
+        <!-- Display myRecipes if search results are not available -->
+        <div *ngIf="!showSearchResults && recipeData.length === 0" class="no-recipes-message">
+          No recipes yet. Kindly create one!
+        </div>
+        <!--Display my recipes-->
+        <div *ngIf="!showSearchResults" class="recipedisplay">
+          <div *ngFor="let recipe of recipeData" class="recipecard">
+            <mat-card class="recipeinfo" (click)="ViewRecipe(recipe.id)">
+              <div class="recipeimagesect">
+                <div class="img">
+                  <img mat-card-image [src]="recipe.recipeUrl" class="recipeimage" alt="Recipe Image">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td>Title: {{recipe.title}}</td>
+                        <td>Category: {{recipe.category}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="recipedetailsect">
+              </div>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

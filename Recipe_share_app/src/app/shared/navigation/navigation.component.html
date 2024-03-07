@@ -1,0 +1,26 @@
+<div>
+    <div class="header">
+      <!-- Logo -->
+      <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Equity_Group_Logo.png" alt="logo">
+      </div>
+      <!-- Menu list -->
+      <div class="navigation" > 
+        <mat-toolbar>
+          <mat-toolbar-row class="fixed-header">
+            <button mat-icon-button class="maticon" (click)="toggleNav()">
+              <mat-icon>menu</mat-icon>
+           </button>
+            <div class="menunavs" [class.show-nav]="isNavVisible">
+              <a mat-button [routerLink]="['/recipes/myprofile']" routerLinkActive="router-link-active">MyProfile</a>
+              <a mat-button [routerLink]="['/recipes/myrecipe']" routerLinkActive="router-link-active">MyRecipes</a>
+              <a mat-button [routerLink]="['/allrecipes']" routerLinkActive="router-link-active">AllRecipes</a>
+            </div>
+          </mat-toolbar-row>
+        </mat-toolbar>
+      </div>
+      <div class="logout">
+        <button mat-stroked-button type="button" class="loginbutton" (click)="Logout()">Logout</button>
+      </div>
+    </div>
+</div>

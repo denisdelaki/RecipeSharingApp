@@ -1,0 +1,18 @@
+<div class="reviewcontainer">
+    <mat-icon class="arrow-icon" (click)="slideToPrev()">keyboard_arrow_left</mat-icon>
+    <mat-horizontal-stepper #stepper class="slider-container">
+      <mat-step *ngFor="let review of reviews" class="slider">
+        <mat-card class="reviewcard">
+          <div class="chefimage">
+            <img mat-card-image [src]="review.image" alt="chef">
+          </div>
+          <div class="chefreview">
+            <p>{{ review.review }}</p>
+            <p class="chefname">Name: ~ {{ review.name }}</p>
+          </div>
+        </mat-card>
+      </mat-step>
+    </mat-horizontal-stepper>
+    <mat-icon class="arrow-icon" (click)="slideToNext()">keyboard_arrow_right</mat-icon>
+  </div>
+  

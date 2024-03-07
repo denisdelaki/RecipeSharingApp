@@ -1,0 +1,48 @@
+<div>
+    <app-navigation></app-navigation>
+    <div class="recipeContainer">
+        <!---details -->
+        <div class="recipedetails" *ngIf="recipe">
+            <h1>Title</h1>
+            <p> {{recipe.title}}</p>
+            <h2>Category </h2>
+            <p>{{recipe.category}}</p>
+            <h3>Ingredients </h3>
+            <ol>
+                <li>{{recipe.ingredients}}</li>
+            </ol>
+            <h3>Instructions</h3>
+            <ol>
+                <li>{{recipe.instruction}}</li>
+            </ol>
+             <!--Review and recommendation sections --->
+             <div class="share-container">
+                <div class="share-options" *ngIf="showOptions">
+                  <p (click)="shareWithEmail()">Share with <mat-icon> email</mat-icon></p>
+                  <p (click)="shareWithWhatsApp()">Share with <mat-icon> call</mat-icon></p>
+                </div>
+                <p (click)="toggleShareOptions()"><mat-icon>share</mat-icon></p>
+                <p class="share-text">Share</p>
+              </div>
+              
+            <h2>Review and Recommendation</h2>
+            <form>            
+                <mat-form-field>
+                    <mat-label>Review and Recommendation</mat-label>
+                    <input matInput type="text" formControlName="recommendation">
+                </mat-form-field>
+                <div class="footer">
+                    <button class="cancel" (click)="cancel()" mat-raised-button>Cancel</button>
+                    <button class="submit" type="submit" mat-raised-button>Submit </button>
+                </div>
+    
+            </form>
+        </div>
+        <!--Image -->
+        <div class="recipeImage">
+            <img class="recimg" [src]="recipe.recipeUrl" alt="recipeImage">
+            <div>
+            </div>
+        </div>
+    </div>
+    </div>

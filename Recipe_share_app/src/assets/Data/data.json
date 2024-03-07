@@ -1,0 +1,241 @@
+{
+  "user": [
+    {
+      "username": "denis",
+      "email": "denisdelaki@gmail.com",
+      "profile": {
+        "telephone": "0703103852",
+        "restaurant": "bond",
+        "address": "33",
+        "facebook": "denis"
+      },
+      "id": "bbe3"
+    },
+    {
+      "id": "8fab",
+      "username": "joshua",
+      "email": "joshua@emtechouse.co.ke",
+      "password": "0000",
+      "passwordconfirm": "0000"
+    },
+    {
+      "id": "31ac",
+      "username": "denisdelaki",
+      "email": "denisdelaki@gmail.com",
+      "password": "9999",
+      "passwordconfirm": "9999"
+    },
+    {
+      "id": "6d95",
+      "username": "denis",
+      "email": "denisdelaki@gmail.com",
+      "password": "9999",
+      "passwordconfirm": "9999"
+    },
+    {
+      "username": "Delhia",
+      "email": "denisdelaki@gmail.com",
+      "profile": {
+        "telephone": "0703103852",
+        "restaurant": "bonds",
+        "address": "33",
+        "profileurl": "https://images.unsplash.com/photo-1523307730650-594bc63f9d67?q=80&w=1527&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "facebook": "delhia"
+      },
+      "id": "d3f3"
+    },
+    {
+      "username": "emmanuel",
+      "email": "emmanuel@gmail.com",
+      "profile": {
+        "telephone": "+254703361342",
+        "restaurant": "bonds",
+        "address": "33",
+        "profileurl": "https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cHJvZmlsZSUyMHBpY3R1cmUlMjBvZmZpY2lhbHxlbnwwfHwwfHx8MA%3D%3D",
+        "facebook": "emmanuel"
+      },
+      "id": "927a"
+    },
+    {
+      "id": "2e1a",
+      "username": "delhia",
+      "email": "delhia@gmail.com",
+      "password": "0000",
+      "passwordconfirm": "0000"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "c63b",
+      "title": "kuku",
+      "category": "Lunch",
+      "ingredients": "kuku",
+      "instruction": "cook the chicken",
+      "recipeUrl": "https://images.unsplash.com/photo-1606728035253-49e8a23146de?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "a712",
+      "title": "kuku",
+      "category": "Dinner",
+      "ingredients": "kuku",
+      "instruction": "cook the chicken",
+      "recipeUrl": "https://plus.unsplash.com/premium_photo-1672363353898-0818871046b3?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "335e",
+      "title": "eggs",
+      "category": "Lunch",
+      "ingredients": "eggs",
+      "instruction": "boil ",
+      "recipeUrl": "https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "5710",
+      "title": "tea",
+      "category": "BreakFast",
+      "ingredients": "tea leaves, milk",
+      "instruction": "boil water, add milk, add tea leaves",
+      "recipeUrl": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?q=80&w=1321&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "2b07",
+      "title": "heavy breakfast ",
+      "category": "BreakFast",
+      "ingredients": "eggs, bread, tea",
+      "instruction": "fry eggs,serve hot",
+      "recipeUrl": "https://plus.unsplash.com/premium_photo-1676409608965-665e89ba22a4?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "e21f",
+      "title": "tasty snacks",
+      "category": "Snack",
+      "ingredients": " cookies ",
+      "instruction": "slice the cookies to equal pieces",
+      "recipeUrl": "https://images.unsplash.com/photo-1517093602195-b40af9688b46?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "fe35",
+      "title": "snacky snacks",
+      "category": "Snack",
+      "ingredients": "blue band, cookies",
+      "instruction": "smear blue band on the cookies",
+      "recipeUrl": "https://images.unsplash.com/photo-1571865402713-98ba5a56f12b?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "78b9",
+      "title": "game meat",
+      "category": "Dinner",
+      "ingredients": "game meat, maize flour",
+      "instruction": "cook ugali, grill the game meat",
+      "recipeUrl": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "7965",
+      "title": "tasty meat",
+      "category": "Dinner",
+      "ingredients": "meat, spinach, tommatoes ",
+      "instruction": "cook the spinach separately, fry the meat, serve with ugali",
+      "recipeUrl": "https://images.unsplash.com/photo-1504973960431-1c467e159aa4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "9fe7",
+      "title": "masala",
+      "category": "Lunch",
+      "ingredients": "masala",
+      "instruction": "cook masala",
+      "recipeUrl": "https://images.unsplash.com/photo-1596797038530-2c107229654b?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "userId": "8fab"
+    },
+    {
+      "title": "omena",
+      "category": "Lunch",
+      "ingredients": "fish",
+      "instruction": "fry omena",
+      "recipimgurl": "https://images.unsplash.com/photo-1577194509876-4bb24787a641?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "id": "2486"
+    },
+    {
+      "title": "omena",
+      "category": "BreakFast",
+      "ingredients": "fish",
+      "instruction": "fry omena",
+      "recipimgurl": "https://images.unsplash.com/photo-1577194509876-4bb24787a641?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "id": "ad2b"
+    },
+    {
+      "title": "kuku",
+      "category": "Lunch",
+      "ingredients": "chicken",
+      "instruction": "fry omena",
+      "recipimgurl": "https://images.unsplash.com/photo-1694579740719-0e601c5d2437?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "id": "9427"
+    },
+    {
+      "title": "masala, chicken",
+      "category": "Dinner",
+      "ingredients": "chicken, masala",
+      "instruction": "cook the chicken",
+      "recipimgurl": "https://images.unsplash.com/photo-1694579740719-0e601c5d2437?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "id": "3505"
+    },
+    {
+      "title": "cheese burger",
+      "category": "Lunch",
+      "ingredients": "cheese",
+      "instruction": "server with soda",
+      "recipimgurl": "https://plus.unsplash.com/premium_photo-1672363353886-a106864f5cb9?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "userId": "927a",
+      "id": "0846"
+    },
+    {
+      "id": "50a5",
+      "title": "eggs",
+      "category": "Lunch",
+      "ingredients": "eggs",
+      "instruction": "fry",
+      "recipeUrl": "https://plus.unsplash.com/premium_photo-1672363353886-a106864f5cb9?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "userId": "927a"
+    },
+    {
+      "id": "71ab",
+      "title": "eggs",
+      "category": "Dinner",
+      "ingredients": "eggs",
+      "instruction": "boil the eggs ",
+      "recipeUrl": "https://images.unsplash.com/photo-1518476381266-33596bddffc0?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "userId": "8fab"
+    },
+    {
+      "id": "7bd7",
+      "title": "eggs",
+      "category": "Lunch",
+      "ingredients": "eggs",
+      "instruction": "fry the eggs",
+      "recipeUrl": "https://images.unsplash.com/photo-1514186073652-b140ce52bcd3?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "userId": "8fab"
+    },
+    {
+      "id": "5133",
+      "title": "meat",
+      "category": "Dinner",
+      "ingredients": "game meat",
+      "instruction": "fry the meat",
+      "recipeUrl": "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "userId": "8fab"
+    }
+  ],
+  "testimonials": [
+    {
+      "image": "https://images.unsplash.com/photo-1581299894007-aaa50297cf16",
+      "review": "I have a lot of food allergies and I love this app!",
+      "name": "Amir",
+      "id": "d7a7"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1581299894007-aaa50297cf16",
+      "review": "I think we've been using Equity eateri for a while now and it's an awesome app.It's very easy to use and you can save recipes in it. I think the best thing about this app is that it has alot of categories,so you are ablee to find the perfect recipe for any occassion.",
+      "name": "Denis",
+      "id": "e972"
+    }
+  ]
+}

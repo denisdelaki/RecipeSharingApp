@@ -1,0 +1,121 @@
+<div>
+    <header>
+      <div class="header">
+        <!-- Logo -->
+        <div class="logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Equity_Group_Logo.png" alt="logo">
+        </div>
+        <!-- Menu list -->
+        <div class="navigation">
+          <mat-toolbar class="fixed-header"> 
+            <mat-toolbar-row>
+              <button mat-icon-button class="maticon" (click)="toggleNav()">
+                <mat-icon>menu</mat-icon>
+             </button>
+              <div class="menunavs" [class.show-nav]="isNavVisible">
+                <a mat-button href="#Home">Home</a>
+                <a mat-button href="#Recommended">Recipes</a>
+                <a mat-button href="#Testimonials">Testimonials</a>
+                <a mat-button href="#AboutUs">AboutUs</a>
+              </div>
+              <div class="authbuttons">
+                <button mat-stroked-button type="menu" class="loginbutton" (click)="Login()">Login</button>
+                <button mat-stroked-button type="menu" class="signupbutton" (click)="SignUp()">Signup</button>
+              </div>
+            </mat-toolbar-row>
+          </mat-toolbar>
+        </div>
+      </div>
+    </header>
+    <!-- Body -->
+    <div class="bodycardcontainer">
+      <mat-card class="bodycard">
+        <mat-card-content class="cardContent">
+          <div>
+            <h2>Share the Love, Share the Recipe <br>and Share the Food</h2>
+            <p>
+              Equity Eateries is a web app that allows you to <br> save your favorite recipes <br>and share them
+            </p>
+            <div>
+              <button mat-stroked-button type="button" class="getStarted" (click)="SignUp()">GetStarted</button>
+            </div>
+          </div>
+          <div class="imagecontainer">
+            <img mat-card-image class="bodyimage" src="https://images.unsplash.com/photo-1539136788836-5699e78bfc75?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <!-- Recommended recipe -->
+    <h2 class="recoheader"><span>Recommended </span>Recipes</h2>
+    <div id="Recommended">
+      <app-recommended></app-recommended>
+      </div>
+    <!-- Testimonials -->
+    <h2 class="recoheader">Testimonials</h2>
+    <div id="Testimonials">
+        <app-testimonials></app-testimonials>
+    </div>
+    
+    
+    <!-- About Us -->
+    <h2 class="recoheader"><span>About</span>Us</h2>
+    <div id="AboutUs">
+      <div class="aboutcard">
+        <div class="aboutimage">
+          <img mat-card-image src="https://images.unsplash.com/photo-1627907228175-2bf846a303b4?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="aboutimage">
+        </div>
+        <div class="aboutdetails">
+          <h4>Create your own recipe book!</h4>
+          <p>Equity Eateries helps you to prepare delicious meals. <br>
+            There are also categories of healthy cuisine, <br>
+            vegetarian recipes or desserts on our platform.</p>
+        </div>
+      </div>
+      <div class="aboutcard2">
+        <div class="aboutdetails2">
+          <h4>Discover new recipes</h4>
+          <p>Equity Eateries Helps you Discover new recipes with <br>
+            the help of other users <br>
+            and social networks, and share them with friends.</p>
+        </div>
+        <div class="aboutimage2">
+          <img mat-card-image src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1557&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="aboutimage">
+        </div>
+      </div>
+      <div class="aboutcard">
+        <div class="aboutimage">
+          <img mat-card-image src="https://images.unsplash.com/photo-1512058454905-6b841e7ad132?q=80&w=1395&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="aboutimage">
+        </div>
+        <div class="aboutdetails">
+          <h4>Save And Share Your Favorite Recipe With the World.</h4>
+          <p>Equity eaterie lets you pin your  <br>
+            favorite recipes from around the web <br>
+            into an easy to use Web app.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Section -->
+    <footer>
+      <div class="footer">
+        <div class="contact">
+          <h4>ContactUs</h4>
+          <p>Email: equityeateris.com</p>
+          <p>Call: 0703103852</p>
+          <p>WhatsApp: 0763103852</p>
+        </div>
+        <div class="footerlogo">
+          <h4>Equity Eateries</h4>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Equity_Group_Logo.png" alt="logo">
+          <p>Your Ultimate Choice and Market Leader</p>
+        </div>
+        <div class="socials">
+          <h4>Follow Us</h4>
+          <p>facebook</p>
+          <p>Twitter X</p>
+          <p>Instagram</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  
