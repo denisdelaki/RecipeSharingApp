@@ -27,7 +27,13 @@ export class LandingPageComponent implements OnInit {
       }
     );
   }
+    ///navigations 
+    isNavVisible: boolean = false;
 
+    toggleNav() {
+      this.isNavVisible = !this.isNavVisible;
+      console.log(this.isNavVisible)
+    }
   SignUp(): void {
     this.router.navigate(['auth/signup']);
   }

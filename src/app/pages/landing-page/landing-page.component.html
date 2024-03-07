@@ -7,9 +7,12 @@
         </div>
         <!-- Menu list -->
         <div class="navigation">
-          <mat-toolbar class="fixed-header">
+          <mat-toolbar class="fixed-header"> 
             <mat-toolbar-row>
-              <div class="menunavs">
+              <button mat-icon-button class="maticon" (click)="toggleNav()">
+                <mat-icon>menu</mat-icon>
+             </button>
+              <div class="menunavs" [class.show-nav]="isNavVisible">
                 <a mat-button href="#Home">Home</a>
                 <a mat-button href="#Recommended">Recipes</a>
                 <a mat-button href="#Testimonials">Testimonials</a>
