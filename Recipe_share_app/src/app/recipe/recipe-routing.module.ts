@@ -9,7 +9,7 @@ const routes: Routes = [
   {path: 'myprofile', component: MyProfileComponent, },
   {path: 'newrecipe', component: NewRecipeComponent, canActivate: [AuthGuard]},
   {path: 'myrecipe', component: MyRecipeComponent, canActivate: [AuthGuard]},
-  {path: 'allrecipe', component: MyRecipeComponent, canActivate: [AuthGuard]},
+  {path: 'allrecipe', component: MyRecipeComponent,},
   {path: 'editrecipe/:id', component: EditRecipeComponent, canActivate: [AuthGuard]},
 ]; 
 

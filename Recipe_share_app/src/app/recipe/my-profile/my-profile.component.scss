@@ -79,7 +79,7 @@ $primary-color3: black;
 .popupcard{
     height: 10vh;
 }
-@media only screen and (max-width: 410px) {
+@media only screen and (max-width: 415px) {
     .myprofile{
         flex-direction: column; 
         margin-top: 20px ;
@@ -87,7 +87,7 @@ $primary-color3: black;
     .sidediv{
         justify-content: flex-start;
         width: 85%;
-        height: 35vh;
+        height: 40vh;
         margin-bottom: 40px;
     }
     .sidediv mat-card{

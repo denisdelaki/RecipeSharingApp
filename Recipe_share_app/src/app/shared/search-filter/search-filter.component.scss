@@ -53,7 +53,7 @@ mat-form-field {
         font-size: 13px;
     }
 }
-@media only screen and (max-width: 600px)and (min-width: 411px) {
+@media only screen and (max-width: 600px)and (min-width: 416px) {
     .searchform {
         height: 15vh;
         width: 60%;
@@ -74,7 +74,7 @@ mat-form-field {
         width: 40%;
     }
 }
-@media only screen and (max-width: 410px) {
+@media only screen and (max-width: 415px) {
     // .searchform {
     //     height: 15vh;
     //     width: 60%;
@@ -110,6 +110,7 @@ mat-form-field {
         position: absolute;
         left: 0;
         top: 15px;
+        margin-right: 20px;
       }
       
       .mat-form-field {
@@ -123,7 +124,7 @@ mat-form-field {
       .button-container {
         display: flex;
         align-items: flex-end;
-        margin-right: auto;
+        margin-left: auto;
         position: absolute;
         right: 0;
         top: 15px;

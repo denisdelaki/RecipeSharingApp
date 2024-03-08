@@ -5,7 +5,7 @@
     <div class="recipes">
       <!-- Upper section -->
       <div class="recipecontrol">
-        <div class="addicon">
+        <div class="addicon" *ngIf="isMyRecipes">
           <mat-icon class="newrecipe" (click)="addRecipe()" matTooltip="addrecipe" matTooltipClass="addrecipe">create_new_folder</mat-icon>
         </div>
         <div class="searchcontrol">
