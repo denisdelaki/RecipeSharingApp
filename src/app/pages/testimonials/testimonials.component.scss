@@ -52,9 +52,10 @@ $primary-color3: black;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50%; 
-    width: 100%; 
-    margin: 20px;
+    height: 200px; 
+    width: 200px; 
+    margin-bottom: 50px;
+    border: 1 px solid black;
   }
   .chefimage img{
     height: 80%;
@@ -83,6 +84,20 @@ $primary-color3: black;
   .mat-horizontal-stepper {
     overflow: hidden;
   }
+  @media only screen and ((max-width: 768px ) and (min-width: 601px)) {
+    .reviewcard {
+      width: 90%;
+      height: 80vh;   
+    }
+    .chefimage img{
+      height: 60%;
+      width: 60%;
+    }
+    .chefreview {
+      margin-top: 38%;
+    }
+
+  }
   @media only screen and (max-width: 415px) {
     .reviewcard {
       width: 90%;
@@ -97,8 +112,8 @@ $primary-color3: black;
       margin-right: auto;
     }
     .chefimage img{
-      height: 80%;
-      width: 40%;
+      height: 45%;
+      width: 45%;
     }
     .chefreview {
       margin-top: 50%;

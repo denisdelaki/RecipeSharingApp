@@ -123,9 +123,11 @@ mat-toolbar{
     width: 130px;
   }
  
-  #Recommended, #Testimonials{
+  #Recommended{
     display: flex;
     direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
     width: 100%;
     margin: auto 20px;
   }

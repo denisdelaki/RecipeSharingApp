@@ -42,6 +42,14 @@ constructor(private route: ActivatedRoute,
     })
   }
   cancel(){
-    this.router.navigate(['/allrecipes'])
+    let  userId = localStorage.getItem('loggedInUserId'); 
+    console.log(userId );
+    if (userId =null) {
+      this.router.navigate(['/landingpage'])
+    }
+    else {
+      this.router.navigate(['/recipe/allrecipe'])
+    }
+    
   }
 }
