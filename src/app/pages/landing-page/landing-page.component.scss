@@ -6,6 +6,8 @@ $primary-color3: black;
   background-color: $primary-color1;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
@@ -60,7 +62,9 @@ mat-toolbar{
   display: flex;
   justify-content: space-evenly;
 }
-
+.maticon{
+  display: none;
+}
 .authbuttons {
   display: flex;
   margin-left: auto; 
@@ -313,9 +317,33 @@ margin-top:34% ;
   font-size: 18px;
 }
 @media only screen and (max-width: 600px) and (min-width: 416px) {
-  .menunavs.show-nav{
-    display: none;
-  }
+  
+  // .bodycontent{
+  //   width: 100%;
+  //   height: 10vh;
+  // }
+  // .cardContent h2{
+  //   font-size: 14px;
+  //   max-width: 100%;
+  //   line-height: 2x;
+  // }
+  // .cardContent p{
+  //   font-size: small;
+  // }
+  // .buttonget{
+  //   display: flex;
+  //   justify-content: center;
+    
+  // }
+  // .getStarted{
+  //   width: 200px;
+  //   font-size: small;
+  // }
+  // .imagecontainer{
+  //   flex: 0 0  50%;
+  //   width: 100%;
+  //   height: 40%;
+  // }
 }
 @media only screen and (max-width: 415px) {
   // header{
@@ -327,33 +355,31 @@ margin-top:34% ;
   .header{
     display: flex;
     flex-direction: column;
-    position: relative;
+    position: relative; 
     max-height: max-content;
+  }
+  .navigation {
+    width: 100%;
+    margin-top: -50px;
+  }
+  .authbuttons{
+    width: 45%;
+    position: absolute;
+    right: 0;
+    top: 10px;
   }
   .logo {      
     height: 40px;
     width: 60px;
-    margin: auto;
+    margin-top: 10px;
+    margin-right: 50px;
+    z-index: 1;
   }
   img{
     height: 100%;
     width: 100%;
   }
-  .navigation{
-    width: 20%;
-    margin-left: 0;
-    position: absolute;
-    bottom: -30px;
-    margin-bottom: 20px;
-  }
-  .authbuttons{
-    width: 20%;
-    margin-left: auto;
-    position: absolute;
-    left: 230px;
-    top: 25%;
-    margin-left: auto;
-  }
+ 
   .maticon{
     margin: 0 auto 0px auto;
     height: 30px;
@@ -387,13 +413,13 @@ margin-top:34% ;
   .loginbutton, .signupbutton{
     height: 25px;
     width: 10px;
-    font-size: 12px;
+    font-size: small;
     border-radius: 1px;
   }
   .bodycard{
     height: 60vh;
     width: 80%;
-    margin: 40px auto;
+    margin: 30px auto;
   }
   .cardContent{
     display: flex;
@@ -481,135 +507,56 @@ margin-top:34% ;
 }
 
 @media only screen and ((max-width: 768px) and (min-width: 601px)) {
-  .navigation a { 
-    color: $primary-color3;
-    margin-right: 10px;
-    cursor: pointer;
-    position: relative;
-    font-weight: light;
-    text-decoration: none;
-    font-size: 18px;
-  }
-  .logo {
-    display: flex;
-    margin: 10px 10px 10px 20px; 
-    height: 40px;
-    width: 50px;
-  }
-  .authbuttons  .signupbutton,.authbuttons  .loginbutton {
-    margin-left: 20px;
-    width: 55px;
-    height: 30px;
-    border: none;
-    border-radius: 17px;
-    transition: background-color 0.3s ease;
+
+  .logo{
+  height: 50px;
+  width: 10%;
+ }
+  .navigation{
+  margin-top: 10px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+ }
+ .navigation a{
+  margin-right: 30px;
+  font-size: 16px;
+ }
+
+ .menunavs{
+  width: 65%;
+ }
+ .authbuttons{
+  flex-grow: 1;
+  margin-right: 10px;
+ }
+ //body card
+ .bodycard{
+  height: 65vh;
+  width: 90%;
+  margin: 40px auto;
+ }
+ .aboutcard2, .aboutcard{
+  display: flex;
+  flex-direction: row;
+  height: 58vh;
+  width: 90%;
+  margin-top: 5px;
 }
-  .bodycardcontainer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    width: 100%;
-  }
-  .bodycard {
-    display: flex;
-    flex-direction: row; 
-    justify-content: space-between;
-    margin: 40px auto;
-    height: 50vh;
-    width: 80%;
-  }
-  .imagecontainer{
-    flex: 0 0  50%;
-    height: 100%;
-  }
-  .imagecontainer img{
-    height: 100%;
-  }
-  #Recommended{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-     margin: 10px; 
-   }
-   #Recommended div{
-     width: 40%;
-     height: 50vh;
-   }
-   .recomcard{
-     border-radius: 30px;
-     height: 100%;
-     width: 100%;
-   }
-   .recomcard p {
-     margin-left: 12px;
-     font-weight: light;
-     font-size: 16px;
-   }
-   #Testimonials{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-     margin: 10px; 
-  }
-  .slider{
-    height: 68vh;
-  }
-  .reviewcard{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
-  .chefimage{
-    position: absolute;
-    top: 3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150px;
-    width: 200px;
-  }
-  .chefimage img{
-    height: 100%;
-    width: 100%;
-    border: 3px solid $primary-color2;
-    border-radius: 100px;
-  }
-  .chefreview{
-  margin-top:30% ;
-  }
-  .chefreview p{
-    padding: 10px;
-  }
-  #AboutUs{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .aboutcard2, .aboutcard{
-    display: flex;
-    flex-direction: row;
-  }
-  .aboutimage{
-    height: 100%;
-    width: 50%;
-  }
-  .aboutdetails2, .aboutdetails{
-    height: 100%;
-    width: 50%;
-    padding: 20px;
-  }
-  .aboutimage2 img, .aboutimage img{
-    height: 100%;
-    width: 100%;
-  }
-   
+.aboutdetails2 h4, .aboutdetails h4{ 
+  font-size: small;
+  line-height: 2;
+  font-weight: bold;
+}
+.aboutdetails2 p, .aboutdetails p{    
+  max-width: 100%;
+  max-height: 100%;
+  font-size: small;
+  line-height: 1.8;
+  margin: 0;    
+}
 }
 @media only screen and ((max-width: 1024px) and (min-width: 769px)) {
   .navigation a { 
