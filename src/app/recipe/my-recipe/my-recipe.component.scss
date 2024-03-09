@@ -127,7 +127,7 @@ $primary-color3: black;
     left: 15%;
   }
 }
-@media only screen and (max-width: 600px)and (min-width: 411px)  {
+@media only screen and (max-width: 600px)and (min-width: 416px)  {
   .recipecard{
     height: 40vh;
     width: 45%;
@@ -143,7 +143,7 @@ $primary-color3: black;
     left: 5%;
   }
 }
-@media only screen and (max-width: 410px) {
+@media only screen and (max-width: 415px) {
   .recipecontrol {
     height: 7vh;
     flex-direction: column;
