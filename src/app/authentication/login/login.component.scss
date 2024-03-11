@@ -95,24 +95,28 @@ mat-form-field {
     color: $primary-color2;
   }
 /* Media queries for responsiveness */
-@media only screen and (min-width: 1024px) {
+@media only screen and ((max-width: 1024px) and (min-width: 851px )) {
     mat-card {
-        width: 30%; 
+        width: 40%; 
     }
 }
-@media only screen and (max-width: 1024px) {
-    .loginCard {
-        width: 35%; 
-        height: 65vh;
-        font-size: small;
-    }
-}
-
-@media only screen and (max-width: 768px) {
+@media only screen and ((max-width: 850px ) and (min-width: 768px) ) {
     .loginCard {
         width: 45%; 
         height: 40vh;
         font-size: small;
+    }
+}
+
+@media only screen and ((max-width: 767px ) and (min-width: 601px) ) {
+    .loginCard {
+        width: 45%; 
+        height: 95vh;
+        font-size: small;
+    }
+    mat-card {
+        margin-top: 2%;
+        margin-bottom: 1%;
     }
 }
 

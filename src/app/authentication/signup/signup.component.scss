@@ -81,20 +81,27 @@ mat-form-field {
 }
 //responsiveness 
 
-@media only screen and (max-width: 768px) {
+@media only screen and ((max-width: 767px ) and (min-width: 601px) ) {
     mat-card {
         width: 75%; 
-        height: 60vh ;
+        height: 90vh ;
+        margin-top: 1%;
+        overflow-y: auto;
+    }
+    .signupCard{
+        overflow-y: auto;
     }
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and ((max-width: 1024px) and (min-width: 851px )) {
+    mat-card {
+        width: 40%; 
+        height: 70vh ;
+    }
+}
+@media only screen and ((max-width: 850px ) and (min-width: 768px) ) {
     mat-card {
         width: 50%; 
-    }
-}
-@media only screen and (min-width: 1024px) {
-    mat-card {
-        width: 30%; 
+        height: 55vh ;
     }
 }
 @media only screen and (max-width: 600px) {
@@ -118,18 +125,18 @@ mat-form-field {
 }
 @media only screen and (max-width: 460px) {
     mat-card {
-        width: 80%; 
-        height: 70vh ;
+        width: 85%; 
+        height: 75vh ;
     }
     .logo{
         display: flex;
         align-items: center;
         margin: 0 auto; 
-        height: 5vh;
-        max-width: 70%; 
+        height: 6vh;
+        max-width: 80%; 
         top: 10px;
     }
     .logo img {
-        max-width: 80%; 
+        max-width: 90%; 
     }
 }

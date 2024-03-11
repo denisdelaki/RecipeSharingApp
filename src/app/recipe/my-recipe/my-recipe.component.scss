@@ -12,7 +12,7 @@ $primary-color3: black;
 } 
 // .recipecontrol {
 //   height: 7vh;
-//   display: flex;
+//   display: flex;ff
 //   justify-content: space-evenly;
 //   align-items: center;
 //   margin-bottom: 20px;
@@ -42,8 +42,9 @@ $primary-color3: black;
  height: 35vh;
  width: 20%;
  margin: 10px;
- border-radius: 20px;
- box-shadow: 3px 3px 3px 3px $primary-color2;
+ border-radius: 3%;
+ border: none;
+ box-shadow: 2px 2px 2px 1px $primary-color2;
 }
 .recipeinfo{
   display: flex;
@@ -62,7 +63,7 @@ $primary-color3: black;
 .img{
   width: 100%;
   height: 70%;
-  border-radius: 20px;
+  //border-radius: 20px;
 }
 .img h5{
   position: absolute;
@@ -99,20 +100,34 @@ $primary-color3: black;
 
 @media only screen and (max-width: 1024px) {
   .recipecard{
-    height: 50vh;
-    width: 30%;
+    height: 30vh;
+    width: 25%;
    }
+   
    .details mat-icon {
     margin: 5px 20px;
     color: $primary-color2 ;
   }
-  .newrecipe{
-    left: 6%;
+  .recipecontrol {
+    position: relative;
   }
+.addicon{
+  position: absolute;
+  left: 0;
+  top: -40px;
+  margin-left: 20px;
+
 }
-@media only screen and (max-width: 768px) {
+}
+@media only screen and ((max-width: 850px) and (min-width: 768px)) {
+  .recipecard{
+    height: 30vh;
+    width: 30%;
+   }
+}
+@media only screen and (max-width: 767px) {
   .recipecard {
-    height: 45vh;
+    height: 25vh;
     width: 35%;
    }
    .details mat-icon {
@@ -122,10 +137,25 @@ $primary-color3: black;
   .recipecontrol {
     justify-content: center;
     margin: 0 20px ;
+    position: relative;
   }
-  .newrecipe{
-    left: 15%;
-  }
+  .addicon{
+    position: absolute;
+    left: 0;
+    top: -40px;
+    margin-left: 20px;
+ }
+ .recipecard{
+  height: 55vh;
+  width: 30%;
+ }
+ .recipeimage{
+  width: 100%;
+  height: 80%;
+ }
+//   .newrecipe{
+//     left: 15%;
+// }
 }
 @media only screen and (max-width: 600px)and (min-width: 416px)  {
   .recipecard{

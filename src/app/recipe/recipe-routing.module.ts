@@ -6,9 +6,9 @@ import { NewRecipeComponent } from './new-recipe/new-recipe.component';
 import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
 import { AuthGuard } from '../core/AuthGuard';
 const routes: Routes = [
-  {path: 'myprofile', component: MyProfileComponent,canActivate: [AuthGuard] },
+  {path: 'myprofile', component: MyProfileComponent, },
   {path: 'newrecipe', component: NewRecipeComponent, canActivate: [AuthGuard]},
-  {path: 'myrecipe', component: MyRecipeComponent, canActivate: [AuthGuard]},
+  {path: 'myrecipe', component: MyRecipeComponent, },
   {path: 'allrecipe', component: MyRecipeComponent,canActivate: [AuthGuard]},
   {path: 'editrecipe/:id', component: EditRecipeComponent, canActivate: [AuthGuard]},
 ]; 
