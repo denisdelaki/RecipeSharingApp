@@ -10,8 +10,8 @@ justify-content: center;
     display: flex;;
     align-items: center;
     justify-content: center;
-    width: 30%;
-    height: 80vh;
+    width: 70%;
+    height: 60vh;
     margin-top: 20vh;
     box-shadow: 2px 3px 3px 2px $primary-color2;
   }
@@ -47,15 +47,22 @@ justify-content: center;
 .close{
     background-color: red;
 }
-@media only screen and (max-width: 410px) {
+@media only screen and (min-width: 1025px) {
+  .newrecipecontainer{ 
+    width: 60%;
+    height: 70vh;
+    margin: auto;
+  }
+}
+@media only screen and (max-width: 415px) {
   .newrecipecard {
     width: 90%;
     height: 70vh;
-    position: absolute;
-    top: 0;
+    margin-top: 10vh;
   }
   .newrecipecontainer{
    position: relative;
   }
 }
+
 

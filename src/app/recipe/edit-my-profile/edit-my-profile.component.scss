@@ -5,14 +5,17 @@ $primary-color3: black;
 
 mat-form-field  {
 margin: auto 20px;
+width: 90%;
 }
-
+.cardContent{
+    width: 100%;
+}
 mat-card {
     margin: auto;
     margin-top: 7%;
     color: $primary-color2;
-    height: 75vh ;
-    width: 100%;
+    height: 70vh ;
+    width: 90%;
    }
    .telfaceb,.addresta{
     display: flex;
@@ -58,5 +61,14 @@ mat-card {
         margin-top: 5%;
         height: 50vh ;
         width: 100%;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .cardContent{
+        height: 50vh;
+    }
+    mat-card {
+        height: 50vh ;
+        width: 100%;  
     }
 }
