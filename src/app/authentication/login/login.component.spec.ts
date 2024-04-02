@@ -27,7 +27,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from '../../core/user.service';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../auth.service.ts3';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { of } from 'rxjs';
 

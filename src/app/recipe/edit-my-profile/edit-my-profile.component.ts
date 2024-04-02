@@ -3,7 +3,7 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { MatDialogRef } from '@angular/material/dialog';
 import { FloatLabelType } from '@angular/material/form-field';
 import { UserService } from '../../core/user.service';
-import { AuthService } from '../../authentication/auth.service';
+import { AuthService } from 'src/app/authentication/auth.service';
 
 @Component({
   selector: 'app-edit-my-profile',

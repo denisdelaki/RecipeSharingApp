@@ -62,6 +62,13 @@
       "email": "delhia@gmail.com",
       "password": "0000",
       "passwordconfirm": "0000"
+    },
+    {
+      "id": "cd5f",
+      "username": "denis",
+      "email": "denisdelaki@gmail.com",
+      "password": "12345@p",
+      "passwordconfirm": "12345@p"
     }
   ],
   "recipes": [
