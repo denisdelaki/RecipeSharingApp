@@ -9,7 +9,7 @@
 
         <!-- Toggler/collapsible button for mobile -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="margin-right: 5px;">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -18,21 +18,52 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <!-- Home Link -->
                 <li class="nav-item">
-                    <a class="nav-link" style="color: black;">Home</a>
+                    <a class="nav-link" style="color: black; position: relative;">
+                        Home
+                        <div class="underline"></div>
+                    </a>
                 </li>
-                <!-- Recipes Link -->
+                <!-- Catalog Link -->
                 <li class="nav-item">
-                    <a class="nav-link" style="color: black;">Recipes</a>
-                </li>
-                <!-- Testimonials Link -->
-                <li class="nav-item">
-                    <a class="nav-link" style="color: black;">Testimonials</a>
+                    <a class="nav-link" style="color: black; position: relative;">
+                        Recipes
+                        <div class="underline"></div>
+                    </a>
                 </li>
                 <!-- About Us Link -->
                 <li class="nav-item">
-                    <a class="nav-link" style="color: black;">About Us</a>
+                    <a class="nav-link" style="color: black; position: relative;">
+                        Testimonials
+                        <div class="underline"></div>
+                    </a>
+                </li>
+                <!-- Contact Us Link -->
+                <li class="nav-item">
+                    <a class="nav-link" style="color: black; position: relative;">
+                        About Us
+                        <div class="underline"></div>
+                    </a>
                 </li>
             </ul>
+        </div>
+
+        <!-- Login and Signup Buttons -->
+        <div class="d-flex align-items-center">
+            <div class="row g-2">
+                <div class="col">
+                    <button mat-button class="btn btn-primary custom-button w-100 w-sm-auto me-sm-2 mb-2 mb-sm-0">Login</button>
+                </div>
+                <div class="col">
+                    <button mat-button class="btn btn-primary custom-button w-100 w-sm-auto ms-sm-2">Sign Up</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Logout Button -->
+        <div class="d-flex align-items-center">
+            <div class="col">
+                <button mat-button class="btn btn-danger custom-button w-100 w-sm-auto me-sm-2 mb-2 mb-sm-0">Logout</button>
+            </div>
         </div>
     </div>
 </nav>
