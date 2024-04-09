@@ -7,6 +7,7 @@ import { AboutUsComponent } from './Components/about-us/about-us.component';
 import { ContactUsComponent } from './Components/contact-us/contact-us.component';
 import { PopularRecipesComponent } from './Components/popular-recipes/popular-recipes.component';
 import { TestimonialsComponent } from './Components/testimonials/testimonials.component';
+import { MaterialModule } from './Material/Material';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { TestimonialsComponent } from './Components/testimonials/testimonials.co
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    MaterialModule
   ]
 })
 export class PagesModule { }
