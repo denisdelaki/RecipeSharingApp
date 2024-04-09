@@ -1,0 +1,32 @@
+
+.nav-link:hover .underline {
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: maroon !important;
+}
+
+
+.underline {
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: maroon !important; 
+    transition: width 0.3s ease;
+}
+.custom-button {
+    margin-right: 5px; 
+    background-color: maroon !important;
+    color: white;
+    border-color: maroon;
+  }
+  
+  .custom-button:hover {
+    color: maroon;
+    background-color: white !important;
+  }
+  
