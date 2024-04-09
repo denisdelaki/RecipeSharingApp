@@ -8,6 +8,7 @@ import { ContactUsComponent } from './Components/contact-us/contact-us.component
 import { PopularRecipesComponent } from './Components/popular-recipes/popular-recipes.component';
 import { TestimonialsComponent } from './Components/testimonials/testimonials.component';
 import { MaterialModule } from './Material/Material';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { MaterialModule } from './Material/Material';
   imports: [
     CommonModule,
     PagesRoutingModule,
-    MaterialModule
+    MaterialModule,
+    NgbCarouselModule,
   ]
 })
 export class PagesModule { }
