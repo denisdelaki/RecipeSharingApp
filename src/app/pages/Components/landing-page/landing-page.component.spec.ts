@@ -46,4 +46,18 @@ describe('LandingPageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should render card title, description, and button correctly', () => {
+    const titleElement = fixture.nativeElement.querySelector('.card-title');
+    expect(titleElement.textContent.trim()).toEqual('Save and Share your Favorite Recipe');
+
+    const descriptionElement = fixture.nativeElement.querySelector('.card-text');
+    expect(descriptionElement.textContent.trim()).toEqual('Equity Eateries is a web app that allows you to save your favorite recipes and share them.');
+
+    const buttonElement = fixture.nativeElement.querySelector('button');
+    expect(buttonElement.textContent.trim()).toEqual('Get Started');
+    expect(buttonElement.getAttribute('type')).toEqual('button');
+    expect(buttonElement.classList).toContain('btn-primary');
+    expect(buttonElement.classList).toContain('btn-block');
+    expect(buttonElement.classList).toContain('custom-button');
+  });
 });

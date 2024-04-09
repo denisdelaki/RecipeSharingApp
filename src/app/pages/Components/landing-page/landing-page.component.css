@@ -1,0 +1,12 @@
+.custom-button {
+    color: maroon;
+    background-color: white !important;
+    border-color: maroon;
+  }
+  
+  .custom-button:hover {
+    margin-right: 5px; 
+    background-color: maroon !important;
+    color: white;
+
+  }
