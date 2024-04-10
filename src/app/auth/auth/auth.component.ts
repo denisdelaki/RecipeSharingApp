@@ -83,7 +83,7 @@ login() {
           setTimeout(() => {
             this.openSnackBar('Logged in successfully', 'success-notification');
             this.authService.login();
-            this.router.navigate(['/recipes/myprofile']);
+            this.router.navigate(['/features/myprofile']);
           }, 2000);
         }
         else {
@@ -123,7 +123,7 @@ login() {
           setTimeout(() => {
             this.openSnackBar('Registered  successfully', 'success-notification');
             this.authService.login();
-            this.router.navigate(['/recipes/myprofile']);
+            this.router.navigate(['/features/myprofile']);
           }, 2000);
           });
        
