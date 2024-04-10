@@ -4,35 +4,40 @@
       <div class="card-body">
         <h2 *ngIf="isSignup" class="card-title text-center mb-4" style="color: black;">Sign Up</h2>
         <h2 *ngIf="!isSignup" class="card-title text-center mb-4" style="color: black;">Login</h2>
-        <form [formGroup]="isSignup ? userForm: loginform" (submit) ="isSignup ? registerUser() : login()">
+
+        <form [formGroup]="isSignup ? signupform: loginform" (submit) ="isSignup ? registerUser() : login()">
           <div class="row justify-content-center">
             <div class="col-10">
               <mat-form-field class="form-group" style="width: 100%;">
                 <mat-label>Email address</mat-label>
                 <input matInput type="email" formControlName="email" id="email" aria-describedby="emailHelp" placeholder="Enter email" style="width: 100%;">
-                <mat-error *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.errors?.['required']">email is required</mat-error>
+                <mat-error *ngIf="signupform.get('email')?.invalid && signupform.get('email')?.errors?.['required']">email is required</mat-error>
               </mat-form-field>
             </div>
           </div>
+
           <div class="row justify-content-center">
             <div class="col-10">
               <mat-form-field class="form-group" style="width: 100%;">
                 <mat-label>Password</mat-label>
                 <input matInput type="password" formControlName="password" id="password" placeholder="Password" style="width: 100%;">
-                <mat-error *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.errors?.['required']">password is required</mat-error>              
-                <mat-error *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters long</mat-error>
-                <mat-error *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.errors?.['pattern']">Password must contain at least one lowercase letter, one uppercase letter, and one digit</mat-error>
+                <mat-error *ngIf="signupform.get('password')?.invalid && signupform.get('password')?.errors?.['required']">password is required</mat-error>              
+                <mat-error *ngIf="signupform.get('password')?.invalid && signupform.get('password')?.errors?.['minlength']">Password must be at least 6 characters long</mat-error>
+                <mat-error *ngIf="signupform.get('password')?.invalid && signupform.get('password')?.errors?.['pattern']">Password must contain at least one lowercase letter, one uppercase letter, and one digit</mat-error>
               </mat-form-field>
             </div>
           </div>
+          <!--Buttons -->
           <button type="submit" class="btn btn-primary btn-block" style="background-color: maroon; color: white; border: none;">
             {{ isSignup ? 'Sign Up' : 'Login' }}
           </button>
         </form>
+
         <div class="mt-3 text-center">
           <a href="#" style="color: black;" *ngIf="!isSignup">Forgot password?</a>
           <p *ngIf="isSignup" class="text-center">Already have an account? <a href="#" style="color: black;" >Login</a></p>
         </div>
+        
       </div>
     </mat-card>
   </div>
