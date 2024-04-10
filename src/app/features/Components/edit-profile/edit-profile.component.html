@@ -1,1 +1,44 @@
-<p>edit-profile works!</p>
+    <div class="container d-flex justify-content-center">
+                            <div class="row justify-content-center">
+                                <div class="col">
+                                    <div class="card border-0">
+                                        <div class="card-body">
+                                            <form class="row my-3" [formGroup]="editProfile">
+                                                <div class="col">
+                                                    <mat-form-field class="form-group mt-1 mb-1" style="width: 100%;">
+                                                        <mat-label>Full Name</mat-label>
+                                                        <input matInput type="text" formControlName="fullName" id="fullName"  placeholder="Enter Full Name" style="width: 100%;">
+                                                      </mat-form-field>
+
+                                                      <mat-form-field class="form-group mt-1 mb-1" style="width: 100%;">
+                                                        <mat-label>Email address</mat-label>
+                                                        <input matInput type="email" formControlName="email" id="email" aria-describedby="emailHelp" placeholder="Enter email" style="width: 100%;">
+                                                      </mat-form-field>
+
+                                                      <mat-form-field class="form-group mt-1 mb-1" style="width: 100%;">
+                                                        <mat-label> Profile Url</mat-label>
+                                                        <input matInput type="url" formControlName="profileurl" id="profileurl"  placeholder="Enter profile Url " style="width: 100%;">
+                                                      </mat-form-field>
+
+                                                      <mat-form-field class="form-group mt-1 mb-1" style="width: 100%;">
+                                                        <mat-label> Phone Number</mat-label>
+                                                        <input matInput type="tel" formControlName="phonumber" id="phonumber"  placeholder="Enter Phone Number" style="width: 100%;">
+                                                      </mat-form-field>
+                                                      
+                                                      <mat-form-field class="form-group mt-1 mb-1" style="width: 100%;">
+                                                        <mat-label>Physical address</mat-label>
+                                                        <input matInput type="address" formControlName="address" id="address"  placeholder="Enter Physical Address" style="width: 100%;">
+                                                      </mat-form-field>
+                                             </div>
+                                            </form>
+                                            <div class="row mt-4 mb-3">
+                                                <div class="d-flex justify-content-center mb-2">
+                                                    <button type="button"  class="btn btn-primary mr-5" style="color: maroon; background-color: white; border-color: maroon;" >Cancel</button>
+                                                    <button type="button"  class="btn btn-outline-primary ms-1 ml-5" style="background-color: maroon; color: white; border: none;">Save</button>
+                                                  </div>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+        </div>
