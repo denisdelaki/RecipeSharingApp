@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-myprofile',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class MyprofileComponent {
 
+constructor(private router: Router, private dialog: MatDialog){
+  
+}
+  //edit the user profile 
+  Edit(){
+
+  } 
 }
