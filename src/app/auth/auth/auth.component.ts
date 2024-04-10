@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../Services/auth.service';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-auth',
@@ -15,7 +17,11 @@ export class AuthComponent implements OnInit {
   signupform: FormGroup;
   loginform: FormGroup;
   
-constructor(private formBuilder: FormBuilder,private authService: AuthService){
+constructor(private formBuilder: FormBuilder,
+  private authService: AuthService,
+  private router: Router,
+  private snackBar: MatSnackBar
+  ){
   //signup form initialization
     this.signupform = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -33,7 +39,13 @@ constructor(private formBuilder: FormBuilder,private authService: AuthService){
       ]]
     });
   }
-
+//// snackbar initialization
+openSnackBar(message: string, panelClass: string): void {
+  this.snackBar.open(message, 'Close', {
+    duration: 2000, 
+    panelClass: [panelClass],
+  });
+}
 
 ngOnInit(): void {
   // Subscribe to the isSignup$ observable in the shared service
@@ -47,25 +59,77 @@ ngOnInit(): void {
 login() {
    console.log(this.loginform.valid)
    if (this.loginform.valid) {
-      // this.authService.login(this.loginform.value.email, this.loginform.value.password);
-      this.isLoggedInChange.emit(this.isSignup);
+      //get the user inputs
+      const userData = {
+        email: this.loginform.value.email,
+        password: this.loginform.value.password,
+      };
+
+      //retrieve the user from the database through the auth service 
+      this.authService.login().subscribe(data => {
+        console.log(data);
+        // Check if the entered credentials match the data from the server
+        const userExists = data.find((user: any) => user.email === userData.email && user.password === userData.password);
+        if (userExists) {
+          //check its id  and assign a variable 
+          console.log(userExists.id)
+          const loggedInUserId=userExists.id
+          //store the Id in the local storage 
+          localStorage.setItem('loggedInUserId', loggedInUserId.toString());
+          //emit the isLoggedInChange event
+          this.isLoggedInChange.emit(true);
+
+          //open snackbar
+          setTimeout(() => {
+            this.openSnackBar('Logged in successfully', 'success-notification');
+            this.authService.login();
+            this.router.navigate(['/recipes/myprofile']);
+          }, 2000);
+        }
+        else {
+          this.openSnackBar('The User Does not exist', 'error-notification');
+        }
+      });
+    }
+    else {
+      this.openSnackBar('Please fill all the fields', 'error-notification');
     }
  }
 
 //signup event handler 
     registerUser() {
       if (this.signupform.valid) {
+        //get the user inputs 
         const userData = {
           email: this.signupform.value.email,
           password: this.signupform.value.password,
         };
+
         console.log("Regitered Data", userData);
         //pass the data to the service for signing up
         this.authService.signup(userData).subscribe(
           (res: any)=>{
-            console.log(res)
+            //check its id  and assign a variable 
+          console.log(res.id)
+          const loggedInUserId=res.id
+
+          //store the Id in the local storage 
+          localStorage.setItem('loggedInUserId', loggedInUserId.toString());
+
+          //emit the isLoggedInChange event
+          this.isLoggedInChange.emit(this.isSignup);
+
+          //open snackbar
+          setTimeout(() => {
+            this.openSnackBar('Registered  successfully', 'success-notification');
+            this.authService.login();
+            this.router.navigate(['/recipes/myprofile']);
+          }, 2000);
           });
-        this.isLoggedInChange.emit(this.isSignup);
+       
+      }
+      else {
+        this.openSnackBar('Please fill all the fields', 'error-notification');
       }
     }
 }

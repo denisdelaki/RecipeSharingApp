@@ -17,7 +17,16 @@ export class AuthService {
   setIsSignup(isSignup: boolean) {
     this.isSignupSource.next(isSignup);
   }
-  
+  //login of the user
+  login(userId?: string): Observable<any> {
+    if (userId) {
+      // Fetch data for a single user
+      return this.http.get<any>(`${this.apiUrl}${userId}`);
+    } else {
+      // Fetch data for multiple users
+      return this.http.get<any>(this.apiUrl);
+    }
+  };
   //signup of the user 
   signup(userData:any): Observable<any>{
     console.log(userData);
