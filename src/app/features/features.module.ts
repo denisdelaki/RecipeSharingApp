@@ -10,6 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { EditProfileComponent } from './Components/edit-profile/edit-profile.component';
 import { MatCardModule } from '@angular/material/card';
+import {MatSelectModule} from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
 import { RecipesComponent } from './Components/recipes/recipes.component';
 import { RecipeDetailComponent } from './Components/recipe-detail/recipe-detail.component';
 import { NewRecipeComponent } from './Components/new-recipe/new-recipe.component';
@@ -26,7 +28,7 @@ import { NewRecipeComponent } from './Components/new-recipe/new-recipe.component
   imports: [
     CommonModule,
     ReactiveFormsModule,MatFormFieldModule
-    ,MatInputModule, MatCardModule,
+    ,MatInputModule, MatCardModule,MatSelectModule,MatOptionModule,
     MatIconModule,MatButtonModule, MatLabel,
     FeaturesRoutingModule
   ]
