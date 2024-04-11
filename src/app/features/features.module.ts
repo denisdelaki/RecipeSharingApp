@@ -12,6 +12,7 @@ import { EditProfileComponent } from './Components/edit-profile/edit-profile.com
 import { MatCardModule } from '@angular/material/card';
 import { RecipesComponent } from './Components/recipes/recipes.component';
 import { RecipeDetailComponent } from './Components/recipe-detail/recipe-detail.component';
+import { NewRecipeComponent } from './Components/new-recipe/new-recipe.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { RecipeDetailComponent } from './Components/recipe-detail/recipe-detail.
     MyprofileComponent,
     EditProfileComponent,
     RecipesComponent,
-    RecipeDetailComponent
+    RecipeDetailComponent,
+    NewRecipeComponent
   ],
   imports: [
     CommonModule,
