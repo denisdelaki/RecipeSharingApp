@@ -37,7 +37,7 @@ save() {
       fullName: this.editProfile.value.fullName, 
       email: this.editProfile.value.email,
       profilePicture: this.editProfile.value.profilePicture,
-      phonumber: this.editProfile.value.phonumber,
+      phoneNumber: this.editProfile.value.phonumber,
       address: this.editProfile.value.address,
       socials :{  
           facebook: this.editProfile.value.facebook, 
@@ -50,6 +50,7 @@ save() {
     this.usersService.updateUserData(userId, updateduserData).subscribe(
       (res: any) => {
         console.log(res);
+        this.dialogRef.close();
       })
   }else{
 
