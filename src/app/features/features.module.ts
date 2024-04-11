@@ -11,13 +11,15 @@ import { MatInputModule } from '@angular/material/input';
 import { EditProfileComponent } from './Components/edit-profile/edit-profile.component';
 import { MatCardModule } from '@angular/material/card';
 import { RecipesComponent } from './Components/recipes/recipes.component';
+import { RecipeDetailComponent } from './Components/recipe-detail/recipe-detail.component';
 
 
 @NgModule({
   declarations: [
     MyprofileComponent,
     EditProfileComponent,
-    RecipesComponent
+    RecipesComponent,
+    RecipeDetailComponent
   ],
   imports: [
     CommonModule,

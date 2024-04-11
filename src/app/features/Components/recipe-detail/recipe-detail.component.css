@@ -1,0 +1,11 @@
+.recipe-img {
+    height: 300px; 
+    object-fit: cover;
+}
+.share{
+    margin-right: 5px; 
+    background-color: maroon !important;
+    color: white;
+    border: none;
+
+}
