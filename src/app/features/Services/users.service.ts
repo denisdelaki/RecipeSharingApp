@@ -20,4 +20,8 @@ export class UsersService {
       return this.http.get<any>(this.apiUrl);
     }
   }
+  ///update user details 
+  updateUserData(userId:any, userData: any): Observable<any> {
+    return this.http.patch<any>(`${this.apiUrl}${userId}`, userData);
+  }
 }

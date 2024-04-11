@@ -1,44 +1,86 @@
-    <div class="container d-flex justify-content-center">
-                            <div class="row justify-content-center">
-                                <div class="col">
-                                    <div class="card border-0">
-                                        <div class="card-body">
-                                            <form class="row my-3" [formGroup]="editProfile">
-                                                <div class="col">
-                                                    <mat-form-field class="form-group mt-1 mb-1" style="width: 100%;">
-                                                        <mat-label>Full Name</mat-label>
-                                                        <input matInput type="text" formControlName="fullName" id="fullName"  placeholder="Enter Full Name" style="width: 100%;">
-                                                      </mat-form-field>
+<div class="container d-flex justify-content-center">
+  <div class="row justify-content-center">
+      <div class="col">
+          <div class="card border-0">
+              <div class="card-body">
+                  <form [formGroup]="editProfile" class="row my-3" (submit)="save()">
+                      <div class="col">
+                          <mat-form-field class="form-group mt-1 mb-1" style="width: 100%;">
+                              <mat-label>Full Name</mat-label>
+                              <input matInput type="text" formControlName="fullName" placeholder="Enter Full Name">
+                          </mat-form-field>
 
-                                                      <mat-form-field class="form-group mt-1 mb-1" style="width: 100%;">
-                                                        <mat-label>Email address</mat-label>
-                                                        <input matInput type="email" formControlName="email" id="email" aria-describedby="emailHelp" placeholder="Enter email" style="width: 100%;">
-                                                      </mat-form-field>
+                          <mat-form-field class="form-group mt-1 mb-1" style="width: 100%;">
+                              <mat-label>Email address</mat-label>
+                              <input matInput type="email" formControlName="email" placeholder="Enter email">
+                          </mat-form-field>
 
-                                                      <mat-form-field class="form-group mt-1 mb-1" style="width: 100%;">
-                                                        <mat-label> Profile Url</mat-label>
-                                                        <input matInput type="url" formControlName="profileurl" id="profileurl"  placeholder="Enter profile Url " style="width: 100%;">
-                                                      </mat-form-field>
+                          <mat-form-field class="form-group mt-1 mb-1" style="width: 100%;">
+                              <mat-label>Profile Url</mat-label>
+                              <input matInput type="url" formControlName="profilePicture" placeholder="Enter profile URL">
+                          </mat-form-field>
 
-                                                      <mat-form-field class="form-group mt-1 mb-1" style="width: 100%;">
-                                                        <mat-label> Phone Number</mat-label>
-                                                        <input matInput type="tel" formControlName="phonumber" id="phonumber"  placeholder="Enter Phone Number" style="width: 100%;">
-                                                      </mat-form-field>
-                                                      
-                                                      <mat-form-field class="form-group mt-1 mb-1" style="width: 100%;">
-                                                        <mat-label>Physical address</mat-label>
-                                                        <input matInput type="address" formControlName="address" id="address"  placeholder="Enter Physical Address" style="width: 100%;">
-                                                      </mat-form-field>
-                                             </div>
-                                            </form>
-                                            <div class="row mt-4 mb-3">
-                                                <div class="d-flex justify-content-center mb-2">
-                                                    <button type="button"  class="btn btn-primary mr-5" style="color: maroon; background-color: white; border-color: maroon;" >Cancel</button>
-                                                    <button type="button"  class="btn btn-outline-primary ms-1 ml-5" style="background-color: maroon; color: white; border: none;">Save</button>
-                                                  </div>
-                                            </div>
-                                        </div>
-                                    </div>  
-                                </div>
-                            </div>
-        </div>
+                          <!-- First row: Phone Number and Physical Address -->
+                          <div class="row my-3">
+                              <div class="col">
+                                  <!-- Phone Number -->
+                                  <mat-form-field class="form-group mt-1 mb-1" style="width: calc(50% - 5px); margin-right: 10px;">
+                                      <mat-label>Phone Number</mat-label>
+                                      <input matInput type="tel" formControlName="phonumber" placeholder="Enter Phone Number">
+                                  </mat-form-field>
+
+                                  <!-- Physical Address -->
+                                  <mat-form-field class="form-group mt-1 mb-1" style="width: calc(50% - 5px);">
+                                      <mat-label>Physical Address</mat-label>
+                                      <input matInput type="address" formControlName="address" placeholder="Enter Physical Address">
+                                  </mat-form-field>
+                              </div>
+                          </div>
+
+                          <!-- First row: Facebook and Twitter -->
+                          <div class="row my-3">
+                              <div class="col">
+                                  <!-- Facebook -->
+                                  <mat-form-field class="form-group mt-1 mb-1" style="width: calc(50% - 5px); margin-right: 10px;">
+                                      <mat-label>Facebook</mat-label>
+                                      <input matInput type="text" formControlName="facebook" placeholder="Enter Facebook URL">
+                                  </mat-form-field>
+
+                                  <!-- Twitter -->
+                                  <mat-form-field class="form-group mt-1 mb-1" style="width: calc(50% - 5px);">
+                                      <mat-label>Twitter</mat-label>
+                                      <input matInput type="text" formControlName="twitter" placeholder="Enter Twitter URL">
+                                  </mat-form-field>
+                              </div>
+                          </div>
+
+                          <!-- Second row: Instagram and Personal Blog -->
+                          <div class="row my-3">
+                              <div class="col">
+                                  <!-- Instagram -->
+                                  <mat-form-field class="form-group mt-1 mb-1" style="width: calc(50% - 5px); margin-right: 10px;">
+                                      <mat-label>Instagram</mat-label>
+                                      <input matInput type="text" formControlName="instagram" placeholder="Enter Instagram URL">
+                                  </mat-form-field>
+
+                                  <!-- Personal Blog -->
+                                  <mat-form-field class="form-group mt-1 mb-1" style="width: calc(50% - 5px);">
+                                      <mat-label>Personal Blog</mat-label>
+                                      <input matInput type="url" formControlName="personalBlog" placeholder="Enter Personal Blog URL">
+                                  </mat-form-field>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+
+                  <div class="row mt-1 mb-3">
+                      <div class="d-flex justify-content-center mb-2">
+                          <button type="button" class="btn btn-primary mr-5" style="color: maroon; background-color: white; border-color: maroon;" (click)="close()">Cancel</button>
+                          <button type="submit" class="btn btn-outline-primary ms-1 ml-5" style="background-color: maroon; color: white; border: none;" (click)="save()">Save</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
