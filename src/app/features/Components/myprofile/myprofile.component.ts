@@ -13,6 +13,7 @@ import { UsersService } from '../../Services/users.service';
 export class MyprofileComponent implements OnInit{
 changeCred!: FormGroup<any>;
   userData: any;
+defaultprofile="https://github.com/Eb-Developer-Playground/Recipe_share_app/blob/myrecipes/src/assets/Images/chefimage.jpg?raw=true";
 
 constructor(private router: Router, private dialog: MatDialog,
   private userservice: UsersService

@@ -3,7 +3,18 @@
     {
       "id": "19e0",
       "email": "denisdelaki@gmail.com",
-      "password": "123456"
+      "password": "123456", 
+      "fullName": "Denisdelaki",
+      "phoneNumber": "07123456789",
+      "profilePicture": "https://avatars.githubusercontent.com/u/104421511?v=4",
+      "address": "33, 20400 Bomet",
+      "socials": {
+        "facebook": "https://www.facebook.com/delaki",
+        "instagram": "https://www.instagram.com/delaki/",
+        "blog": "https://www.blog.com/in/delaki/",
+        "twitter": "https://twitter.com/delaki"
+      }
+
     },
     {
       "id": "2eb7",
