@@ -50,7 +50,8 @@ if (this.AddRecipe.valid){
     ingredients: this.AddRecipe.value?.ingredients,
     instructions: this.AddRecipe.value?.instructions,
     recipePicture: this.AddRecipe.value?.recipePicture,
-    category: this.AddRecipe.value?.category
+    category: this.AddRecipe.value?.category,
+    userId: localStorage.getItem('loggedInUserId')
   }
   console.log(recipeData);
   this.recipesService.createRecipes(recipeData).subscribe(
@@ -61,7 +62,8 @@ if (this.AddRecipe.valid){
           category: response.category,
           ingredients: response.ingredients,
           instruction: response.instruction,
-          recipeUrl: response.recipeUrl
+          recipeUrl: response.recipeUrl,
+          userId: response.userId
       })
       this.openSnackBar('Recipe created successfully', 'success-notification');
       // this.router.navigate(['/recipes/myrecipe'])
