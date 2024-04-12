@@ -33,4 +33,11 @@ export class NavigationComponent implements OnInit {
     this.router.navigate(['/auth/']);
     // this.isLoggedInChange.emit(this.isSignup);
   }
+
+  Logout(){
+    localStorage.removeItem('loggedInUserId');
+    this.isLoggedIn = false;
+    this.router.navigate(['/auth/']);
+   
+  }
 }

@@ -1,7 +1,70 @@
 <div class="container-fluid my-6 justify-content-center"> 
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top mx-4" style="z-index: 1200; background-color: white; ">
-    <div class="container " >
+
+    <!-- When user is not logged in this is the nav links  -->
+ <div class="container" *ngIf="!isLoggedIn">
+    <!-- Logo/Home Link -->
+    <a class="navbar-brand" routerLink="/" style="color: black;">
+        <img class="navbar-img img-fluid" src="https://i.pinimg.com/474x/ea/29/0f/ea290fef4538a9d76a5456258827438d--creative-logo-chefs.jpg"
+            style="max-width: 60px; border-radius: 50%;"><p style="font-size: 0.6em;">Equity Eateries</p>
+    </a>
+
+    <!-- Toggler/collapsible button for mobile -->
+    <button class="navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="margin-right: 5px; background-color: maroon; color: white;">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navigation Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!-- Home Link -->
+            <li class="nav-item">
+                <a class="nav-link" style="color: black; position: relative;">
+                    Home
+                    <div class="underline"></div>
+                </a>
+            </li>
+            <!-- Catalog Link -->
+            <li class="nav-item">
+                <a class="nav-link" style="color: black; position: relative;">
+                    Recipes
+                    <div class="underline"></div>
+                </a>
+            </li>
+            <!-- About Us Link -->
+            <li class="nav-item">
+                <a class="nav-link" style="color: black; position: relative;">
+                    Testimonials
+                    <div class="underline"></div>
+                </a>
+            </li>
+            <!-- Contact Us Link -->
+            <li class="nav-item">
+                <a class="nav-link" style="color: black; position: relative;">
+                    About Us
+                    <div class="underline"></div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Login and Signup Buttons -->
+    <div class="d-flex align-items-center">
+        <div class="row g-2">
+            <div class="col-md-6">
+                <button mat-button class="btn btn-primary custom-button w-100 me-2" (click)="Login()">Login</button>
+            </div>
+            <div class="col-md-6">
+                <button mat-button class="btn btn-primary custom-button w-100 ms-2" (click)="Signup()">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- When the user is logged in these are the nav links  -->
+    <div class="container" *ngIf="isLoggedIn" >
         <!-- Logo/Home Link -->
         <a class="navbar-brand" routerLink="/" style="color: black;">
             <img class="navbar-img img-fluid" src="https://i.pinimg.com/474x/ea/29/0f/ea290fef4538a9d76a5456258827438d--creative-logo-chefs.jpg"
@@ -17,55 +80,38 @@
         <!-- Navigation Links -->
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <!-- Home Link -->
+                <!-- My Profile Link -->
                 <li class="nav-item">
-                    <a class="nav-link" style="color: black; position: relative;">
-                        Home
+                    <a class="nav-link" routerLink="/features/myprofile"  style="color: black; position: relative;">
+                        My Profile
                         <div class="underline"></div>
                     </a>
                 </li>
                 <!-- Catalog Link -->
                 <li class="nav-item">
-                    <a class="nav-link" style="color: black; position: relative;">
-                        Recipes
+                    <a class="nav-link" routerLink="/features/allrecipes" style="color: black; position: relative;">
+                        My Recipes
                         <div class="underline"></div>
                     </a>
                 </li>
                 <!-- About Us Link -->
                 <li class="nav-item">
-                    <a class="nav-link" style="color: black; position: relative;">
-                        Testimonials
+                    <a class="nav-link" routerLink="/features/allrecipes" style="color: black; position: relative;">
+                        All Recipes
                         <div class="underline"></div>
                     </a>
                 </li>
-                <!-- Contact Us Link -->
-                <li class="nav-item">
-                    <a class="nav-link" style="color: black; position: relative;">
-                        About Us
-                        <div class="underline"></div>
-                    </a>
-                </li>
+
             </ul>
         </div>
 
-        <!-- Login and Signup Buttons -->
-        <div class="d-flex align-items-center">
-            <div class="row g-2">
-                <div class="col">
-                    <button mat-button class="btn btn-primary custom-button w-100 w-sm-auto me-sm-2 mb-2 mb-sm-0" (click)="Login()">Login</button>
-                </div>
-                <div class="col">
-                    <button mat-button class="btn btn-primary custom-button w-100 w-sm-auto ms-sm-2" (click)="Signup()">Sign Up</button>
-                </div>
-            </div>
-        </div>
 
         <!-- Logout Button -->
-        <!-- <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center">
             <div class="col">
-                <button mat-button class="btn btn-danger custom-button w-100 w-sm-auto me-sm-2 mb-2 mb-sm-0">Logout</button>
+                <button mat-button class="btn btn-danger custom-button w-100 w-sm-auto me-sm-2 mb-2 mb-sm-0" (click)="Logout()">Logout</button>
             </div>
-        </div> -->
+        </div>
     </div>
 </nav>
 </div><br>

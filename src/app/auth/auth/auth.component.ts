@@ -79,13 +79,13 @@ login() {
           localStorage.setItem('loggedInUserId', loggedInUserId.toString());
           //emit the isLoggedInChange event
           this.dataTransmitService.transmitIsLoggedIn(true);
-
           //open snackbar
           setTimeout(() => {
             this.openSnackBar('Logged in successfully', 'success-notification');
             this.authService.login();
             this.router.navigate(['/features/myprofile']);
           }, 2000);
+          // window.location.reload();
         }
         else {
           this.openSnackBar('The User Does not exist', 'error-notification');
