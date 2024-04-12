@@ -37,16 +37,21 @@ export class MyprofileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Fetch user data based on user ID
-    const userId = localStorage.getItem('loggedInUserId');
-    console.log(userId)
-    if (userId !=="" && userId !==undefined) {
-      this.userservice.getuserData(userId || '').subscribe(data => {
-        this.userData = data;
-        console.log(this.userData);
-      });
+    if (typeof localStorage !== 'undefined') {
+      // Fetch user data based on user ID
+      const userId = localStorage.getItem('loggedInUserId');
+      console.log(userId);
+      if (userId !== "" && userId !== undefined) {
+        this.userservice.getuserData(userId || '').subscribe(data => {
+          this.userData = data;
+          console.log(this.userData);
+        });
+      } else {
+        console.error('User ID not found in local storage');
+      }
     } else {
-      console.error('User ID not found in local storage');
+      console.error('localStorage is not available');
     }
   }
+  
 }
