@@ -1,16 +1,13 @@
-<div class="container py-5">
-    <div class="row" *ngIf="recipe">
-
+<div class="container py-5 justify-content-center align-items-center">
+    <div class="row justify-content-center align-items-center" *ngIf="recipe">
       <div class="col-lg-6 justify-content-center align-items-center ">
         <img
         [src]="recipe.recipePicture"
-          class="img-fluid rounded mx-auto" style="height: 400px; width: 400px;"
+          class="img-fluid rounded mx-auto my-auto" style="height: 400px; width: 400px;"
           alt="Product Image"
         /><br>
-        <h2 class="fw-bold mt-3"><Strong>Title</Strong> {{recipe?.title}}</h2>
-      </div>
-
-      <div class="col-lg-6">
+        <h2 class="fw-bold mt-3"><Strong>Title</Strong> </h2>
+        <p>{{recipe?.title}}</p>
         <hr>
         <h3><strong>Description</strong></h3>
         <p class="mb-4">
@@ -19,21 +16,27 @@
           product.
         </p>
         <hr>
-        <p class="text-muted"><strong>Category</strong> {{recipe.category}}</p>
-        <p class="my-4"><strong>Time</strong> {{recipe?.time || 0}} mins</p>
+        <p class="text-muted"><strong>Category</strong> </p>
+        <small>{{recipe.category}}</small>
+        <h3 class="my-4 row"><strong>Time</strong> </h3>
+        <p class="mx-auto">Prep Time: {{recipe?.time || 0}} mins</p>
+        <p>Cooking Time: {{recipe?.time || 0}} mins</p>
         <hr>
-        <div class="col-lg-4">
-            <h3>Ingredients</h3>
+        <div class="row">
+          <div class="col-lg-4">
+            <h3><strong>Ingredients</strong></h3>
             <ul>
                 <li>{{recipe?.ingredients}}</li>
             </ul>
         </div>
         <div class="col-lg-4">
-          <h3>Instructions</h3>
+          <h3><strong>Instructions</strong></h3>
           <ul>
               <li>{{recipe?.instructions}}</li>
           </ul>
       </div>
+        </div>
+  
 
       <hr>
         <div class="d-flex gap-3 mb-4">
