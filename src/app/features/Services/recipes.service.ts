@@ -9,17 +9,20 @@ export class RecipesService {
   private apiUrl = 'http://localhost:3000/recipes/';
   
   constructor(private http: HttpClient) {}
+
   ///get recipes from the server 
   //get logged in userId data 
   getmyRecipe( userId: string,recipeId?: string): Observable<any> {
     if (recipeId) {
-      // Fetch single recipe during view recipe
+      // Fetch single recipe during view recipe for logged user
       return this.http.get<any>(`${this.apiUrl}${recipeId}?userId=${userId}`);
     } else {
       // Fetch all recipes
       return this.http.get<any[]>(`${this.apiUrl}?userId=${userId}`);
     }
   }
+
+  ///get recipes from the server
   getRecipes(recipeId?: string): Observable<any> {
     if (recipeId) {
       // Fetch single recipe during view recipe
