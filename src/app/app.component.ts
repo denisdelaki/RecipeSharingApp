@@ -4,15 +4,19 @@ import { AuthService } from './auth/Services/auth.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   @Input() isSignup: boolean = false;
+  isLoggedIn: boolean = false; 
   title = 'RecipeSharingApp';
-constructor(private autService : AuthService ){}
+  constructor(private authService: AuthService) {}
+
   onIsSignupChange(isSignup: boolean) {
-    console.log(isSignup);
+    console.log('isSignup changed:', isSignup);
     this.isSignup = isSignup;
-    this.autService.setIsSignup(isSignup);
-    }
+    this.authService.setIsSignup(isSignup);
+  }
+
+
 }

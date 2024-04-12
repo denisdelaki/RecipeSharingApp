@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../Services/auth.service';
+import { DataTransmitService } from '../../shared/Services/data-transmit.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -12,13 +13,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class AuthComponent implements OnInit {
   //data passage to and from other components 
   @Input() isSignup: boolean = false;
-  @Output() isLoggedInChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   signupform: FormGroup;
   loginform: FormGroup;
   
 constructor(private formBuilder: FormBuilder,
   private authService: AuthService,
+  private dataTransmitService: DataTransmitService,
   private router: Router,
   private snackBar: MatSnackBar
   ){
@@ -77,7 +78,7 @@ login() {
           //store the Id in the local storage 
           localStorage.setItem('loggedInUserId', loggedInUserId.toString());
           //emit the isLoggedInChange event
-          this.isLoggedInChange.emit(true);
+          this.dataTransmitService.transmitIsLoggedIn(true);
 
           //open snackbar
           setTimeout(() => {
@@ -117,7 +118,7 @@ login() {
           localStorage.setItem('loggedInUserId', loggedInUserId.toString());
 
           //emit the isLoggedInChange event
-          this.isLoggedInChange.emit(this.isSignup);
+          this.dataTransmitService.transmitIsLoggedIn(true);
 
           //open snackbar
           setTimeout(() => {
