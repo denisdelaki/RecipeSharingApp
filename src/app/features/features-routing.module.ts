@@ -8,7 +8,7 @@ const routes: Routes = [
   {path: 'myprofile', component: MyprofileComponent},
   {path: 'myrecipes', component: RecipesComponent},
   {path: 'allrecipes', component: RecipesComponent},
-  {path: 'recipedetail', component: RecipeDetailComponent}
+  {path: 'recipedetail/:id', component: RecipeDetailComponent}
 ];
 
 @NgModule({
