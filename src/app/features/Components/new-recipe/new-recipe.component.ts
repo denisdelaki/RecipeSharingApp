@@ -49,6 +49,7 @@ if (this.AddRecipe.valid){
     title: this.AddRecipe.value.title,
     ingredients: this.AddRecipe.value?.ingredients,
     instructions: this.AddRecipe.value?.instructions,
+    time: this.AddRecipe.value?.time,
     recipePicture: this.AddRecipe.value?.recipePicture,
     category: this.AddRecipe.value?.category,
     userId: localStorage.getItem('loggedInUserId')
@@ -62,6 +63,7 @@ if (this.AddRecipe.valid){
           category: response.category,
           ingredients: response.ingredients,
           instruction: response.instruction,
+          time: response.time,
           recipeUrl: response.recipeUrl,
           userId: response.userId
       })

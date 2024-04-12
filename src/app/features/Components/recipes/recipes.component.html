@@ -9,8 +9,8 @@
                 <div class="card-body d-flex flex-column justify-content-center align-items-center">
                     <h3 class="card-title">{{recipedata?.title}}</h3>
                     <span class="card-subtitle">{{recipedata?.category}}</span>
-                    <mat-icon class="card-text">access_time</mat-icon><span class="ml-1">30 Mins</span>
-                    <button type="button" class="btn btn-primary btn-block custom-button">View Full Recipe</button>
+                    <mat-icon class="card-text">access_time</mat-icon><span class="ml-1">{{recipedata?.time || 0}} Mins</span>
+                    <button type="button" class="btn btn-primary btn-block custom-button" (click)="ViewRecipe(recipedata?.id)">View Full Recipe</button>
                 </div>
             </div>
         </div>

@@ -33,6 +33,12 @@ export class RecipesComponent {
     this.destroy$.complete();
   }
 
+  //view recipe data
+  ViewRecipe(recipeid: any){
+    console.log("view recipe data", recipeid)
+    this.router.navigate(['/features/recipedetail/', recipeid])
+  }
+
   //load the recipes
   loadrecipes() {
     const userId = localStorage.getItem('loggedInUserId') ?? '';
