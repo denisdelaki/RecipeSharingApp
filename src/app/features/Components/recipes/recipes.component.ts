@@ -10,9 +10,8 @@ import { RecipesService } from '../../Services/recipes.service';
   styleUrl: './recipes.component.css'
 })
 export class RecipesComponent {
-Delete(arg0: any) {
-throw new Error('Method not implemented.');
-}
+  itemToDelete: any;
+
 addToFavorites(_t9: any) {
 throw new Error('Method not implemented.');
 }
@@ -44,7 +43,9 @@ throw new Error('Method not implemented.');
     console.log("view recipe data", recipeid)
     this.router.navigate(['/features/recipedetail/', recipeid])
   }
-
+  Delete(item: any) {
+    this.itemToDelete = item;
+    }
   //load the recipes
   loadrecipes() {
     const userId = localStorage.getItem('loggedInUserId') ?? '';

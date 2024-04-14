@@ -8,26 +8,29 @@
                 <img [src]="recipedata?.recipePicture" class="card-img-top recipe-img" [alt]="recipedata?.title">
                 <div class="card-body d-flex flex-column justify-content-center align-items-center">
                     <h3 class="card-title">{{recipedata?.title}}</h3>
-                    <span class="card-subtitle">{{recipedata?.category}}</span>
-                    <mat-icon class="card-text">access_time</mat-icon><span class="ml-1">{{recipedata?.time || 0}} Mins</span>
-                    <ul class="list-unstyled d-flex justify-content-between mt-3">
+                    <p class="card-subtitle">{{recipedata?.category}}</p>
+                    <p>
+                        <mat-icon class="card-text">access_time</mat-icon>
+                        <span class="ml-1">{{recipedata?.time || 0}} Mins</span>
+                    </p>
+                    <ul class="list-unstyled d-flex justify-content-between">
                         <li class="me-3 flex-grow-1 mr-5 ml-0">
-                            <a href="" (click)="addToFavorites(recipedata)" class="d-flex flex-column align-items-center">
+                            <span  (click)="addToFavorites(recipedata)" class="d-flex flex-column align-items-center">
                                 <mat-icon class="favorite-icon">favorite</mat-icon>
                                 <p class="mt-1 span">Save</p>
-                            </a>
+                            </span>
                         </li>
                         <li class="me-3 flex-grow-1 mx-5">
-                            <a href="" (click)="addToFavorites(recipedata)" class="d-flex flex-column align-items-center">
+                            <span  (click)="addToFavorites(recipedata)" class="d-flex flex-column align-items-center">
                                 <mat-icon class="edit-icon">edit</mat-icon>
                                 <p class="mt-1 span">Edit</p>
-                            </a>
+                            </span>
                         </li>
                         <li class="me-3 flex-grow-1 ml-5 mr-0">
-                            <a href="" (click)="Delete(recipedata.id)" class="d-flex flex-column align-items-center">
+                            <span  (click)="Delete(recipedata.id)" class="d-flex flex-column align-items-center">
                                 <mat-icon class="delete-icon">delete</mat-icon>
                                 <p class="mt-1 span">Delete</p>
-                            </a>
+                            </span>
                         </li>
                     </ul>
                     <button type="button" class="btn btn-primary btn-block custom-button mt-3" (click)="ViewRecipe(recipedata?.id)">View Full Recipe</button>
