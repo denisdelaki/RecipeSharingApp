@@ -10,6 +10,12 @@ import { RecipesService } from '../../Services/recipes.service';
   styleUrl: './recipes.component.css'
 })
 export class RecipesComponent {
+Delete(arg0: any) {
+throw new Error('Method not implemented.');
+}
+addToFavorites(_t9: any) {
+throw new Error('Method not implemented.');
+}
   isMyRecipes!: boolean;
   recipesData: any;
   constructor(

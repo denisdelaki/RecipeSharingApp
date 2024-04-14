@@ -10,8 +10,29 @@
                     <h3 class="card-title">{{recipedata?.title}}</h3>
                     <span class="card-subtitle">{{recipedata?.category}}</span>
                     <mat-icon class="card-text">access_time</mat-icon><span class="ml-1">{{recipedata?.time || 0}} Mins</span>
-                    <button type="button" class="btn btn-primary btn-block custom-button" (click)="ViewRecipe(recipedata?.id)">View Full Recipe</button>
+                    <ul class="list-unstyled d-flex justify-content-between mt-3">
+                        <li class="me-3 flex-grow-1 mr-5 ml-0">
+                            <a href="" (click)="addToFavorites(recipedata)" class="d-flex flex-column align-items-center">
+                                <mat-icon class="favorite-icon">favorite</mat-icon>
+                                <p class="mt-1 span">Save</p>
+                            </a>
+                        </li>
+                        <li class="me-3 flex-grow-1 mx-5">
+                            <a href="" (click)="addToFavorites(recipedata)" class="d-flex flex-column align-items-center">
+                                <mat-icon class="edit-icon">edit</mat-icon>
+                                <p class="mt-1 span">Edit</p>
+                            </a>
+                        </li>
+                        <li class="me-3 flex-grow-1 ml-5 mr-0">
+                            <a href="" (click)="Delete(recipedata.id)" class="d-flex flex-column align-items-center">
+                                <mat-icon class="delete-icon">delete</mat-icon>
+                                <p class="mt-1 span">Delete</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <button type="button" class="btn btn-primary btn-block custom-button mt-3" (click)="ViewRecipe(recipedata?.id)">View Full Recipe</button>
                 </div>
+                
             </div>
         </div>
 

@@ -14,3 +14,18 @@
     color: white;
 
   }
+  .edit-icon , .delete-icon, .favorite-icon{
+    color: maroon;
+  }
+  .span{
+    color: maroon;
+    display: none;
+  }
+  .favorite-icon:hover + .span,  .edit-icon:hover + .span,  .delete-icon:hover + .span{
+    display: block;
+
+  }
+  a{
+    text-decoration: none;
+
+  }
