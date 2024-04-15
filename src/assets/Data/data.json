@@ -28,7 +28,8 @@
       "ingredients": "kales",
       "instructions": "chop kales and fry them",
       "recipePicture": "https://images.unsplash.com/photo-1523143093721-2cb542ba354d?q=80&w=2085&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "category": "Lunch"
+      "category": "Lunch",
+      "time": "20"
     },
     {
       "id": "0a92",
@@ -37,7 +38,8 @@
       "instructions": "Fry the eggs with manchurian",
       "recipePicture": "https://www.licious.in/blog/wp-content/uploads/2021/09/shutterstock_1650877375.jpg",
       "category": "Snack",
-      "userId": "19e0"
+      "userId": "19e0",
+      "time": "30"
     },
     {
       "id": "afdb",
@@ -46,7 +48,8 @@
       "instructions": "chop the vegetables and serve with meat",
       "recipePicture": "https://images.unsplash.com/photo-1528751086790-81a64658fc53?q=80&w=2848&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "category": "Dinner",
-      "userId": "19e0"
+      "userId": "19e0",
+      "time": "45"
     },
     {
       "id": "5811",

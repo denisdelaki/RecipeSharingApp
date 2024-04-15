@@ -40,8 +40,10 @@ createRecipes(FormData:any): Observable<any>{
 }
   // Edit a recipe
   editRecipe(recipeId: string, updatedRecipeData: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}${recipeId}`, updatedRecipeData);
+    return this.http.patch<any>(`${this.apiUrl}${recipeId}`, updatedRecipeData);
   }
+
+  
   // Delete a recipe
   deleteRecipe(recipeId: string): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}${recipeId}`);

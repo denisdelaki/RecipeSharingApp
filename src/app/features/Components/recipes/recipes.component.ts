@@ -93,15 +93,16 @@ export class RecipesComponent implements OnInit, OnDestroy {
   }
 
   //edit recipe details
-  editRecipe(recipeId: any){
-      console.log("edit recipe", recipeId)
+  editRecipe(recipeid: any){
+      console.log("edit recipe", recipeid)
       const dialogRef = this.dialog.open(EditrecipeComponent, {
         width: '550px',
         // Prevent closing by clicking outside or pressing ESC
         disableClose: true,
         //pass the recipe id to edit recipe component 
-        data: { recipeId: recipeId }
+        data: { recipeid: recipeid }
       });
+      this.loadrecipes();
   }
   Delete(recipeId: any) {
     this.recipesService.deleteRecipe(recipeId).pipe(
