@@ -6,6 +6,7 @@ import { Subject, throwError } from 'rxjs';
 import { RecipesService } from '../../Services/recipes.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { catchError, finalize, takeUntil, tap } from 'rxjs/operators';
+import { EditrecipeComponent } from '../editrecipe/editrecipe.component';
 
 @Component({
   selector: 'app-recipes',
@@ -49,31 +50,6 @@ export class RecipesComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
-  //view recipe data
-  ViewRecipe(recipeid: any){
-    console.log("view recipe data", recipeid)
-    this.router.navigate(['/features/recipedetail/', recipeid])
-  }
-
-  addToFavorites(_t9: any) {
-    throw new Error('Method not implemented.');
-  }
-
-  Delete(recipeId: any) {
-    this.recipesService.deleteRecipe(recipeId).pipe(
-      takeUntil(this.destroy$),
-      catchError((error) => {
-        console.error('Error deleting recipe:', error);
-        this.openSnackBar('Error deleting recipe', 'error-notification');
-        return throwError(error);
-      }),
-      finalize(() => {
-        this.openSnackBar('Recipe deleted successfully', 'success-notification');
-        this.router.navigate(['/features/myrecipes']);
-      })
-    ).subscribe();
-  }
-
   //load the recipes
   loadrecipes() {
     const userId = localStorage.getItem('loggedInUserId') ?? '';
@@ -105,6 +81,41 @@ export class RecipesComponent implements OnInit, OnDestroy {
       ).subscribe();
     }
   }
+
+  //view recipe data
+  ViewRecipe(recipeid: any){
+    console.log("view recipe data", recipeid)
+    this.router.navigate(['/features/recipedetail/', recipeid])
+  }
+
+  addToFavorites(_t9: any) {
+    throw new Error('Method not implemented.');
+  }
+
+  //edit recipe details
+  editRecipe(recipeId: any){
+      console.log("edit recipe", recipeId)
+      const dialogRef = this.dialog.open(EditrecipeComponent, {
+        width: '550px',
+        // Prevent closing by clicking outside or pressing ESC
+        disableClose: true
+      });
+  }
+  Delete(recipeId: any) {
+    this.recipesService.deleteRecipe(recipeId).pipe(
+      takeUntil(this.destroy$),
+      catchError((error) => {
+        console.error('Error deleting recipe:', error);
+        this.openSnackBar('Error deleting recipe', 'error-notification');
+        return throwError(error);
+      }),
+      finalize(() => {
+        this.openSnackBar('Recipe deleted successfully', 'success-notification');
+        this.router.navigate(['/features/myrecipes']);
+      })
+    ).subscribe();
+  }
+
 
   newrecipe(){
     const dialogRef = this.dialog.open(NewRecipeComponent, {

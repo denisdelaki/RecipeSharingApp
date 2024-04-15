@@ -18,11 +18,11 @@ export class EditProfileComponent implements OnInit{
       email: ['', [ Validators.email]], 
       profilePicture: ['', Validators.pattern('https?://.+')],
       phoneNumber: ['', Validators.pattern('[0-9]{10}')], 
-      address: [''],
-      facebook: [''], 
-      twitter: [''],
-      instagram: [''],
-      blog: ['']
+      address: ['', Validators.pattern('https?://.+')],
+      facebook: ['', Validators.pattern('https?://.+')], 
+      twitter: ['', Validators.pattern('https?://.+')],
+      instagram: ['', Validators.pattern('https?://.+')],
+      blog: ['', Validators.pattern('https?://.+')],
     });
   }
   ngOnInit(): void {

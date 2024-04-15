@@ -15,6 +15,7 @@ import { MatOptionModule } from '@angular/material/core';
 import { RecipesComponent } from './Components/recipes/recipes.component';
 import { RecipeDetailComponent } from './Components/recipe-detail/recipe-detail.component';
 import { NewRecipeComponent } from './Components/new-recipe/new-recipe.component';
+import { EditrecipeComponent } from './Components/editrecipe/editrecipe.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { NewRecipeComponent } from './Components/new-recipe/new-recipe.component
     EditProfileComponent,
     RecipesComponent,
     RecipeDetailComponent,
-    NewRecipeComponent
+    NewRecipeComponent,
+    EditrecipeComponent
   ],
   imports: [
     CommonModule,
