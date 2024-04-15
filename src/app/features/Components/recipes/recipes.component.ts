@@ -7,6 +7,7 @@ import { RecipesService } from '../../Services/recipes.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { catchError, finalize, takeUntil, tap } from 'rxjs/operators';
 import { EditrecipeComponent } from '../editrecipe/editrecipe.component';
+import { title } from 'process';
 
 @Component({
   selector: 'app-recipes',
@@ -18,6 +19,7 @@ export class RecipesComponent implements OnInit, OnDestroy {
   isMyRecipes!: boolean;
   recipesData: any[] = [];
   deletedRecipeId: any;
+  favoriterecipe:  any[] = [];
 
   constructor(
     private dialog: MatDialog,
@@ -68,7 +70,7 @@ export class RecipesComponent implements OnInit, OnDestroy {
       ).subscribe();
     } else {
       //Show all the recipes 
-      this.recipesService.getrecipes().pipe(
+      this.recipesService.getRecipes().pipe(
         takeUntil(this.destroy$),
         tap((recipes) => {
           this.recipesData = recipes;
@@ -88,9 +90,37 @@ export class RecipesComponent implements OnInit, OnDestroy {
     this.router.navigate(['/features/recipedetail/', recipeid])
   }
 
-  addToFavorites(_t9: any) {
-    throw new Error('Method not implemented.');
+  addToFavorites(recipedata: any) {
+    // Get the current logged-in user ID
+    const userId = localStorage.getItem('loggedInUserId');
+  
+    // Check if the user is logged in
+    if (!userId) {
+      // Handle the case when the user is not logged in
+      console.error('User is not logged in');
+      return; // Exit the function
+    }
+    const dataToFavorite = {
+      title: recipedata.title,
+      ingredients: recipedata.ingredients,
+      instructions: recipedata.instructions,
+      recipePicture: recipedata.recipePicture,
+      category: recipedata.category,
+      time: recipedata.time,
+      userId: userId,
+    };
+    console.log(dataToFavorite)
+    this.recipesService.addToFavorites(dataToFavorite).subscribe(recipes =>{
+      this.favoriterecipe.push(dataToFavorite);
+      this.openSnackBar('Recipe added to favorites','success-notification');
+    }),
+      catchError((error) => {
+        console.error('Error adding recipe to favorites:', error);
+        this.openSnackBar('Error adding recipe to favorites', 'error-notification');
+        return (error);
+      })
   }
+  
 
   //edit recipe details
   editRecipe(recipeid: any){
@@ -104,6 +134,7 @@ export class RecipesComponent implements OnInit, OnDestroy {
       });
       this.loadrecipes();
   }
+
   Delete(recipeId: any) {
     this.recipesService.deleteRecipe(recipeId).pipe(
       takeUntil(this.destroy$),
