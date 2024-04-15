@@ -1,0 +1,11 @@
+<div>
+    <form [formGroup]="searchForm" class="row">
+        <mat-form-field class="form-group" style="width: 50%;" appearance="outline">
+            <mat-label>Search</mat-label>
+            <input matInput type="search" formControlName="search" placeholder="Search..." (input)="filterData()">
+            <button mat-icon-button matSuffix *ngIf="showResetIcon" (click)="resetSearch()" style="border: none;  margin-right: 5px;" >
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+    </form>
+</div>

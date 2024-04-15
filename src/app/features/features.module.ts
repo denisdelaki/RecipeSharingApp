@@ -16,6 +16,7 @@ import { RecipesComponent } from './Components/recipes/recipes.component';
 import { RecipeDetailComponent } from './Components/recipe-detail/recipe-detail.component';
 import { NewRecipeComponent } from './Components/new-recipe/new-recipe.component';
 import { EditrecipeComponent } from './Components/editrecipe/editrecipe.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -32,7 +33,7 @@ import { EditrecipeComponent } from './Components/editrecipe/editrecipe.componen
     ReactiveFormsModule,MatFormFieldModule
     ,MatInputModule, MatCardModule,MatSelectModule,MatOptionModule,
     MatIconModule,MatButtonModule, MatLabel,
-    FeaturesRoutingModule
+    FeaturesRoutingModule, SharedModule
   ]
 })
 export class FeaturesModule { }
