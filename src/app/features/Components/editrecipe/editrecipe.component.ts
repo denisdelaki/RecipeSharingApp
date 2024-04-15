@@ -9,16 +9,23 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class EditrecipeComponent {
 
   editrecipe!: FormGroup;
+
+    //category optons 
+Categorys = [
+  {value: 'BreakFast', viewValue: 'BreakFast'},
+  {value: 'Lunch', viewValue: 'Lunch'},
+  {value: 'Dinner', viewValue: 'Dinner'},
+  {value: 'Snack', viewValue: 'Snack'}
+  ];
+
   constructor(private formBuilder: FormBuilder, ){
     this.editrecipe = this.formBuilder.group({
-      recipeTitle: ['',], 
-      recipeImage: ['', Validators.pattern('https?://.+')],
-      recipeDescription: ['',],
-      recipeIngredients: ['',],
-      recipeInstructions: ['',],
-      recipeCategory: ['',],
-      recipeTags: ['',],
-      recipeRating: ['',]
+      title: ['', [Validators.required]],
+      ingredients: ['', [Validators.required]],
+      instructions: ['', [Validators.required]],
+      recipePicture: ['', [Validators.required], Validators.pattern('https?://.+')],
+      category: ['', [Validators.required]],
+      time: ['', [Validators.required]],
     });
   }
 

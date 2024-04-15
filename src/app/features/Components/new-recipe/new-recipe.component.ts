@@ -24,7 +24,8 @@ export class NewRecipeComponent {
       title: ['', [Validators.required]],
       ingredients: ['', [Validators.required]],
       instructions: ['', [Validators.required]],
-      recipePicture: ['', [Validators.required]],
+      recipePicture: ['', [Validators.required], Validators.pattern('https?://.+')],
+      time: ['', [Validators.required]],
       category: ['', [Validators.required]],
     });
    }
