@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NewRecipeComponent } from '../new-recipe/new-recipe.component';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog  } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, throwError } from 'rxjs';
 import { RecipesService } from '../../Services/recipes.service';
@@ -98,7 +98,9 @@ export class RecipesComponent implements OnInit, OnDestroy {
       const dialogRef = this.dialog.open(EditrecipeComponent, {
         width: '550px',
         // Prevent closing by clicking outside or pressing ESC
-        disableClose: true
+        disableClose: true,
+        //pass the recipe id to edit recipe component 
+        data: { recipeId: recipeId }
       });
   }
   Delete(recipeId: any) {

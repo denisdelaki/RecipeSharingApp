@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-editrecipe',
   templateUrl: './editrecipe.component.html',
   styleUrl: './editrecipe.component.css'
 })
-export class EditrecipeComponent {
+export class EditrecipeComponent implements OnInit {
 
   editrecipe!: FormGroup;
 
@@ -18,7 +19,10 @@ Categorys = [
   {value: 'Snack', viewValue: 'Snack'}
   ];
 
-  constructor(private formBuilder: FormBuilder, ){
+  constructor(private formBuilder: FormBuilder,
+    public dialogRef: MatDialogRef<EditrecipeComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+   ){
     this.editrecipe = this.formBuilder.group({
       title: ['', [Validators.required]],
       ingredients: ['', [Validators.required]],
@@ -27,9 +31,19 @@ Categorys = [
       category: ['', [Validators.required]],
       time: ['', [Validators.required]],
     });
+
+    //get the recipe id 
+    console.log(data.recipeId);
   }
 
-  save() {
+  ngOnInit(): void {
+    
+  }
+  edit() {
     throw new Error('Method not implemented.');
+    }
+
+    close() {
+      this.dialogRef.close();
     }
 }
