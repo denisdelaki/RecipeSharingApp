@@ -1,0 +1,13 @@
+<div>
+    <form [formGroup]="filter" class="row">
+        <mat-form-field class="searchBy" appearance="outline">
+            <mat-label>Filter By</mat-label>
+            <mat-select formControlName="searchBy">
+                <mat-option value="title">Title</mat-option>
+                <mat-option value="category">Category</mat-option>
+            <!-- <mat-option value="title">Title</mat-option> -->
+            <!-- <mat-option value="category">Category</mat-option> -->
+        </mat-select>
+        </mat-form-field>
+    </form>
+</div>
