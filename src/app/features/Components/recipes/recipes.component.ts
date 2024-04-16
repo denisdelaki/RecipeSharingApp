@@ -7,7 +7,6 @@ import { RecipesService } from '../../Services/recipes.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { catchError, finalize, takeUntil, tap } from 'rxjs/operators';
 import { EditrecipeComponent } from '../editrecipe/editrecipe.component';
-import { title } from 'process';
 
 @Component({
   selector: 'app-recipes',
@@ -97,6 +96,8 @@ export class RecipesComponent implements OnInit, OnDestroy {
     // Check if the user is logged in
     if (!userId) {
       // Handle the case when the user is not logged in
+      this.openSnackBar('You must be logged in to add favorite recipes', 'error-snackbar');
+      return;
       console.error('User is not logged in');
       return; // Exit the function
     }

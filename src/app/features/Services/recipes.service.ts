@@ -8,6 +8,7 @@ import { Observable, BehaviorSubject, map } from 'rxjs';
 export class RecipesService {
   private apiUrl = 'http://localhost:3000/recipes/';
   private apiUrl2 = 'http://localhost:3000/favoriterecipes';
+  private apiUrl3 = 'http://localhost:3000/recommended';
 
   
   constructor(private http: HttpClient) {}
@@ -58,6 +59,11 @@ createRecipes(FormData:any): Observable<any>{
  // Add userId parameter to addToFavorites method
 addToFavorites(recipedata: any): Observable<any> {
   return this.http.post<any>(this.apiUrl2, recipedata);
+}
+
+//recipe recommendations
+recommend(recipedata: any): Observable<any> {
+  return this.http.post<any>(this.apiUrl3, recipedata);
 }
 
 

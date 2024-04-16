@@ -7,9 +7,9 @@ import { AboutUsComponent } from './Components/about-us/about-us.component';
 import { ContactUsComponent } from './Components/contact-us/contact-us.component';
 import { PopularRecipesComponent } from './Components/popular-recipes/popular-recipes.component';
 import { TestimonialsComponent } from './Components/testimonials/testimonials.component';
-import { MaterialModule } from './Material/Material';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from '../shared/shared.module';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -23,8 +23,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     PagesRoutingModule,
-    MaterialModule,
     NgbCarouselModule,
+    MatIconModule,
     SharedModule
   ]
 })
