@@ -66,6 +66,15 @@ recommend(recipedata: any): Observable<any> {
   return this.http.post<any>(this.apiUrl3, recipedata);
 }
 
+getRecommendedRecipes(recipeId?: string): Observable<any> {
+  if (recipeId) {
+    // Fetch single recipe during view recipe
+    return this.http.get<any>(`${this.apiUrl}${recipeId}`);
+  } else {
+    // Fetch all recipes
+    return this.http.get<any>(this.apiUrl);
+  }
+}
 
   ///remove a recipe from the list of favorite recipes
   removeFromFavorites(recipeId: string): Observable<any> {

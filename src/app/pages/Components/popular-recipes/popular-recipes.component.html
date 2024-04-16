@@ -1,38 +1,16 @@
 <div class="container ">
     <h2>Recommended Recipes</h2>
-    <div class="row " >
-        <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
-            <div class="card">
-                <img src="https://www.licious.in/blog/wp-content/uploads/2021/09/shutterstock_1650877375.jpg" class="card-img-top recipe-img" alt="Egg Manchurian">
-                <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                    <h3 class="card-title">Egg Manchurian</h3>
-                    <span class="card-subtitle">Appetizer</span>
-                    <mat-icon class="card-text">access_time</mat-icon><span class="ml-1">30 Mins</span>
-                    <button type="button" class="btn btn-primary btn-block custom-button">View Full Recipe</button>
+    <div class="row" >
+            <div  class="col-xl-4 col-lg-4 col-md-6 mb-4 "  *ngFor="let recipe of recipesData">
+                <div class="card">
+                    <img [src]="recipe?.recipePicture" class="card-img-top recipe-img" alt="Egg Manchurian">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                        <h3 class="card-title">{{recipe?.title}}</h3>
+                        <span class="card-subtitle">{{recipe?.category}}</span>
+                        <mat-icon class="card-text">access_time</mat-icon><span class="ml-1">{{recipe?.time}} Mins</span>
+                        <button type="button" class="btn btn-primary btn-block custom-button" (click)="viewrecipe(recipe.id)">View Full Recipe</button>
+                    </div>
                 </div>
-            </div>
+            </div  >
         </div>
-        <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1528751086790-81a64658fc53?q=80&w=2848&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top recipe-img" alt="Pure Vegetable Bowl">
-                <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                    <h3 class="card-title">Pure Vegetable Bowl</h3>
-                    <span class="card-subtitle">Appetizer</span>
-                    <mat-icon class="card-text">access_time</mat-icon><span class="ml-1">30 Mins</span>
-                    <button type="button" class="btn btn-primary btn-block custom-button">View Full Recipe</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-4 col-lg-4 col-md-6 mb-4">
-            <div class="card">
-                <img src="https://bing.com/th?id=OSK.70d01507ed24dad42e5ce528ecae1324" class="card-img-top recipe-img" alt="Egg Masala Ramen">
-                <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                    <h3 class="card-title">Egg Masala Ramen</h3>
-                    <span class="card-subtitle">Appetizer</span>
-                    <mat-icon class="card-text">access_time</mat-icon><span class="ml-1">30 Mins</span>
-                    <button type="button" class="btn btn-primary btn-block custom-button">View Full Recipe</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
