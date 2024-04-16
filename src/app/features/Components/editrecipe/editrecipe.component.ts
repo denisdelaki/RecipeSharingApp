@@ -53,10 +53,15 @@ Categorys = [
   ngOnInit(): void {
     if(this.data.recipeid){
       this.recipesService.getRecipes(this.data.recipeid).subscribe(recipedata => {
+        console.log(recipedata)
+        // Extract ingredients and instructions arrays
+        const ingredientsArray = recipedata?.ingredients.map((ingredient: any) => ingredient.ingredient);
+        const instructionsArray = recipedata?.instructions.map((instruction: any) => instruction.instruction);
+
         this.editrecipe.patchValue({
           title: recipedata?.title,
-          ingredients: recipedata?.ingredients,
-          instructions: recipedata?.instructions,
+          ingredients: ingredientsArray,
+          instructions: instructionsArray,
           recipePicture: recipedata?.recipePicture,
           category: recipedata?.category,
           time: recipedata?.time
