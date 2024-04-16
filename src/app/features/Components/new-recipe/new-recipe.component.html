@@ -19,19 +19,60 @@
                                 </mat-select>               
                               </mat-form-field>
 
-                            <mat-form-field class="form-group mt-1 mb-1" style="width: 100%;">
-                                <mat-label> Ingredients</mat-label>
-                                <input matInput type="text" formControlName="ingredients" placeholder="Enter ingredients">
-                            </mat-form-field>
-
-                            <mat-form-field class="form-group mt-1 mb-1" style="width: 100%;">
-                                <mat-label> Instructions</mat-label>
-                                <input matInput type="text" formControlName="instructions" placeholder="List the Instructions">
-                            </mat-form-field>
+                              <div class="row">
+                                <button mat-icon-button (click)="addIngredient()" class="addicon">
+                                    <mat-icon >add_circle</mat-icon> 
+                                </button>
+                                <span class="addesc">Add ingredient</span>
+                            </div>
+                              <div formArrayName="ingredients" class="row">
+                                <div class="col" *ngFor="let ingredient of ingredientForms.controls; let i = index">
+                                    <div class="row">
+                                        <div class="col-11">
+                                            <mat-form-field class="form-group mt-1 mb-1" style="width: 100%;">
+                                                <mat-label>Ingredients</mat-label>
+                                                <input matInput [formControlName]="i" placeholder="Enter ingredient">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-1 d-flex justify-content-end align-items-center">
+                                            <button mat-icon-button color="warn" (click)="removeIngredient(i)">
+                                                <mat-icon>delete</mat-icon>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+     
+                            <div class="row">
+                                <button mat-icon-button (click)="addInstruction()" class="addicon">
+                                    <mat-icon>add_circle</mat-icon> 
+                                </button>
+                                <span class="addesc">Add instruction</span>
+                            </div>
+                            
+                            <div formArrayName="instructions" class="row">
+                                <div class="col" *ngFor="let instruction of instructionForms.controls; let i = index">
+                                    <div class="row">
+                                        <div class="col-11">
+                                            <mat-form-field class="form-group mt-1 mb-1" style="width: 100%;">
+                                                <mat-label>Instructions</mat-label>
+                                                <input matInput [formControlName]="i" placeholder="Enter instruction">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-1 d-flex justify-content-end align-items-center">
+                                            <button mat-icon-button color="warn" (click)="removeInstruction(i)">
+                                                <mat-icon>delete</mat-icon>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
 
                             <mat-form-field class="form-group mt-1 mb-1" style="width: 100%;">
                                 <mat-label> Time Allocated</mat-label>
-                                <input matInput type="text" formControlName="time" placeholder="Time Allocated">
+                                <input matInput type="number" formControlName="time" placeholder="Time Allocated">
                             </mat-form-field>
 
                             <mat-form-field class="form-group mt-1 mb-1" style="width: 100%;">
@@ -39,7 +80,7 @@
                                 <input matInput type="url" formControlName="recipePicture" placeholder="Enter recipe URL">
                             </mat-form-field>
                         </div>
-                        </form>
+                    </form>
         <div class="row mt-1 mb-3">
             <div class="d-flex justify-content-center mb-2">
                 <button type="button" class="btn btn-primary mr-5" style="color: maroon; background-color: white; border-color: maroon;" (click)="close()">Cancel</button>

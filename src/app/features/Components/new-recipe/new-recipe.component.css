@@ -1,0 +1,10 @@
+.addesc{
+    display: none;
+}
+.addicon:hover + .addesc{
+    display: block;
+}
+
+.addicon{
+    color: maroon;
+}

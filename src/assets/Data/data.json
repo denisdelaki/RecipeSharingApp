@@ -60,6 +60,63 @@
       "category": "Lunch",
       "userId": "19e0",
       "time": "7"
+    },
+    {
+      "id": "2292",
+      "title": "smocha",
+      "ingredients": "chapati, smokie, sauce",
+      "instructions": "wrap chapati on smokie and add tomatoes sauce",
+      "time": "10",
+      "recipePicture": "https://i.ytimg.com/vi/8U1_BLHOY-E/maxresdefault.jpg",
+      "category": "Snack",
+      "userId": "19e0"
+    },
+    {
+      "id": "6c02",
+      "title": "smocha",
+      "ingredients": [
+        {
+          "name": "chapati"
+        },
+        {
+          "name": "smokie"
+        }
+      ],
+      "instructions": "wrap chapati on smokie and add tomatoes sauce",
+      "time": "20",
+      "recipePicture": "https://i.ytimg.com/vi/8U1_BLHOY-E/maxresdefault.jpg",
+      "category": "Snack",
+      "userId": "19e0"
+    },
+    {
+      "id": "6f63",
+      "title": "Egg Masala Ramen",
+      "ingredients": [
+        {
+          "ingredient": "eggs"
+        },
+        {
+          "ingredient": " masala"
+        },
+        {
+          "ingredient": " ramen"
+        }
+      ],
+      "instructions": [
+        {
+          "instruction": "fry the eggs"
+        },
+        {
+          "instruction": "add masala."
+        },
+        {
+          "instruction": " Server hot "
+        }
+      ],
+      "time": 30,
+      "recipePicture": "https://bing.com/th?id=OSK.70d01507ed24dad42e5ce528ecae1324",
+      "category": "Dinner",
+      "userId": "19e0"
     }
   ],
   "favoriterecipes": [

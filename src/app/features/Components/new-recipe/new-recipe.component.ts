@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { RecipesService } from '../../Services/recipes.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -22,9 +22,9 @@ export class NewRecipeComponent {
   ){
     this.AddRecipe = this.formBuilder.group({
       title: ['', [Validators.required]],
-      ingredients: ['', [Validators.required]],
-      instructions: ['', [Validators.required]],
-      recipePicture: ['', [Validators.required], Validators.pattern('https?://.+')],
+      ingredients: this.formBuilder.array([''], [Validators.required]),
+      instructions: this.formBuilder.array([''], [Validators.required]),
+      recipePicture: ['', [Validators.required, Validators.pattern('https?://.+')]],
       time: ['', [Validators.required]],
       category: ['', [Validators.required]],
     });
@@ -48,22 +48,23 @@ console.log(this.AddRecipe.valid);
 if (this.AddRecipe.valid){
   const recipeData = {
     title: this.AddRecipe.value.title,
-    ingredients: this.AddRecipe.value?.ingredients,
-    instructions: this.AddRecipe.value?.instructions,
+    ingredients: this.AddRecipe.value.ingredients.map((ingredient: string) => ({ ingredient: ingredient })),
+    instructions: this.AddRecipe.value.instructions.map((instruction: string) => ({ instruction: instruction })),
     time: this.AddRecipe.value?.time,
     recipePicture: this.AddRecipe.value?.recipePicture,
     category: this.AddRecipe.value?.category,
     userId: localStorage.getItem('loggedInUserId')
   }
   console.log(recipeData);
+
   this.recipesService.createRecipes(recipeData).subscribe(
     response => {
       console.log(response)
       this.recipesdata.push({
           title: response.title,
           category: response.category,
-          ingredients: response.ingredients,
-          instruction: response.instruction,
+          ingredients: response.ingredients.map((ingredient: { ingredient: string }) => ingredient.ingredient),
+          instructions: response.instructions.map((instruction: { instruction: string }) => instruction.instruction),
           time: response.time,
           recipeUrl: response.recipeUrl,
           userId: response.userId
@@ -74,6 +75,29 @@ if (this.AddRecipe.valid){
     })
   this.dialogRef.close();
 }
+}
+addIngredient() {
+  this.ingredientForms.push(this.formBuilder.control('', Validators.required));
+}
+
+removeIngredient(index: number) {
+  this.ingredientForms.removeAt(index);
+}
+
+addInstruction(){
+  this.instructionForms.push(this.formBuilder.control('', Validators.required));
+}
+
+removeInstruction(index: number) {
+  this.instructionForms.removeAt(index);
+}
+
+get instructionForms() {
+  return this.AddRecipe.get('instructions') as FormArray;
+} 
+
+get ingredientForms() {
+  return this.AddRecipe.get('ingredients') as FormArray;
 }
 close() {
   this.dialogRef.close();
