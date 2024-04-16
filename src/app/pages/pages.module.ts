@@ -9,6 +9,7 @@ import { PopularRecipesComponent } from './Components/popular-recipes/popular-re
 import { TestimonialsComponent } from './Components/testimonials/testimonials.component';
 import { MaterialModule } from './Material/Material';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
     PagesRoutingModule,
     MaterialModule,
     NgbCarouselModule,
+    SharedModule
   ]
 })
 export class PagesModule { }

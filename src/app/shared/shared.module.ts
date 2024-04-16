@@ -11,13 +11,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { FilterComponent } from './Components/filter/filter.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import { FooterComponent } from './Components/footer/footer.component';
 
 
 @NgModule({
   declarations: [
     NavigationComponent,
     SearchComponent,
-    FilterComponent
+    FilterComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +29,8 @@ import { MatOptionModule } from '@angular/material/core';
   exports: [
     NavigationComponent,
     SearchComponent,
-    FilterComponent
+    FilterComponent,
+    FooterComponent
   ],
 })
 export class SharedModule { }
