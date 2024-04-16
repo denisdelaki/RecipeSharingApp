@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, BehaviorSubject, map } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { catchError, Observable, throwError,} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,54 +12,91 @@ export class RecipesService {
   private apiUrl3 = 'http://localhost:3000/recommended';
 
   
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private snackBar: MatSnackBar) {}
 
 //create Recipes in my recipes page  
 
-createRecipes(FormData:any): Observable<any>{
-  console.log(FormData);
-  return this.http.post<any>(this.apiUrl, FormData);
+createRecipes(FormData: any): Observable<any> {
+  return this.http.post<any>(this.apiUrl, FormData).pipe(
+    catchError((error: HttpErrorResponse) => {
+      this.showErrorMessage('Failed to create recipe, server error ' );
+      return throwError(error);
+    })
+  );
 }
 
   ///get recipes from the server 
   //get logged in userId data 
-  getmyRecipe( userId: string,recipeId?: string): Observable<any> {
+  getmyRecipe(userId: string, recipeId?: string): Observable<any> {
     if (recipeId) {
-      // Fetch single recipe during view recipe for logged user
-      return this.http.get<any>(`${this.apiUrl}${recipeId}?userId=${userId}`);
+      return this.http.get<any>(`${this.apiUrl}${recipeId}?userId=${userId}`).pipe(
+        catchError((error: HttpErrorResponse) => {
+          this.showErrorMessage('Failed to fetch recipe, server error ');
+          return throwError(error);
+        })
+      );
     } else {
-      // Fetch all recipes
-      return this.http.get<any[]>(`${this.apiUrl}?userId=${userId}`);
+      return this.http.get<any[]>(`${this.apiUrl}?userId=${userId}`).pipe(
+        catchError((error: HttpErrorResponse) => {
+          this.showErrorMessage('Failed to fetch recipes, server error ');
+          return throwError(error);
+        })
+      );
     }
   }
 
   ///get recipes from the server
   getRecipes(recipeId?: string): Observable<any> {
     if (recipeId) {
-      // Fetch single recipe during view recipe
-      return this.http.get<any>(`${this.apiUrl}${recipeId}`);
+            // Fetch single recipe during view recipe
+      return this.http.get<any>(`${this.apiUrl}${recipeId}`).pipe(
+        catchError((error: HttpErrorResponse) => {
+          this.showErrorMessage('Failed to fetch recipe, server error ');
+          return throwError(error);
+        })
+      );
     } else {
-      // Fetch all recipes
-      return this.http.get<any>(this.apiUrl);
+            // Fetch all recipes
+      return this.http.get<any>(this.apiUrl).pipe(
+        catchError((error: HttpErrorResponse) => {
+          this.showErrorMessage('Failed to fetch recipe, server error s');
+          return throwError(error);
+        })
+      );
     }
   }
 
   // Edit a recipe
   editRecipe(recipeId: string, updatedRecipeData: any): Observable<any> {
-    return this.http.patch<any>(`${this.apiUrl}${recipeId}`, updatedRecipeData);
+    return this.http.patch<any>(`${this.apiUrl}${recipeId}`, updatedRecipeData).pipe(
+      catchError((error: HttpErrorResponse) => {
+        this.showErrorMessage('Failed to edit recipe, server error' );
+        return throwError(error);
+      })
+    );
   }
 
   
   // Delete a recipe
   deleteRecipe(recipeId: string): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}${recipeId}`);
+    return this.http.delete<any>(`${this.apiUrl}${recipeId}`).pipe(
+      catchError((error: HttpErrorResponse) => {
+        this.showErrorMessage('Failed to delete recipe, server error e');
+        return throwError(error);
+      })
+    );
   }
 
 
   ///add a recipe to the list of  favorite recipes
  // Add userId parameter to addToFavorites method
-addToFavorites(recipedata: any): Observable<any> {
-  return this.http.post<any>(this.apiUrl2, recipedata);
+ addToFavorites(recipedata: any): Observable<any> {
+  return this.http.post<any>(this.apiUrl2, recipedata).pipe(
+    catchError((error: HttpErrorResponse) => {
+      this.showErrorMessage('Failed to add recipe to favorites, server error');
+      return throwError(error);
+    })
+  );
 }
 
 //recipe recommendations
@@ -80,5 +118,13 @@ getRecommendedRecipes(recipeId?: string): Observable<any> {
   removeFromFavorites(recipeId: string): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl2}${recipeId}/favorite`);
   }
+
+    // Method to show error message using MatSnackBar
+    private showErrorMessage(message: string): void {
+      this.snackBar.open(message, 'Close', {
+        duration: 5000, 
+        panelClass: ['error-snackbar'] 
+      });
+    }
 
 }
