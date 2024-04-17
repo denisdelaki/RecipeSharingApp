@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientModule } from '@angular/common/http';
 import { PopularRecipesComponent } from './popular-recipes.component';
 
 describe('PopularRecipesComponent', () => {
@@ -8,10 +8,13 @@ describe('PopularRecipesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PopularRecipesComponent]
+      declarations: [PopularRecipesComponent],
+      imports: [HttpClientModule]
     })
     .compileComponents();
-    
+  });
+
+  beforeEach(() => {
     fixture = TestBed.createComponent(PopularRecipesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -20,4 +23,5 @@ describe('PopularRecipesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });

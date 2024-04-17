@@ -10,6 +10,15 @@ import { Router } from '@angular/router';
   styleUrl: './new-recipe.component.css'
 })
 export class NewRecipeComponent {
+  service(service: any, arg1: string) {
+    throw new Error('Method not implemented.');
+  }
+  initialState(initialState: any) {
+    throw new Error('Method not implemented.');
+  }
+  onButtonClick() {
+    throw new Error('Method not implemented.');
+  }
   AddRecipe!: FormGroup;
   recipesdata: any[] = [];
 

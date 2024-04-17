@@ -1,5 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TestBed, ComponentFixture } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
 import { EditrecipeComponent } from './editrecipe.component';
 
 describe('EditrecipeComponent', () => {
@@ -8,10 +9,13 @@ describe('EditrecipeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [HttpClientModule, MatDialogModule], 
       declarations: [EditrecipeComponent]
     })
     .compileComponents();
-    
+  });
+
+  beforeEach(() => {
     fixture = TestBed.createComponent(EditrecipeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -20,4 +24,6 @@ describe('EditrecipeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  
 });
