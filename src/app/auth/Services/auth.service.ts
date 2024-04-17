@@ -14,6 +14,10 @@ export class AuthService {
   isSignup$ = this.isSignupSource.asObservable();
 
   constructor(private http: HttpClient, private snackBar: MatSnackBar) { }
+
+  openSnackBar(message: string, panelClass: string): void {
+    this.snackBar.open(message, 'Close', { duration: 2000, panelClass: [panelClass] });
+  }
   //pass the boolean value to check whether the login or signup button has been clicked by the user 
   setIsSignup(isSignup: boolean) {
     this.isSignupSource.next(isSignup);

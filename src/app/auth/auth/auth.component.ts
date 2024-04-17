@@ -42,10 +42,7 @@ constructor(private formBuilder: FormBuilder,
   }
 //// snackbar initialization
 openSnackBar(message: string, panelClass: string): void {
-  this.snackBar.open(message, 'Close', {
-    duration: 2000, 
-    panelClass: [panelClass],
-  });
+  this.snackBar.open(message, 'Close', { duration: 2000, panelClass: [panelClass] });
 }
 
 ngOnInit(): void {
@@ -80,12 +77,9 @@ login() {
           //emit the isLoggedInChange event
           this.dataTransmitService.transmitIsLoggedIn(true);
           //open snackbar
-          setTimeout(() => {
-            this.openSnackBar('Logged in successfully', 'success-notification');
-            this.authService.login();
-            this.router.navigate(['/features/myprofile']);
-          }, 2000);
-          // window.location.reload();
+          this.openSnackBar('Logged in successfully', 'success-notification');
+          //navigate to the my profile page
+          this.router.navigate(['/features/myprofile']);
         }
         else {
           this.openSnackBar('The User Does not exist', 'error-notification');
