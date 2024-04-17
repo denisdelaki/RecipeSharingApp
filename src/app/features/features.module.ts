@@ -17,7 +17,6 @@ import { RecipeDetailComponent } from './Components/recipe-detail/recipe-detail.
 import { NewRecipeComponent } from './Components/new-recipe/new-recipe.component';
 import { EditrecipeComponent } from './Components/editrecipe/editrecipe.component';
 import { SharedModule } from '../shared/shared.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -34,7 +33,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,MatFormFieldModule
     ,MatInputModule, MatCardModule,MatSelectModule,MatOptionModule,
     MatIconModule,MatButtonModule, MatLabel,
-    FeaturesRoutingModule, SharedModule,BrowserAnimationsModule
+    FeaturesRoutingModule, SharedModule,
   ]
 })
 export class FeaturesModule { }
