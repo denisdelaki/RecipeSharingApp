@@ -10,6 +10,7 @@ import { UsersService } from '../../Services/users.service';
 })
 export class EditProfileComponent implements OnInit{
   editProfile!: FormGroup;
+
   constructor(private formBuilder: FormBuilder, 
     private usersService: UsersService,
     public dialogRef: MatDialogRef<EditProfileComponent>) {
@@ -25,7 +26,9 @@ export class EditProfileComponent implements OnInit{
       blog: ['', Validators.pattern('https?://.+')],
     });
   }
+
   ngOnInit(): void {
+    console.log('ngOnInit is called'); 
     // Fetch user data and populate the form fields
     const userId = localStorage.getItem('loggedInUserId');
     if (userId) {
@@ -44,12 +47,12 @@ export class EditProfileComponent implements OnInit{
         });
       });
     }
+    else{
+      console.log("loggin");
+    }
   }
   
-EditProfile() {
-throw new Error('Method not implemented.');
-}
-  editForm!: FormGroup<any>;
+
 save() {
   if (this.editProfile.valid){
     const userId=localStorage.getItem('loggedInUserId');
@@ -58,13 +61,13 @@ save() {
       fullName: this.editProfile.value.fullName, 
       email: this.editProfile.value.email,
       profilePicture: this.editProfile.value.profilePicture,
-      phoneNumber: this.editProfile.value.phonumber,
+      phoneNumber: this.editProfile.value.phoneNumber,
       address: this.editProfile.value.address,
       socials :{  
           facebook: this.editProfile.value.facebook, 
           twitter: this.editProfile.value.twitter,
           instagram: this.editProfile.value.instagram,
-           personalBlog: this.editProfile.value.personalBlog 
+          blog: this.editProfile.value.blog 
       }
     }
     console.log(updateduserData);
