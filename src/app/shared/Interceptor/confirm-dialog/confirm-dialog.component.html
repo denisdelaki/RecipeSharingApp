@@ -1,0 +1,13 @@
+<div class="card border-0">
+    <div class="card-body">
+        <h3 mat-dialog-title>Confirm</h3>
+        <div mat-dialog-content>
+          <p>Are you sure you want to delete this recipe?</p>
+        </div>
+        <div mat-dialog-actions>
+          <button mat-button (click)="cancel()" class="btn btn-primary mr-5" style="color: maroon; background-color: white; border-color: maroon;">Cancel</button>
+          <button mat-button color="warn" (click)="confirm()" class="btn btn-outline-primary ms-1 ml-5" style="background-color: maroon; color: white; border: none;">Delete</button>
+        </div>
+    </div>
+</div>
+
