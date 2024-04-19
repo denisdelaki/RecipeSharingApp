@@ -1,6 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataTransmitService } from '../../Services/data-transmit.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmLogoutDialogComponent } from '../../Interceptor/confirm-logout-dialog/confirm-logout-dialog.component';
 
 @Component({
   selector: 'app-navigation',
@@ -12,6 +14,7 @@ export class NavigationComponent implements OnInit {
   isLoggedIn: boolean = false;
 
   constructor(private router: Router, 
+    private dialog: MatDialog,
     private dataTransmitService: DataTransmitService) { }
 
     ngOnInit() {
@@ -33,6 +36,18 @@ export class NavigationComponent implements OnInit {
     this.router.navigate(['/auth/']);
     // this.isLoggedInChange.emit(this.isSignup);
   }
+
+  confirmlogout(){
+    const dialogRef = this.dialog.open(ConfirmLogoutDialogComponent, {
+      width: '350px',
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        // If user confirmed deletion
+        this.Logout()
+      }
+    });
+  } 
 
   Logout(){
     localStorage.removeItem('loggedInUserId');

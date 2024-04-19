@@ -12,6 +12,8 @@ import { FilterComponent } from './Components/filter/filter.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { FooterComponent } from './Components/footer/footer.component';
+import { ConfirmDialogComponent } from './Interceptor/confirm-dialog/confirm-dialog.component';
+import { ConfirmLogoutDialogComponent } from './Interceptor/confirm-logout-dialog/confirm-logout-dialog.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { FooterComponent } from './Components/footer/footer.component';
     NavigationComponent,
     SearchComponent,
     FilterComponent,
-    FooterComponent
+    FooterComponent,
+    ConfirmDialogComponent,
+    ConfirmLogoutDialogComponent
   ],
   imports: [
     CommonModule,
