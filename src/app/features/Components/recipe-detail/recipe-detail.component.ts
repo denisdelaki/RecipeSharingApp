@@ -55,7 +55,6 @@ export class RecipeDetailComponent implements OnInit {
       // Handle the case when the user is not logged in
       this.openSnackBar('You must be logged in to recommend the recipes', 'error-snackbar');
       return;
-      return; 
     }
     const dataToRecommend = {
       title: recipedata.title,
