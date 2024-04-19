@@ -43,7 +43,7 @@
                             </span>
                         </li>
                         <li class="me-3 flex-grow-1 ml-5 mr-0" *ngIf="isMyRecipes">
-                            <span  (click)="Delete(recipedata.id)" class="d-flex flex-column align-items-center">
+                            <span  (click)="confirmDelete(recipedata.id)" class="d-flex flex-column align-items-center">
                                 <mat-icon class="delete-icon">delete</mat-icon>
                                 <p class="mt-1 span">Delete</p>
                             </span>

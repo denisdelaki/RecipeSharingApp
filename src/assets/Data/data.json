@@ -4,15 +4,15 @@
       "id": "19e0",
       "email": "denisdelaki@gmail.com",
       "password": "123456",
-      "fullName": "Denisdelaki",
-      "phoneNumber": "07123456789",
+      "fullName": "Denis kipyegon",
+      "phoneNumber": "+254712345789",
       "profilePicture": "https://avatars.githubusercontent.com/u/104421511?v=4",
       "address": "33, 20400 Bomet",
       "socials": {
         "facebook": "https://www.facebook.com/delaki",
+        "twitter": "https://twitter.com/delaki",
         "instagram": "https://www.instagram.com/delaki/",
-        "blog": "https://www.blog.com/in/delaki/",
-        "twitter": "https://twitter.com/delaki"
+        "blog": "https://www.blog.com/in/delaki/"
       }
     },
     {
@@ -23,7 +23,16 @@
     {
       "id": "ac41",
       "email": "d@gmail.com",
-      "password": "123456"
+      "password": "123456",
+      "phoneNumber": "+254712345789",
+      "socials": {}
+    },
+    {
+      "id": "9b0d",
+      "email": "delhia@gmail.com",
+      "password": "123456",
+      "phoneNumber": "+254712345789",
+      "socials": {}
     }
   ],
   "recipes": [
@@ -114,6 +123,34 @@
       "recipePicture": "https://images.unsplash.com/photo-1528751086790-81a64658fc53?q=80&w=2848&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "category": "Dinner",
       "userId": "19e0"
+    },
+    {
+      "id": "7fbb",
+      "title": "Pure Vegetable Bowl",
+      "ingredients": [
+        "vegetables"
+      ],
+      "instructions": [
+        "chop the vegetables"
+      ],
+      "time": "30",
+      "recipePicture": "https://th.bing.com/th/id/R.c655f6ad4bf1a12f920298b6e087200b?rik=KNLe3mk2jiJUjA&riu=http%3a%2f%2fcontent.kens5.com%2fphoto%2f2017%2f10%2f22%2fvegetables_1508727313637_11456014_ver1.0.jpg&ehk=Fq8Eoa9aKzsUPDZ8DtBhyVemrHDc8oqvw4qs3PvJii8%3d&risl=&pid=ImgRaw&r=0",
+      "category": "Lunch",
+      "userId": "9b0d"
+    },
+    {
+      "id": "9413",
+      "title": "Pure Vegetable Bowl",
+      "ingredients": [
+        "vegetables"
+      ],
+      "instructions": [
+        "chop the vegetables"
+      ],
+      "time": "30",
+      "recipePicture": "https://th.bing.com/th/id/R.c655f6ad4bf1a12f920298b6e087200b?rik=KNLe3mk2jiJUjA&riu=http%3a%2f%2fcontent.kens5.com%2fphoto%2f2017%2f10%2f22%2fvegetables_1508727313637_11456014_ver1.0.jpg&ehk=Fq8Eoa9aKzsUPDZ8DtBhyVemrHDc8oqvw4qs3PvJii8%3d&risl=&pid=ImgRaw&r=0",
+      "category": "Lunch",
+      "userId": "ac41"
     }
   ],
   "favoriterecipes": [
@@ -186,6 +223,24 @@
       "category": "Dinner",
       "time": 30,
       "userId": "19e0"
+    },
+    {
+      "id": "5d98",
+      "title": "Pure Vegetable Bowl",
+      "ingredients": [
+        {
+          "ingredient": "vegetables"
+        }
+      ],
+      "instructions": [
+        {
+          "instruction": "chop the vegetables"
+        }
+      ],
+      "recipePicture": "https://th.bing.com/th/id/R.c655f6ad4bf1a12f920298b6e087200b?rik=KNLe3mk2jiJUjA&riu=http%3a%2f%2fcontent.kens5.com%2fphoto%2f2017%2f10%2f22%2fvegetables_1508727313637_11456014_ver1.0.jpg&ehk=Fq8Eoa9aKzsUPDZ8DtBhyVemrHDc8oqvw4qs3PvJii8%3d&risl=&pid=ImgRaw&r=0",
+      "category": "Lunch",
+      "time": 34,
+      "userId": "ac41"
     }
   ],
   "recommended": [

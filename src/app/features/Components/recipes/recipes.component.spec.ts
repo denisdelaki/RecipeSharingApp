@@ -11,9 +11,9 @@ describe('RecipesComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [RecipesComponent],
-      imports: [MatDialogModule, HttpClientModule, RouterTestingModule], // Add RouterTestingModule
+      imports: [MatDialogModule, HttpClientModule, RouterTestingModule], 
       providers: [
-        // ... other providers
+        
       ]
     })
     .compileComponents();

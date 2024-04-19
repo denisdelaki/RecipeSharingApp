@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ConfirmLogoutDialogComponent } from './confirm-logout-dialog.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 describe('ConfirmLogoutDialogComponent', () => {
   let component: ConfirmLogoutDialogComponent;
@@ -8,7 +10,12 @@ describe('ConfirmLogoutDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ConfirmLogoutDialogComponent]
+      declarations: [ConfirmLogoutDialogComponent],
+      imports: [HttpClientModule],
+      providers: [
+        { provide: MatDialogRef, useValue: {} },
+        { provide: MAT_DIALOG_DATA, useValue: {} },
+      ]
     })
     .compileComponents();
     

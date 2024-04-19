@@ -11,24 +11,27 @@ import { UsersService } from '../../Services/users.service';
 export class EditProfileComponent implements OnInit{
   editProfile!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, 
+
+  constructor(
+    private formBuilder: FormBuilder, 
     private usersService: UsersService,
-    public dialogRef: MatDialogRef<EditProfileComponent>) {
+    public dialogRef: MatDialogRef<EditProfileComponent>
+  ) {
     this.editProfile = this.formBuilder.group({
-      fullName: ['',], 
-      email: ['', [ Validators.email]], 
+      fullName: [''],
+      email: ['', Validators.email],
       profilePicture: ['', Validators.pattern('https?://.+')],
-      phoneNumber: ['', Validators.pattern('[0-9]{10}')], 
-      address: ['', Validators.pattern('https?://.+')],
-      facebook: ['', Validators.pattern('https?://.+')], 
+      phoneNumber: ['', [Validators.pattern('\\+254[0-9]{9}')]],
+      address: [''],
+      facebook: ['', Validators.pattern('https?://.+')],
       twitter: ['', Validators.pattern('https?://.+')],
       instagram: ['', Validators.pattern('https?://.+')],
       blog: ['', Validators.pattern('https?://.+')],
     });
   }
-
+  
   ngOnInit(): void {
-    console.log('ngOnInit is called'); 
+    // console.log('ngOnInit is called'); 
     // Fetch user data and populate the form fields
     const userId = localStorage.getItem('loggedInUserId');
     if (userId) {
@@ -54,6 +57,7 @@ export class EditProfileComponent implements OnInit{
   
 
 save() {
+  console.log("validate", this.editProfile.valid);
   if (this.editProfile.valid){
     const userId=localStorage.getItem('loggedInUserId');
     console.log(userId);

@@ -7,6 +7,7 @@ import { RecipesService } from '../../Services/recipes.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { catchError, finalize, takeUntil, tap } from 'rxjs/operators';
 import { EditrecipeComponent } from '../editrecipe/editrecipe.component';
+import { ConfirmDialogComponent } from '../../../shared/Interceptor/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-recipes',
@@ -145,12 +146,23 @@ export class RecipesComponent implements OnInit, OnDestroy {
         return throwError(error);
       }),
       finalize(() => {
+        // this.confirmDelete();
         this.openSnackBar('Recipe deleted successfully', 'success-notification');
-        this.router.navigate(['/features/myrecipes']);
+        this.loadrecipes();
       })
     ).subscribe();
   }
-
+   confirmDelete(recipeId: any){
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      width: '350px',
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        // If user confirmed deletion
+        this.Delete(recipeId)
+      }
+    });
+  }
 
   newrecipe(){
     const dialogRef = this.dialog.open(NewRecipeComponent, {

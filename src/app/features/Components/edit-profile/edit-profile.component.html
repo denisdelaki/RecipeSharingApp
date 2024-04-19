@@ -18,6 +18,7 @@
                           <mat-form-field class="form-group mt-1 mb-1" style="width: 100%;">
                               <mat-label>Profile Url</mat-label>
                               <input matInput type="url" formControlName="profilePicture" placeholder="Enter profile URL">
+                              <mat-error *ngIf="editProfile?.get('profilePicture')?.hasError('pattern')">Enter a valid URL.</mat-error>
                           </mat-form-field>
 
                           <!-- First row: Phone Number and Physical Address -->
@@ -27,7 +28,8 @@
                                   <mat-form-field class="form-group mt-1 mb-1" style="width: calc(50% - 5px); margin-right: 10px;">
                                       <mat-label>Phone Number</mat-label>
                                       <input matInput type="tel" formControlName="phoneNumber"  placeholder="Enter Phone Number +254">
-                                  </mat-form-field>
+                                      <mat-error *ngIf="editProfile?.get('phoneNumber')?.hasError('pattern')">Phone number must be in the format +254 followed by 9 digits.</mat-error>
+                                    </mat-form-field>
 
                                   <!-- Physical Address -->
                                   <mat-form-field class="form-group mt-1 mb-1" style="width: calc(50% - 5px);">
@@ -44,12 +46,14 @@
                                   <mat-form-field class="form-group mt-1 mb-1" style="width: calc(50% - 5px); margin-right: 10px;">
                                       <mat-label>Facebook</mat-label>
                                       <input matInput type="text" formControlName="facebook" placeholder="Enter Facebook URL">
+                                      <mat-error *ngIf="editProfile?.get('facebook')?.hasError('pattern')">Enter a valid URL.</mat-error>
                                   </mat-form-field>
 
                                   <!-- Twitter -->
                                   <mat-form-field class="form-group mt-1 mb-1" style="width: calc(50% - 5px);">
                                       <mat-label>Twitter</mat-label>
                                       <input matInput type="text" formControlName="twitter" placeholder="Enter Twitter URL">
+                                      <mat-error *ngIf="editProfile?.get('twitter')?.hasError('pattern')">Enter a valid URL.</mat-error>
                                   </mat-form-field>
                               </div>
                           </div>
@@ -61,12 +65,14 @@
                                   <mat-form-field class="form-group mt-1 mb-1" style="width: calc(50% - 5px); margin-right: 10px;">
                                       <mat-label>Instagram</mat-label>
                                       <input matInput type="text" formControlName="instagram" placeholder="Enter Instagram URL">
+                                      <mat-error *ngIf="editProfile?.get('instagram')?.hasError('pattern')">Enter a valid URL.</mat-error>
                                   </mat-form-field>
 
                                   <!-- Personal Blog -->
                                   <mat-form-field class="form-group mt-1 mb-1" style="width: calc(50% - 5px);">
                                       <mat-label>Personal Blog</mat-label>
                                       <input matInput type="url" formControlName="blog" placeholder="Enter Personal Blog URL">
+                                      <mat-error *ngIf="editProfile?.get('blog')?.hasError('pattern')">Enter a valid URL.</mat-error>
                                   </mat-form-field>
                               </div>
                           </div>
