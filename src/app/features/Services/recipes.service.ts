@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { catchError, Observable, throwError,} from 'rxjs';
+import { catchError, map, Observable, throwError,} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -126,5 +126,33 @@ getRecommendedRecipes(recipeId?: string): Observable<any> {
         panelClass: ['error-snackbar'] 
       });
     }
+
+// In recipes.service.ts
+
+searchRecipes(searchTerm: string): Observable<any> {
+  const userId = localStorage.getItem('loggedInUserId') ?? '';
+if (userId) {
+  return this.getmyRecipe(userId).pipe(
+    map((recipes) => {
+      return recipes.filter((item: any) => {
+        return item.category.toLowerCase().includes(searchTerm.toLowerCase()) || 
+               item.title.toLowerCase().includes(searchTerm.toLowerCase());  
+      });
+    })
+  )
+}else{
+  return this.getRecipes().pipe(
+    map((data: any[]) => {
+      // Filter based on search criteria
+      return data.filter((item: any) => {
+        // Check if the search term matches either category or title
+        return item.category.toLowerCase().includes(searchTerm.toLowerCase()) || 
+               item.title.toLowerCase().includes(searchTerm.toLowerCase());
+      });
+    })
+  );
+}
+
+}
 
 }

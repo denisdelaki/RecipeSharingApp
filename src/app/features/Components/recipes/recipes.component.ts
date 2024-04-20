@@ -8,6 +8,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { catchError, finalize, takeUntil, tap } from 'rxjs/operators';
 import { EditrecipeComponent } from '../editrecipe/editrecipe.component';
 import { ConfirmDialogComponent } from '../../../shared/Interceptor/confirm-dialog/confirm-dialog.component';
+import { DataTransmitService } from '../../../shared/Services/data-transmit.service';
 
 @Component({
   selector: 'app-recipes',
@@ -26,7 +27,8 @@ export class RecipesComponent implements OnInit, OnDestroy {
     private snackBar: MatSnackBar,
     private route: ActivatedRoute,
     private router: Router,
-    private recipesService: RecipesService
+    private recipesService: RecipesService,
+    private transferService: DataTransmitService
   ) { 
     this.route.url.subscribe(url => {
       this.isMyRecipes = (url[0].path === 'myrecipes');
@@ -45,6 +47,11 @@ export class RecipesComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.loadrecipes();
+    //subscribe to changes when user searches for recipes
+    this.transferService.searchedData$.pipe(
+      takeUntil(this.destroy$),
+      tap(recipes => this.recipesData = recipes)
+    ).subscribe();
   }
 
   ngOnDestroy(): void {
