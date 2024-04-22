@@ -99,6 +99,27 @@ createRecipes(FormData: any): Observable<any> {
   );
 }
 
+//get favorite recipes
+getFavoriteRecipes(): Observable<any> {
+  return this.http.get<any[]>(this.apiUrl2).pipe(
+    catchError((error: HttpErrorResponse) => {
+      this.showErrorMessage('Failed to fetch favorite recipes, server error');
+      return throwError(error);
+    })
+  );
+}
+
+//delete favorite recipe
+deleteFavorite(id: number): Observable<any> {
+  return this.http.delete<any>(`${this.apiUrl2}${id}`).pipe(
+    catchError((error: HttpErrorResponse) => {
+      this.showErrorMessage('Failed to delete favorite recipe, server error');
+      return throwError(error);
+    })
+  );
+}
+
+
 //recipe recommendations
 recommend(recipedata: any): Observable<any> {
   return this.http.post<any>(this.apiUrl3, recipedata);

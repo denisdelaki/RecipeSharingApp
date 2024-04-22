@@ -46,6 +46,16 @@ export class RecipesComponent implements OnInit, OnDestroy {
     });
   }
 
+  openSnackBarWithLink(message: string, panelClass: string, linkText: string, linkUrl: string): void {
+    const snackBarRef = this.snackBar.open(message, linkText, {
+      duration: 5000,
+      panelClass: panelClass,
+    });
+    snackBarRef.onAction().subscribe(() => {
+      this.router.navigateByUrl(linkUrl);
+    });
+  }
+
   private destroy$: Subject<void> = new Subject<void>();
 
   ngOnInit(): void {
@@ -124,8 +134,7 @@ export class RecipesComponent implements OnInit, OnDestroy {
     console.log(dataToFavorite)
     this.recipesService.addToFavorites(dataToFavorite).subscribe(recipes =>{
       this.favoriterecipe.push(dataToFavorite);
-      this.openSnackBar('Recipe added to favorites','success-notification');
-    }),
+      this.openSnackBarWithLink('Recipe added to favorites', 'success-notification', 'View favorites', '/features/favorites');    }),
       catchError((error) => {
         console.error('Error adding recipe to favorites:', error);
         this.openSnackBar('Error adding recipe to favorites', 'error-notification');

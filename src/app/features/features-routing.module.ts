@@ -4,10 +4,12 @@ import { MyprofileComponent } from './Components/myprofile/myprofile.component';
 import { RecipesComponent } from './Components/recipes/recipes.component';
 import { RecipeDetailComponent } from './Components/recipe-detail/recipe-detail.component';
 import { GuardService } from '../auth/Services/guard.service';
+import { FavoritesComponent } from './Components/favorites/favorites.component';
 const routes: Routes = [
   {path: 'myprofile', component: MyprofileComponent, canActivate: [GuardService]},
   {path: 'myrecipes', component: RecipesComponent, canActivate: [GuardService]},
   {path: 'allrecipes', component: RecipesComponent, canActivate: [GuardService]},
+  {path: 'favorites', component: FavoritesComponent, },
   {path: 'recipedetail/:id', component: RecipeDetailComponent}
 ];
 
