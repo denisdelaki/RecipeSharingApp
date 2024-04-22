@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { NewRecipeComponent } from '../new-recipe/new-recipe.component';
 import { MatDialog  } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -9,6 +9,8 @@ import { catchError, finalize, takeUntil, tap } from 'rxjs/operators';
 import { EditrecipeComponent } from '../editrecipe/editrecipe.component';
 import { ConfirmDialogComponent } from '../../../shared/Interceptor/confirm-dialog/confirm-dialog.component';
 import { DataTransmitService } from '../../../shared/Services/data-transmit.service';
+import { SearchComponent } from '../../../shared/Components/search/search.component';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-recipes',
@@ -21,6 +23,7 @@ export class RecipesComponent implements OnInit, OnDestroy {
   recipesData: any[] = [];
   deletedRecipeId: any;
   favoriterecipe:  any[] = [];
+  @ViewChild(SearchComponent) searchComponent!: SearchComponent; 
 
   constructor(
     private dialog: MatDialog,
@@ -178,4 +181,10 @@ export class RecipesComponent implements OnInit, OnDestroy {
       disableClose: true
     });
   }
+
+    // Accessing searchForm from SearchComponent
+    getSearchForm(): FormGroup | undefined {
+      return this.searchComponent ? this.searchComponent.searchForm : undefined;
+    }
+    
 }

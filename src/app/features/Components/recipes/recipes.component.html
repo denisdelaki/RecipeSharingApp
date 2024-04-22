@@ -56,4 +56,22 @@
         </div>
 
     </div>
+
+
+
+  <!-- Message Section when No Recipes Available -->
+  <div class="row" *ngIf="recipesData && recipesData.length === 0">
+    <div class="col text-center">
+      <h3>No recipes available.</h3>
+      <p></p>
+    </div>
+  </div>
+
+<!-- Message Section for Searched Item Unavailable -->
+<!-- <div class="row" *ngIf="recipesData.length === 0 && getSearchForm()?.get('search')?.value">
+    <div class="col text-center">
+      <h3>Search result not found.</h3>
+      <p>The searched item is unavailable.</p>
+    </div>
+</div>   -->
 </div>
