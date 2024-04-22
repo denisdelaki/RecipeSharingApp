@@ -16,6 +16,7 @@ export class DataTransmitService {
 
   transmitIsLoggedIn(isLoggedIn: boolean) {
     this.isLoggedInSubject.next(isLoggedIn);
+    console.log("is loggedin service",isLoggedIn);
   }
 
   //set searched data 

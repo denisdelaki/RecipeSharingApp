@@ -20,11 +20,14 @@ export class NavigationComponent implements OnInit {
     ngOnInit() {
      // Check if the user ID exists in the local storage to determine isLoggedIn status
     const UserId = localStorage.getItem('loggedInUserId');
-    this.isLoggedIn = !!UserId; 
+    
       this.dataTransmitService.isLoggedIn$.subscribe(isLoggedIn => {
-        console.log("isLoggedIn", this.isLoggedIn);
+      
         this.isLoggedIn = isLoggedIn;
+        this.isLoggedIn = !!UserId; 
       });
+      this.isLoggedIn = !!UserId; 
+      console.log("isLoggedIn", this.isLoggedIn);
     }
 
   Login(){
