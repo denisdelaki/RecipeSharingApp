@@ -52,9 +52,9 @@ export class FavoritesComponent implements OnInit, OnDestroy {
     ).subscribe();
   }
 
-  ViewRecipe(recipedata: any){
-    console.log("view recipe data", recipedata)
-    this.router.navigate(['/features/recipedetail/', recipedata.id])
+  ViewRecipe(id: any){
+    console.log("view recipe data", id)
+    this.router.navigate(['/features/recipedetail/', id])
   }
 
   confirmDelete(id: string){

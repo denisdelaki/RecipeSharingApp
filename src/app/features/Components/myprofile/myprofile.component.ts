@@ -53,5 +53,9 @@ export class MyprofileComponent implements OnInit {
       console.error('localStorage is not available');
     }
   }
+
+  viewSavedRecipes(){
+    this.router.navigate(['/features/favorites'])
+  }
   
 }

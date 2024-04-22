@@ -119,10 +119,9 @@ export class RecipesComponent implements OnInit, OnDestroy {
       // Handle the case when the user is not logged in
       this.openSnackBar('You must be logged in to add favorite recipes', 'error-snackbar');
       return;
-      console.error('User is not logged in');
-      return; // Exit the function
     }
     const dataToFavorite = {
+      id: recipedata.id,
       title: recipedata.title,
       ingredients: recipedata.ingredients,
       instructions: recipedata.instructions,

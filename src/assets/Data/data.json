@@ -155,7 +155,17 @@
   ],
   "favoriterecipes": [
     {
-      "id": "6378",
+      "id": "2292",
+      "title": "smocha",
+      "ingredients": "chapati, smokie, sauce",
+      "instructions": "wrap chapati on smokie and add tomatoes sauce",
+      "recipePicture": "https://i.ytimg.com/vi/8U1_BLHOY-E/maxresdefault.jpg",
+      "category": "Snack",
+      "time": "10",
+      "userId": "19e0"
+    },
+    {
+      "id": "6f63",
       "title": "Egg Masala Ramen",
       "ingredients": [
         {
@@ -181,45 +191,6 @@
       ],
       "recipePicture": "https://bing.com/th?id=OSK.70d01507ed24dad42e5ce528ecae1324",
       "category": "Dinner",
-      "time": 30,
-      "userId": "19e0"
-    },
-    {
-      "id": "36cc",
-      "title": "Pure Vegetable Bowl",
-      "ingredients": [
-        {
-          "ingredient": "vegetables"
-        }
-      ],
-      "instructions": [
-        {
-          "instruction": "chop the vegetables"
-        },
-        {
-          "instruction": "serve with meat"
-        }
-      ],
-      "recipePicture": "https://images.unsplash.com/photo-1528751086790-81a64658fc53?q=80&w=2848&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "category": "Dinner",
-      "time": 15,
-      "userId": "19e0"
-    },
-    {
-      "id": "db5a",
-      "title": "Egg Manchurian",
-      "ingredients": [
-        {
-          "ingredient": "eggs"
-        }
-      ],
-      "instructions": [
-        {
-          "instruction": "Fry the eggs with manchurian"
-        }
-      ],
-      "recipePicture": "https://www.licious.in/blog/wp-content/uploads/2021/09/shutterstock_1650877375.jpg",
-      "category": "Snack",
       "time": 30,
       "userId": "19e0"
     }
