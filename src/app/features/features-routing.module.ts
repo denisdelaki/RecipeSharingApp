@@ -9,7 +9,7 @@ const routes: Routes = [
   {path: 'myprofile', component: MyprofileComponent, canActivate: [GuardService]},
   {path: 'myrecipes', component: RecipesComponent, canActivate: [GuardService]},
   {path: 'allrecipes', component: RecipesComponent, canActivate: [GuardService]},
-  {path: 'favorites', component: FavoritesComponent, },
+  {path: 'favorites', component: FavoritesComponent, canActivate: [GuardService]},
   {path: 'recipedetail/:id', component: RecipeDetailComponent}
 ];
 

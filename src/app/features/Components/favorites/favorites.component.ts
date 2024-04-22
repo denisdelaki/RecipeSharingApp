@@ -43,13 +43,17 @@ export class FavoritesComponent implements OnInit, OnDestroy {
   }
 
   loadFavorites(){
-    this.recipeService.getFavoriteRecipes().pipe(
-      takeUntil(this.destroy$),
-      tap((recipes) => {
-        this.recipesData = recipes
-        this.recipesData = this.recipesData.filter((recipe: { id: any; }) => recipe.id !== this.deletedRecipeId)
-      })
-    ).subscribe();
+    const userId= localStorage.getItem("loggedInUserId")
+    if(userId){
+      this.recipeService.getFavoriteRecipes(userId).pipe(
+        takeUntil(this.destroy$),
+        tap((recipes) => {
+          this.recipesData = recipes;
+          this.recipesData = this.recipesData.filter((recipe: { id: any; }) => recipe.id !== this.deletedRecipeId)
+          console.log(this.recipesData);
+        })
+      ).subscribe();
+    }
   }
 
   ViewRecipe(id: any){

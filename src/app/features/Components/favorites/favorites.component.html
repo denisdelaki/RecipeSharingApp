@@ -24,5 +24,12 @@
             </div>
         </div>
     </div>
+     <!-- Message Section when No Recipes Available -->
+  <div class="row" *ngIf="recipesData && recipesData.length === 0">
+    <div class="col text-center">
+      <h3>No recipes available.</h3>
+      <p></p>
+    </div>
+  </div>
 </div>
 

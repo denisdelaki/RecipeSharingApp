@@ -100,8 +100,8 @@ createRecipes(FormData: any): Observable<any> {
 }
 
 //get favorite recipes
-getFavoriteRecipes(): Observable<any> {
-  return this.http.get<any[]>(this.apiUrl2).pipe(
+getFavoriteRecipes(userId: any): Observable<any> {
+  return this.http.get<any[]>(`${this.apiUrl2}?userId=${userId}`).pipe(
     catchError((error: HttpErrorResponse) => {
       this.showErrorMessage('Failed to fetch favorite recipes, server error');
       return throwError(error);
