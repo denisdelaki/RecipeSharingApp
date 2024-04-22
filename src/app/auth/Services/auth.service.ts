@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, Observable, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, Observable, tap, throwError } from 'rxjs';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -9,6 +9,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class AuthService {
   //User management API url
   private apiUrl = 'http://localhost:3000/users/';
+
+  private isAuthenticated = false;
 
   private isSignupSource = new BehaviorSubject<boolean>(false);
   isSignup$ = this.isSignupSource.asObservable();
@@ -25,30 +27,33 @@ export class AuthService {
 
   //login of the user
   login(userId?: string): Observable<any> {
-    if (userId) {
-      // Fetch data for a single user
-      return this.http.get<any>(`${this.apiUrl}${userId}`).pipe(
-        catchError((error: HttpErrorResponse) => {
-          this.showErrorMessage('Failed to log in');
-          return throwError(error);
-        })
-      );
-    } else {
-            // Fetch data for multiple users
-      return this.http.get<any>(this.apiUrl).pipe(
-        catchError((error: HttpErrorResponse) => {
-          this.showErrorMessage('Failed to fetch users');
-          return throwError(error);
-        })
-      );
-    }
-  };
+    const url = userId ? `${this.apiUrl}${userId}` : this.apiUrl;
+    const errorMessage = userId ? 'Failed to log in' : 'Failed to fetch users';
+  
+    return this.http.get<any>(url).pipe(
+      tap((response: any) => {
+        // Success
+        this.isAuthenticated = true;
+        
+      }),
+      catchError((error: HttpErrorResponse) => {
+        // Error
+        this.showErrorMessage(errorMessage);
+        return throwError(error);
+      })
+    );
+  }
+  
 
 
   //signup of the user 
   signup(userData:any): Observable<any>{
     console.log(userData);
     return this.http.post<any>(this.apiUrl, userData);
+  }
+
+  isAuthenticatedUser(): boolean {
+    return this.isAuthenticated;
   }
 
      // Method to show error message using MatSnackBar
