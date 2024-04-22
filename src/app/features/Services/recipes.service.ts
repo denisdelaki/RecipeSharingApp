@@ -8,7 +8,7 @@ import { catchError, map, Observable, throwError,} from 'rxjs';
 })
 export class RecipesService {
   private apiUrl = 'http://localhost:3000/recipes/';
-  private apiUrl2 = 'http://localhost:3000/favoriterecipes';
+  private apiUrl2 = 'http://localhost:3000/favoriterecipes/';
   private apiUrl3 = 'http://localhost:3000/recommended';
 
   
@@ -81,7 +81,7 @@ createRecipes(FormData: any): Observable<any> {
   deleteRecipe(recipeId: string): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}${recipeId}`).pipe(
       catchError((error: HttpErrorResponse) => {
-        this.showErrorMessage('Failed to delete recipe, server error e');
+        this.showErrorMessage('Failed to delete recipe, server error ');
         return throwError(error);
       })
     );
@@ -110,7 +110,7 @@ getFavoriteRecipes(): Observable<any> {
 }
 
 //delete favorite recipe
-deleteFavorite(id: number): Observable<any> {
+deleteFavorite(id: string): Observable<any> {
   return this.http.delete<any>(`${this.apiUrl2}${id}`).pipe(
     catchError((error: HttpErrorResponse) => {
       this.showErrorMessage('Failed to delete favorite recipe, server error');
@@ -118,6 +118,7 @@ deleteFavorite(id: number): Observable<any> {
     })
   );
 }
+
 
 
 //recipe recommendations

@@ -155,47 +155,7 @@
   ],
   "favoriterecipes": [
     {
-      "id": "b65a",
-      "title": "Sukuma Wiki",
-      "ingredients": "kales",
-      "instructions": "chop kales and fry them",
-      "recipePicture": "https://images.unsplash.com/photo-1523143093721-2cb542ba354d?q=80&w=2085&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "category": "Lunch",
-      "time": "20",
-      "userId": "19e0"
-    },
-    {
-      "id": "4654",
-      "title": "Egg Manchurian",
-      "ingredients": "eggs",
-      "instructions": "Fry the eggs with manchurian",
-      "recipePicture": "https://www.licious.in/blog/wp-content/uploads/2021/09/shutterstock_1650877375.jpg",
-      "category": "Snack",
-      "time": "30",
-      "userId": "19e0"
-    },
-    {
-      "id": "aad0",
-      "title": "Pure Vegetable Bowl",
-      "ingredients": "vegatables",
-      "instructions": "chop the vegetables and serve with meat",
-      "recipePicture": "https://images.unsplash.com/photo-1528751086790-81a64658fc53?q=80&w=2848&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "category": "Dinner",
-      "time": "45",
-      "userId": "19e0"
-    },
-    {
-      "id": "38ae",
-      "title": "Sukuma Wiki",
-      "ingredients": "kales",
-      "instructions": "chop kales and fry them",
-      "recipePicture": "https://images.unsplash.com/photo-1523143093721-2cb542ba354d?q=80&w=2085&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "category": "Lunch",
-      "time": "20",
-      "userId": "19e0"
-    },
-    {
-      "id": "4204",
+      "id": "6378",
       "title": "Egg Masala Ramen",
       "ingredients": [
         {
@@ -225,7 +185,7 @@
       "userId": "19e0"
     },
     {
-      "id": "5d98",
+      "id": "36cc",
       "title": "Pure Vegetable Bowl",
       "ingredients": [
         {
@@ -235,41 +195,32 @@
       "instructions": [
         {
           "instruction": "chop the vegetables"
+        },
+        {
+          "instruction": "serve with meat"
         }
       ],
-      "recipePicture": "https://th.bing.com/th/id/R.c655f6ad4bf1a12f920298b6e087200b?rik=KNLe3mk2jiJUjA&riu=http%3a%2f%2fcontent.kens5.com%2fphoto%2f2017%2f10%2f22%2fvegetables_1508727313637_11456014_ver1.0.jpg&ehk=Fq8Eoa9aKzsUPDZ8DtBhyVemrHDc8oqvw4qs3PvJii8%3d&risl=&pid=ImgRaw&r=0",
-      "category": "Lunch",
-      "time": 34,
-      "userId": "ac41"
-    },
-    {
-      "id": "a846",
-      "title": "smocha",
-      "ingredients": "chapati, smokie, sauce",
-      "instructions": "wrap chapati on smokie and add tomatoes sauce",
-      "recipePicture": "https://i.ytimg.com/vi/8U1_BLHOY-E/maxresdefault.jpg",
-      "category": "Snack",
-      "time": "10",
+      "recipePicture": "https://images.unsplash.com/photo-1528751086790-81a64658fc53?q=80&w=2848&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "category": "Dinner",
+      "time": 15,
       "userId": "19e0"
     },
     {
-      "id": "e908",
-      "title": "smocha",
-      "ingredients": "chapati, smokie, sauce",
-      "instructions": "wrap chapati on smokie and add tomatoes sauce",
-      "recipePicture": "https://i.ytimg.com/vi/8U1_BLHOY-E/maxresdefault.jpg",
+      "id": "db5a",
+      "title": "Egg Manchurian",
+      "ingredients": [
+        {
+          "ingredient": "eggs"
+        }
+      ],
+      "instructions": [
+        {
+          "instruction": "Fry the eggs with manchurian"
+        }
+      ],
+      "recipePicture": "https://www.licious.in/blog/wp-content/uploads/2021/09/shutterstock_1650877375.jpg",
       "category": "Snack",
-      "time": "10",
-      "userId": "19e0"
-    },
-    {
-      "id": "8482",
-      "title": "smocha",
-      "ingredients": "chapati, smokie, sauce",
-      "instructions": "wrap chapati on smokie and add tomatoes sauce",
-      "recipePicture": "https://i.ytimg.com/vi/8U1_BLHOY-E/maxresdefault.jpg",
-      "category": "Snack",
-      "time": "10",
+      "time": 30,
       "userId": "19e0"
     }
   ],
