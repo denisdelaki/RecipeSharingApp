@@ -4,7 +4,7 @@
       "id": "19e0",
       "email": "denisdelaki@gmail.com",
       "password": "123456",
-      "fullName": "Denis kipyegon",
+      "fullName": "Denis ",
       "phoneNumber": "+254712345789",
       "profilePicture": "https://avatars.githubusercontent.com/u/104421511?v=4",
       "address": "33, 20400 Bomet",
@@ -44,46 +44,6 @@
       "recipePicture": "https://images.unsplash.com/photo-1523143093721-2cb542ba354d?q=80&w=2085&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "category": "Lunch",
       "time": "20"
-    },
-    {
-      "id": "2292",
-      "title": "smocha",
-      "ingredients": "chapati, smokie, sauce",
-      "instructions": "wrap chapati on smokie and add tomatoes sauce",
-      "time": "10",
-      "recipePicture": "https://i.ytimg.com/vi/8U1_BLHOY-E/maxresdefault.jpg",
-      "category": "Snack",
-      "userId": "19e0"
-    },
-    {
-      "id": "6f63",
-      "title": "Egg Masala Ramen",
-      "ingredients": [
-        {
-          "ingredient": "eggs"
-        },
-        {
-          "ingredient": " masala"
-        },
-        {
-          "ingredient": " ramen"
-        }
-      ],
-      "instructions": [
-        {
-          "instruction": "fry the eggs"
-        },
-        {
-          "instruction": "add masala."
-        },
-        {
-          "instruction": " Server hot "
-        }
-      ],
-      "time": 30,
-      "recipePicture": "https://bing.com/th?id=OSK.70d01507ed24dad42e5ce528ecae1324",
-      "category": "Dinner",
-      "userId": "19e0"
     },
     {
       "id": "b908",
@@ -151,6 +111,21 @@
       "recipePicture": "https://th.bing.com/th/id/R.c655f6ad4bf1a12f920298b6e087200b?rik=KNLe3mk2jiJUjA&riu=http%3a%2f%2fcontent.kens5.com%2fphoto%2f2017%2f10%2f22%2fvegetables_1508727313637_11456014_ver1.0.jpg&ehk=Fq8Eoa9aKzsUPDZ8DtBhyVemrHDc8oqvw4qs3PvJii8%3d&risl=&pid=ImgRaw&r=0",
       "category": "Lunch",
       "userId": "ac41"
+    },
+    {
+      "id": "4ec3",
+      "title": "Pure Vegetable Bowl",
+      "ingredients": [
+        "vegetables"
+      ],
+      "instructions": [
+        "chop the vegetables",
+        "boil"
+      ],
+      "time": "90",
+      "recipePicture": "https://th.bing.com/th/id/R.c655f6ad4bf1a12f920298b6e087200b?rik=KNLe3mk2jiJUjA&riu=http%3a%2f%2fcontent.kens5.com%2fphoto%2f2017%2f10%2f22%2fvegetables_1508727313637_11456014_ver1.0.jpg&ehk=Fq8Eoa9aKzsUPDZ8DtBhyVemrHDc8oqvw4qs3PvJii8%3d&risl=&pid=ImgRaw&r=0",
+      "category": "Dinner",
+      "userId": "19e0"
     }
   ],
   "favoriterecipes": [
@@ -165,32 +140,38 @@
       "userId": "19e0"
     },
     {
-      "id": "6f63",
-      "title": "Egg Masala Ramen",
+      "id": "b908",
+      "title": "Egg Manchurian",
       "ingredients": [
         {
           "ingredient": "eggs"
-        },
-        {
-          "ingredient": " masala"
-        },
-        {
-          "ingredient": " ramen"
         }
       ],
       "instructions": [
         {
-          "instruction": "fry the eggs"
-        },
-        {
-          "instruction": "add masala."
-        },
-        {
-          "instruction": " Server hot "
+          "instruction": "Fry the eggs with manchurian"
         }
       ],
-      "recipePicture": "https://bing.com/th?id=OSK.70d01507ed24dad42e5ce528ecae1324",
-      "category": "Dinner",
+      "recipePicture": "https://www.licious.in/blog/wp-content/uploads/2021/09/shutterstock_1650877375.jpg",
+      "category": "Snack",
+      "time": 30,
+      "userId": "19e0"
+    },
+    {
+      "id": "b908",
+      "title": "Egg Manchurian",
+      "ingredients": [
+        {
+          "ingredient": "eggs"
+        }
+      ],
+      "instructions": [
+        {
+          "instruction": "Fry the eggs with manchurian"
+        }
+      ],
+      "recipePicture": "https://www.licious.in/blog/wp-content/uploads/2021/09/shutterstock_1650877375.jpg",
+      "category": "Snack",
       "time": 30,
       "userId": "19e0"
     }
@@ -302,6 +283,24 @@
       ],
       "recipePicture": "https://bing.com/th?id=OSK.70d01507ed24dad42e5ce528ecae1324",
       "category": "Dinner",
+      "time": 30,
+      "userId": "19e0"
+    },
+    {
+      "id": "8338",
+      "title": "Egg Manchurian",
+      "ingredients": [
+        {
+          "ingredient": "eggs"
+        }
+      ],
+      "instructions": [
+        {
+          "instruction": "Fry the eggs with manchurian"
+        }
+      ],
+      "recipePicture": "https://www.licious.in/blog/wp-content/uploads/2021/09/shutterstock_1650877375.jpg",
+      "category": "Snack",
       "time": 30,
       "userId": "19e0"
     }
