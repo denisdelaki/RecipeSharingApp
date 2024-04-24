@@ -76,6 +76,9 @@ if (this.AddRecipe.valid){
     })
   this.dialogRef.close();
 }
+else{
+  this.openSnackBar('Invalid form. Please fill in all required fields.', 'error-notification');
+}
 }
 addIngredient() {
   this.ingredientForms.push(this.formBuilder.control('', Validators.required));

@@ -5,17 +5,36 @@
 //     Expectation: Component should be truthy
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NavigationComponent } from './navigation.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { BehaviorSubject, of } from 'rxjs';
+import { ConfirmLogoutDialogComponent } from '../../Interceptor/confirm-logout-dialog/confirm-logout-dialog.component';
+import { DataTransmitService } from '../../Services/data-transmit.service';
 
 describe('NavigationComponent', () => {
   let component: NavigationComponent;
   let fixture: ComponentFixture<NavigationComponent>;
+  let dialog: MatDialog;
+  let dataTransmitService: DataTransmitService;
 
+  class MatDialogMock {
+    open() {
+      return { afterClosed: () => of(true) };
+    }
+  }
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NavigationComponent]
+      declarations: [NavigationComponent],
+      imports: [HttpClientModule, MatDialogModule],
+      providers: [
+        { provide: MatDialog, useClass: MatDialogMock },
+        { provide: DataTransmitService, useValue: { isLoggedIn$: of(true) } }
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(NavigationComponent);
+    dialog = TestBed.inject(MatDialog);
+    dataTransmitService = TestBed.inject(DataTransmitService);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -82,5 +101,39 @@ describe('NavigationComponent', () => {
       expect(testimonialsLink.style.color).toEqual('black');
       expect(aboutUsLink.style.color).toEqual('black');
     });
+
+
   });
+
+  it('should emit false on Login()', () => {
+    const emitSpy = jest.spyOn(component.isSignup, 'emit');
+    component.Login();
+    expect(emitSpy).toHaveBeenCalledWith(false);
+  });
+
+  it('should emit true on Signup()', () => {
+    const emitSpy = jest.spyOn(component.isSignup, 'emit');
+    component.Signup();
+    expect(emitSpy).toHaveBeenCalledWith(true);
+  });
+
+  it('should open dialog on confirmlogout()', () => {
+    const openDialogSpy = jest.spyOn(dialog, 'open').mockReturnValue({ afterClosed: () => of(true) } as any);
+    component.confirmlogout();
+    expect(openDialogSpy).toHaveBeenCalledWith(ConfirmLogoutDialogComponent, { width: '350px' });
+  });
+
+  it('should remove loggedInUserId and set isLoggedIn to false on Logout()', () => {
+    localStorage.setItem('loggedInUserId', '123');
+    component.Logout();
+    expect(localStorage.getItem('loggedInUserId')).toBeFalsy();
+    expect(component.isLoggedIn).toBe(false);
+  });
+
+  it('should set isLoggedIn to false when UserId does not exist in localStorage', () => {
+    localStorage.removeItem('loggedInUserId');
+    component.Logout();
+    expect(component.isLoggedIn).toBe(false);
+  })
+
 });

@@ -145,4 +145,25 @@ describe('AuthService', () => {
     req.error(errorEvent); 
   });
 
+// This test checks if isAuthenticatedUser returns true after successful login
+it('should return true after login', () => {
+  // Mock response from the server
+  const mockUser = { id: '123', name: 'John Doe' };
+
+  // Subscribe to the login method and expect the isAuthenticatedUser method to return true after successful login
+  service.login().subscribe(() => {
+    expect(service.isAuthenticatedUser()).toBe(true);
+  });
+
+  // Expect an HTTP request to login, and provide a mock response from the server
+  const req = httpMock.expectOne(`http://localhost:3000/users/`);
+  expect(req.request.method).toBe('GET');
+  req.flush(mockUser);
+});
+
+it('isAuthenticatedUser should return false initially when not authenticated', () => {
+  expect(service.isAuthenticatedUser()).toBe(false);
+})
+
+
 });

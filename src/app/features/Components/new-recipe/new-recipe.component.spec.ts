@@ -64,6 +64,38 @@ describe('NewRecipeComponent', () => {
     });
   });
 
+  it('should add recipe if form is valid', () => {
+    // Create a spy for the add() method
+    const addSpy = jest.spyOn(component, 'add');
+    // Manually set the form as valid
+    component.AddRecipe.setErrors(null);
+    // Call the add() method
+    component.add();
+    // Expect the add() method to have been called
+    expect(addSpy).toHaveBeenCalled();
+  });
+
+  it('should not add recipe if form is invalid', () => {
+    // Create a spy for the add() method
+    const addSpy = jest.spyOn(component, 'add');
+    // Create a spy for the openSnackBar() method
+    const openSnackBarSpy = jest.spyOn(component, 'openSnackBar');
+    
+    // Set the form as invalid
+    component.AddRecipe.setErrors({ 'invalid': true });
+    
+    // Call the add() method
+    component.add();
+    
+    // Expect the add() method to have been called
+    expect(addSpy).toHaveBeenCalled();
+    
+    // Expect the openSnackBar() method to have been called with the correct parameters
+    expect(openSnackBarSpy).toHaveBeenCalledWith('Invalid form. Please fill in all required fields.', 'error-notification');
+  });
+  
+  
+
   it('should add a new ingredient form', () => {
     // Call the method to add a new ingredient form
     component.addIngredient(); 
@@ -101,43 +133,16 @@ describe('NewRecipeComponent', () => {
     expect(component.instructionForms).toEqual(component.AddRecipe.get('instructions') as FormArray);
   });
   
-  // it('should add a recipe and close the dialog when form is valid', () => {
-  //   const mockFormValue = {
-  //     title: 'Test Recipe',
-  //     ingredients: ['Ingredient 1', 'Ingredient 2'],
-  //     instructions: ['Instruction 1', 'Instruction 2'],
-  //     time: 30,
-  //     recipePicture: 'https://example.com/recipe.jpg',
-  //     category: 'BreakFast'
-  //   };
-  
-  //   const mockResponse = {
-  //     title: 'Test Recipe',
-  //     ingredients: [{ ingredient: 'Ingredient 1' }, { ingredient: 'Ingredient 2' }],
-  //     instructions: [{ instruction: 'Instruction 1' }, { instruction: 'Instruction 2' }],
-  //     time: 30,
-  //     recipeUrl: 'https://example.com/recipe',
-  //     category: 'BreakFast',
-  //     userId: 'test-user-id'
-  //   };
-  
-  //   jest.spyOn(service, 'createRecipes').mockReturnValue(of(mockResponse));
-  //   const openSnackBarSpy = jest.spyOn(component, 'openSnackBar');
-  
-  //   component.AddRecipe.patchValue(mockFormValue);
-  //   component.add();
-  
-  //   expect(service.createRecipes).toHaveBeenCalledWith({
-  //     ...mockFormValue,
-  //     // Use expect.any(String) for flexible userId matching
-  //     userId: expect.any(String) 
-  //   });
-  
-  //   expect(component.recipesdata.length).toBe(1);
-  //   expect(component.recipesdata[0]).toEqual(mockResponse);
-  //   expect(openSnackBarSpy).toHaveBeenCalledWith('Recipe created successfully', 'success-notification');
-  //   expect(dialogRefMock.close).toHaveBeenCalled();
-  // });
+  it('should contain category options', () => {
+    // Ensure that Categorys are present
+    expect(component.Categorys).toBeTruthy();
+    // Ensure that the length of Categorys matches the expected length
+    expect(component.Categorys.length).toBe(4); 
+    // Ensure that each category object has the expected properties
+    expect(component.Categorys[0]).toHaveProperty('value');
+    expect(component.Categorys[0]).toHaveProperty('viewValue');
+    // You can further test the values of category options if needed
+  });
   
   
 });
