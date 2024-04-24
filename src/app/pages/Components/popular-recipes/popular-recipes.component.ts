@@ -19,13 +19,11 @@ export class PopularRecipesComponent implements OnInit {
 
   fetchRecipes() {
     this.recipesService.getRecommendedRecipes().subscribe(recipes => {
-      console.log(recipes);
       this.recipesData = recipes;
     })
   }
 
   viewrecipe(recipeid: any){
-    console.log("view recipe", recipeid)
     this.router.navigate(['/features/recipedetail/', recipeid])
   }
 }

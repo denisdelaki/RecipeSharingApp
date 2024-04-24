@@ -142,7 +142,7 @@ getRecommendedRecipes(recipeId?: string): Observable<any> {
   }
 
     // Method to show error message using MatSnackBar
-    private showErrorMessage(message: string): void {
+    public showErrorMessage(message: string): void {
       this.snackBar.open(message, 'Close', {
         duration: 5000, 
         panelClass: ['error-snackbar'] 
