@@ -5,7 +5,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { RecipesService } from '../../Services/recipes.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 describe('FavoritesComponent', () => {
   let component: FavoritesComponent;
@@ -14,6 +15,7 @@ describe('FavoritesComponent', () => {
   let mockSnackBar: Partial<MatSnackBar>;
   let mockRouter: Partial<Router>;
   let mockMatDialog: jest.Mocked<MatDialog>;
+  let httpMock: HttpTestingController;
 
   beforeEach(async () => {
     mockRecipesService = {
@@ -32,7 +34,7 @@ describe('FavoritesComponent', () => {
     mockRouter = {
       navigate: jest.fn()
     };
-
+    
     await TestBed.configureTestingModule({
       declarations: [FavoritesComponent],
       providers: [
@@ -40,13 +42,16 @@ describe('FavoritesComponent', () => {
         { provide: MatSnackBar, useValue: mockSnackBar },
         { provide: MatDialog, useValue: mockMatDialog },
         { provide: Router, useValue: mockRouter },
-        { provide: MatDialog, useValue: mockMatDialog }
+        { provide: MatDialog, useValue: mockMatDialog },
+        { provide: HttpTestingController, useValue: httpMock },
+        { provide: HttpClient, useValue: HttpClient },
       ],
-      imports: [HttpClientModule]
+      imports: [HttpClientModule, HttpClientTestingModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(FavoritesComponent);
     component = fixture.componentInstance;
+    httpMock = TestBed.inject(HttpTestingController);
     fixture.detectChanges();
   });
 
@@ -103,6 +108,21 @@ describe('FavoritesComponent', () => {
       duration: 2000,
       panelClass: ['success-notification']
     }));
+  });
+
+  it('should call getFavoriteRecipes method of RecipesService', () => {
+    const userId = '123';
+    const expectedUrl = `http://localhost:3000/api/favorites/${userId}`;
+    component.loadFavorites();
+
+    const req = httpMock.expectOne(expectedUrl);
+    expect(req.request.method).toBe('GET');
+
+    req.flush({ data: [] });
+
+    expect(component.recipesData.length).toBe(0);
+
+    httpMock.verify();
   });
   
   

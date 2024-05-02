@@ -27,4 +27,10 @@ describe('AppComponent', () => {
     expect(component.title).toEqual('RecipeSharingApp');
   });
 
+  it('should log isSignup change', () => {
+    const spy = jest.spyOn(console, 'log');
+    component.onIsSignupChange(true);
+    expect(spy).toHaveBeenCalledWith('isSignup changed:', true);
+  })
+
 });

@@ -2,12 +2,22 @@ import { TestBed, waitForAsync } from '@angular/core/testing';
 import { HttpClientModule, HttpErrorResponse } from '@angular/common/http';
 import { RecipesService } from './recipes.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { of } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 describe('RecipesService', () => {
   let service: RecipesService;
   let httpMock: HttpTestingController;
+  let httpClientSpy: { get: jest.Mock };
+  let matSnackBarMock: { open: jest.Mock };
 
   beforeEach(async () => {
+    httpClientSpy = { get: jest.fn() };
+
+    matSnackBarMock = { open: jest.fn() };
+
+ service = new RecipesService(httpClientSpy as any, matSnackBarMock as unknown as MatSnackBar);
+
     await TestBed.configureTestingModule({
       imports: [HttpClientModule, HttpClientTestingModule], 
       providers: [RecipesService]
@@ -277,4 +287,58 @@ describe('RecipesService', () => {
     req.flush(mockResponse);
   });
 
+});
+
+describe('searchRecipes', () => {
+  let service: RecipesService;
+
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientModule],
+      providers: [RecipesService]
+    }).compileComponents();
+
+    service = TestBed.inject(RecipesService);
+  }));
+
+  it('should search recipes based on category or title when user is logged in', () => {
+    const searchTerm = 'test';
+    const userId = 'testUserId';
+    const mockRecipes = [
+      { id: '1', title: 'Test Recipe 1', category: 'Test Category 1' },
+      { id: '2', title: 'Test Recipe 2', category: 'Test Category 2' }
+    ];
+  
+    // Mocking getmyRecipe method
+    jest.spyOn(service, 'getmyRecipe').mockReturnValue(of(mockRecipes));
+  
+    service.searchRecipes(searchTerm).subscribe(recipes => {
+      expect(recipes.length).toBe(2);
+      expect(recipes).toEqual(mockRecipes); // Ensure returned recipes match mock data
+  
+      // Verify that getmyRecipe is called only once after the subscribe callback
+      expect(service.getmyRecipe).toHaveBeenCalledWith(userId);
+      expect(service.getmyRecipe).toHaveBeenCalledTimes(1);
+    });
+  });
+  
+
+  it('should search recipes based on category or title when user is not logged in', () => {
+    const searchTerm = 'test';
+    const mockRecipes = [
+      { id: '1', title: 'Test Recipe 1', category: 'Test Category 1' },
+      { id: '2', title: 'Test Recipe 2', category: 'Test Category 2' }
+    ];
+  
+    // Mocking getRecipes method
+    jest.spyOn(service, 'getRecipes').mockReturnValue(of(mockRecipes));
+  
+    service.searchRecipes(searchTerm).subscribe(recipes => {
+      expect(recipes).toEqual(mockRecipes); 
+  
+      // Verify that getRecipes is called only once after the subscribe callback
+      expect(service.getRecipes).toHaveBeenCalledTimes(1);
+    });
+  });
+  
 });
