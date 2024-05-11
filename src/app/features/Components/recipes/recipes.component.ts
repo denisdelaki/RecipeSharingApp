@@ -30,7 +30,7 @@ export class RecipesComponent implements OnInit, OnDestroy {
     private snackBar: MatSnackBar,
     private route: ActivatedRoute,
     private router: Router,
-    private recipesService: RecipesService,
+    public recipesService: RecipesService,
     private transferService: DataTransmitService
   ) { 
     this.route.url.subscribe(url => {

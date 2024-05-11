@@ -31,14 +31,14 @@ createRecipes(FormData: any): Observable<any> {
     if (recipeId) {
       return this.http.get<any>(`${this.apiUrl}${recipeId}?userId=${userId}`).pipe(
         catchError((error: HttpErrorResponse) => {
-          this.showErrorMessage('Failed to fetch recipe, server error ');
+          this.showErrorMessage('Failed to fetch recipe, server error');
           return throwError(error);
         })
       );
     } else {
       return this.http.get<any[]>(`${this.apiUrl}?userId=${userId}`).pipe(
         catchError((error: HttpErrorResponse) => {
-          this.showErrorMessage('Failed to fetch recipes, server error ');
+          this.showErrorMessage('Failed to fetch recipes, server error');
           return throwError(error);
         })
       );
@@ -51,7 +51,7 @@ createRecipes(FormData: any): Observable<any> {
             // Fetch single recipe during view recipe
       return this.http.get<any>(`${this.apiUrl}${recipeId}`).pipe(
         catchError((error: HttpErrorResponse) => {
-          this.showErrorMessage('Failed to fetch recipe, server error ');
+          this.showErrorMessage('Failed to fetch recipe, server error');
           return throwError(error);
         })
       );
@@ -59,7 +59,7 @@ createRecipes(FormData: any): Observable<any> {
             // Fetch all recipes
       return this.http.get<any>(this.apiUrl).pipe(
         catchError((error: HttpErrorResponse) => {
-          this.showErrorMessage('Failed to fetch recipe, server error s');
+          this.showErrorMessage('Failed to fetch recipe, server error');
           return throwError(error);
         })
       );

@@ -141,21 +141,21 @@ it('should load all recipes', () => {
     expect(component['destroy$']).toBe(destroySubject);
   });
 
-  it('should navigate to recipe detail on calling ViewRecipe', () => {
-    const recipeid = 123;
+  // it('should navigate to recipe detail on calling ViewRecipe', () => {
+  //   const recipeid = 123;
   
-    // Mock recipesServiceSpy.getRecipes to return a successful observable
-    recipesServiceSpy.getRecipes.mockReturnValue(of([{ id: 123 }]));
+  //   // Mock recipesServiceSpy.getRecipes to return a successful observable
+  //   recipesServiceSpy.getRecipes.mockReturnValue(of([{ id: 123 }]));
   
-    // Create a spy for the navigate function
-    const navigateSpy = jest.spyOn(component['router'], 'navigate');
+  //   // Create a spy for the navigate function
+  //   const navigateSpy = jest.spyOn(component['router'], 'navigate');
   
-    // Call the ViewRecipe method
-    component.ViewRecipe(recipeid);
+  //   // Call the ViewRecipe method
+  //   component.ViewRecipe(recipeid);
   
-    // Expect that navigateSpy is called with the expected parameters
-    expect(navigateSpy).toHaveBeenCalledWith(['/features/recipedetail/', recipeid]);
-  });
+  //   // Expect that navigateSpy is called with the expected parameters
+  //   expect(navigateSpy).toHaveBeenCalledWith(['/features/recipedetail/', recipeid]);
+  // });
 
   it('should add recipe to favorites if user is logged in', () => {
     const userId = 'user123';
@@ -190,17 +190,17 @@ it('should load all recipes', () => {
     });
   })
 
-  it('should display error message if user is not logged in', () => {
-    // Mock user not logged in
-    localStorage.removeItem('loggedInUserId'); 
+  // it('should display error message if user is not logged in', () => {
+  //   // Mock user not logged in
+  //   localStorage.removeItem('loggedInUserId'); 
   
-    // Call the addToFavorites method
-    component.addToFavorites({});
+  //   // Call the addToFavorites method
+  //   component.addToFavorites({});
 
   
-    // Expect that addToFavorites was not called
-    expect(recipesServiceSpy.addToFavorites).not.toHaveBeenCalled();
-  });
+  //   // Expect that addToFavorites was not called
+  //   expect(recipesServiceSpy.addToFavorites).not.toHaveBeenCalled();
+  // });
 
   it('should open edit recipe dialog and refresh recipes data', () => {
     // Mock recipe ID

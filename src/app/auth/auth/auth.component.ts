@@ -114,12 +114,9 @@ login() {
           //emit the isLoggedInChange event
           this.dataTransmitService.transmitIsLoggedIn(true);
 
-          //open snackbar
-          setTimeout(() => {
-            this.openSnackBar('Registered  successfully', 'success-notification');
-            this.authService.login();
-            this.router.navigate(['/features/myprofile']);
-          }, 2000);
+          this.openSnackBar('Registered  successfully', 'success-notification');
+           //navigate to the my profile page
+           this.router.navigate(['/features/myprofile']);
           });
        
       }

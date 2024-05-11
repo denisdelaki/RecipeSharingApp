@@ -111,19 +111,28 @@ describe('FavoritesComponent', () => {
   });
 
   it('should call getFavoriteRecipes method of RecipesService', () => {
-    const userId = '123';
-    const expectedUrl = `http://localhost:3000/api/favorites/${userId}`;
-    component.loadFavorites();
-
-    const req = httpMock.expectOne(expectedUrl);
-    expect(req.request.method).toBe('GET');
-
-    req.flush({ data: [] });
-
-    expect(component.recipesData.length).toBe(0);
-
-    httpMock.verify();
+    // Arrange
+    const userId = 'testUserId'; // Assuming a test user ID
+    // Sample recipes data
+    const mockRecipes = [{ id: '1', name: 'Recipe 1' }, { id: '2', name: 'Recipe 2' }];
+    // Mocking the getFavoriteRecipes method to return sample recipes 
+    mockRecipesService.getFavoriteRecipes = jest.fn().mockReturnValue(of(mockRecipes)); 
+  
+    // Set the userId in localStorage
+    localStorage.setItem('loggedInUserId', userId);
+  
+    // Act
+    component.loadFavorites(); // Call the loadFavorites method
+  
+    // Assert
+    // Verify that getFavoriteRecipes is called with the correct user ID
+    expect(mockRecipesService.getFavoriteRecipes).toHaveBeenCalledWith(userId); 
+    // Verify that the recipesData property is set correctly with the mock recipes data
+    expect(component.recipesData).toEqual(mockRecipes); 
   });
+  
+  
+
   
   
   afterEach(() => {

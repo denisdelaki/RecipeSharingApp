@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, Observable, tap, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, map, Observable, tap, throwError } from 'rxjs';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -47,10 +47,19 @@ export class AuthService {
 
 
   //signup of the user 
-  signup(userData:any): Observable<any>{
-    console.log(userData);
-    return this.http.post<any>(this.apiUrl, userData);
-  }
+signup(userData: any): Observable<any> {
+  // Check if the user already exists in the database
+  return this.http.get<any[]>(`${this.apiUrl}`).pipe(
+    map(users => {
+      if (users.some(user => user.email === userData.email)) {
+        this.showErrorMessage('User already exists');
+        // throw new Error('User already exists');
+      }
+      // If the user does not exist, proceed with the signup process
+      return this.http.post<any>(`${this.apiUrl}`, userData);
+    })
+  );
+}
 
   isAuthenticatedUser(): boolean {
     return this.isAuthenticated;

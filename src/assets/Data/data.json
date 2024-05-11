@@ -158,21 +158,24 @@
       "userId": "19e0"
     },
     {
-      "id": "b908",
-      "title": "Egg Manchurian",
+      "id": "5d7d",
+      "title": "Pure Vegetable Bowl",
       "ingredients": [
         {
-          "ingredient": "eggs"
+          "ingredient": "vegetables"
         }
       ],
       "instructions": [
         {
-          "instruction": "Fry the eggs with manchurian"
+          "instruction": "chop the vegetables"
+        },
+        {
+          "instruction": "serve with meat"
         }
       ],
-      "recipePicture": "https://www.licious.in/blog/wp-content/uploads/2021/09/shutterstock_1650877375.jpg",
-      "category": "Snack",
-      "time": 30,
+      "recipePicture": "https://images.unsplash.com/photo-1528751086790-81a64658fc53?q=80&w=2848&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "category": "Dinner",
+      "time": 15,
       "userId": "19e0"
     }
   ],
@@ -288,6 +291,24 @@
     },
     {
       "id": "8338",
+      "title": "Egg Manchurian",
+      "ingredients": [
+        {
+          "ingredient": "eggs"
+        }
+      ],
+      "instructions": [
+        {
+          "instruction": "Fry the eggs with manchurian"
+        }
+      ],
+      "recipePicture": "https://www.licious.in/blog/wp-content/uploads/2021/09/shutterstock_1650877375.jpg",
+      "category": "Snack",
+      "time": 30,
+      "userId": "19e0"
+    },
+    {
+      "id": "48b5",
       "title": "Egg Manchurian",
       "ingredients": [
         {

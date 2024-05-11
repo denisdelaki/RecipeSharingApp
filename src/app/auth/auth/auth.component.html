@@ -28,9 +28,11 @@
             </div>
           </div>
           <!--Buttons -->
-          <button type="submit" class="btn btn-primary btn-block" style="background-color: maroon; color: white; border: none;">
+          <button type="submit" class="btn btn-primary btn-block" 
+            style="background-color: maroon; color: white; border: none;"
+            [disabled]="(isSignup && !signupform.valid) || (!isSignup && !loginform.valid)">
             {{ isSignup ? 'Sign Up' : 'Login' }}
-          </button>
+           </button>
         </form>
 
         <div class="mt-3 text-center">
