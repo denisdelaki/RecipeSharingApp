@@ -1,8 +1,9 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Inject, OnInit, Output, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataTransmitService } from '../../Services/data-transmit.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmLogoutDialogComponent } from '../../Interceptor/confirm-logout-dialog/confirm-logout-dialog.component';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-navigation',
@@ -13,20 +14,25 @@ export class NavigationComponent implements OnInit {
   @Output() isSignup: EventEmitter<boolean> = new EventEmitter<boolean>();
   isLoggedIn: boolean = false;
 
-  constructor(private router: Router, 
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private router: Router, 
     private dialog: MatDialog,
     private dataTransmitService: DataTransmitService) { }
 
     ngOnInit() {
-    const UserId = localStorage.getItem('loggedInUserId');
-    
+      let UserId;
+      if (isPlatformBrowser(this.platformId)) {
+        const localStorage = window.localStorage;
+         UserId = localStorage.getItem('loggedInUserId');
+      }
       this.dataTransmitService.isLoggedIn$.subscribe(isLoggedIn => {  
         this.isLoggedIn = isLoggedIn;
       });
-      // Check if the user ID exists in the local storage to determine isLoggedIn status
+     // Check if the user ID exists in the local storage to determine isLoggedIn status
       if (UserId) {
-        this.isLoggedIn=true;
-      }else{
+        this.isLoggedIn = true;
+      } else {
         this.isLoggedIn = false;
       }
       console.log("isLoggedIn", this.isLoggedIn);
