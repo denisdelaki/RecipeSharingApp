@@ -7,9 +7,9 @@ import { catchError, map, Observable, throwError,} from 'rxjs';
   providedIn: 'root'
 })
 export class RecipesService {
-  private apiUrl = 'http://localhost:3000/recipes/';
-  private apiUrl2 = 'http://localhost:3000/favoriterecipes/';
-  private apiUrl3 = 'http://localhost:3000/recommended';
+  private apiUrl = 'https://fakestoreapi.com/products/';
+  private apiUrl2 = 'https://fakestoreapi.com/products/';
+  private apiUrl3 = 'https://fakestoreapi.com/products';
 
   
   constructor(private http: HttpClient, private snackBar: MatSnackBar) {}

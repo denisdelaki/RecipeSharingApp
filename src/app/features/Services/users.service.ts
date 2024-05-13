@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UsersService {
 
-  private apiUrl = 'http://localhost:3000/users/';
+  private apiUrl = 'https://fakestoreapi.com/products';
 
   constructor(private http: HttpClient) {}
 ///get users from the server 
