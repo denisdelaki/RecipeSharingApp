@@ -24,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    AngularFireDatabaseModule,
     RouterModule,HttpClientModule,
     NgbModule, SharedModule
   ],

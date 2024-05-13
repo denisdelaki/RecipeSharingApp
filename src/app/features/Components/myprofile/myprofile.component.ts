@@ -6,6 +6,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UsersService } from '../../Services/users.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { User } from '../../model/user';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 @Component({
   selector: 'app-myprofile',
   templateUrl: './myprofile.component.html',
@@ -21,7 +22,8 @@ export class MyprofileComponent implements OnInit {
     private formBuilder: FormBuilder,
     private dialog: MatDialog,
     private userService: UsersService,
-    private afAuth: AngularFireAuth
+    private afAuth: AngularFireAuth,
+    private db: AngularFireDatabase
   ) { 
     this.changeCred = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -41,26 +43,19 @@ export class MyprofileComponent implements OnInit {
   ngOnInit(): void {
     this.afAuth.authState.subscribe(user => {
       if (user) {
-        //set the user profile data to be displayed 
-        this.userData={
-          displayName: user.displayName,
-          email: user.email,
-          phoneNumber: user.phoneNumber,
-          photoURL: user.photoURL,
-          address: null,
-          socials: {
-            facebook: null,
-            twitter: null,
-            instagram: null,
-            blog: null
+        // Fetch user data from the realtime database
+        this.db.object(`/users/${user.uid}`).valueChanges().subscribe((userData: any) => {
+          if (userData) {
+            this.userData = userData as User;
+          } else {
+            console.log('User data not found in database');
           }
-        }
+        });
       } else {
         // User is signed out.
         console.log('No user is signed in.');
       }
     });
-    
   }
 
   viewSavedRecipes(){

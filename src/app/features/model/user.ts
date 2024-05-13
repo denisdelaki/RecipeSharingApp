@@ -5,9 +5,9 @@ export interface User {
     photoURL: string | null;
     address: string | null;
     socials: {
-      facebook?: string | null;
-      twitter?: string | null;
-      instagram?: string | null;
-      blog?: string | null;
+      facebook: string | null;
+      twitter: string | null;
+      instagram: string | null;
+      blog: string | null;
     };
 }

@@ -7,6 +7,7 @@ export const environment = {
     storageBucket: "recipesharingapp-01.appspot.com",
     messagingSenderId: "518171464728",
     appId: "1:518171464728:web:3061a517163cc399e01f6d",
-    measurementId: "G-PLQWLD1HJ5"
+    measurementId: "G-PLQWLD1HJ5",
+    databaseURL: "https://recipesharingapp-01-default-rtdb.firebaseio.com"
   }
 };
