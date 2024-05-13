@@ -4,7 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { EditProfileComponent } from '../edit-profile/edit-profile.component';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UsersService } from '../../Services/users.service';
-
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { User } from '../../model/user';
 @Component({
   selector: 'app-myprofile',
   templateUrl: './myprofile.component.html',
@@ -12,14 +13,15 @@ import { UsersService } from '../../Services/users.service';
 })
 export class MyprofileComponent implements OnInit {
   changeCred: FormGroup; 
-  userData: any;
+  userData!: User | null;
   defaultprofile = "https://github.com/Eb-Developer-Playground/Recipe_share_app/blob/myrecipes/src/assets/Images/chefimage.jpg?raw=true";
 
   constructor(
     private router: Router, 
     private formBuilder: FormBuilder,
     private dialog: MatDialog,
-    private userservice: UsersService
+    private userService: UsersService,
+    private afAuth: AngularFireAuth
   ) { 
     this.changeCred = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -37,25 +39,31 @@ export class MyprofileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (typeof localStorage !== 'undefined') {
-      // Fetch user data based on user ID
-      const userId = localStorage.getItem('loggedInUserId');
-      console.log(userId);
-      if (userId !== "" && userId !== undefined) {
-        this.userservice.getuserData(userId || '').subscribe(data => {
-          this.userData = data;
-          console.log(this.userData);
-        });
+    this.afAuth.authState.subscribe(user => {
+      if (user) {
+        //set the user profile data to be displayed 
+        this.userData={
+          displayName: user.displayName,
+          email: user.email,
+          phoneNumber: user.phoneNumber,
+          photoURL: user.photoURL,
+          address: null,
+          socials: {
+            facebook: null,
+            twitter: null,
+            instagram: null,
+            blog: null
+          }
+        }
       } else {
-        console.error('User ID not found in local storage');
+        // User is signed out.
+        console.log('No user is signed in.');
       }
-    } else {
-      console.error('localStorage is not available');
-    }
+    });
+    
   }
 
   viewSavedRecipes(){
     this.router.navigate(['/features/favorites'])
   }
-  
 }

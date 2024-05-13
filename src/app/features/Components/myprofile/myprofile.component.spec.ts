@@ -69,28 +69,28 @@ describe('MyprofileComponent', () => {
     expect(router.navigate).toHaveBeenCalledWith(['/features/favorites']);
   })
 
-  it('should call userservice.getuserData when ngOnInit is called', () => {
-    // Arrange
-    jest.spyOn(userservice, 'getuserData');
+  // it('should call userservice.getuserData when ngOnInit is called', () => {
+  //   // Arrange
+  //   jest.spyOn(userservice, 'getuserData');
 
-    // Act
-    component.ngOnInit();
+  //   // Act
+  //   component.ngOnInit();
 
-    // Assert
-    expect(userservice.getuserData).toHaveBeenCalled();
-  })
+  //   // Assert
+  //   expect(userservice.getuserData).toHaveBeenCalled();
+  // })
 
-  it('should fetch user data from local storage if available', () => {
-    // Arrange
-    localStorage.setItem('loggedInUserId', '123');
-    jest.spyOn(userservice, 'getuserData');
+  // it('should fetch user data from local storage if available', () => {
+  //   // Arrange
+  //   localStorage.setItem('loggedInUserId', '123');
+  //   jest.spyOn(userservice, 'getuserData');
 
-    // Act
-    component.ngOnInit();
+  //   // Act
+  //   component.ngOnInit();
 
-    // Assert
-    expect(userservice.getuserData).toHaveBeenCalledWith('123');
-  })
+  //   // Assert
+  // //   expect(userservice.getuserData).toHaveBeenCalledWith('123');
+  // // })
 
 
 });

@@ -35,20 +35,20 @@ export class EditProfileComponent implements OnInit{
     // Fetch user data and populate the form fields
     const userId = localStorage.getItem('loggedInUserId');
     if (userId) {
-      this.usersService.getuserData(userId).subscribe(userData => {
-        // Set form values with fetched data
-        this.editProfile.patchValue({
-          fullName: userData?.fullName,
-          email: userData?.email,
-          profilePicture: userData?.profilePicture,
-          phoneNumber: userData?.phoneNumber, 
-          address: userData?.address,
-          facebook: userData?.socials?.facebook, 
-          twitter: userData?.socials?.twitter,
-          instagram: userData?.socials?.instagram,
-          blog: userData?.socials?.blog
-        });
-      });
+      // this.usersService.getuserData(userId).subscribe(userData => {
+      //   // Set form values with fetched data
+      //   this.editProfile.patchValue({
+      //     fullName: userData?.fullName,
+      //     email: userData?.email,
+      //     profilePicture: userData?.profilePicture,
+      //     phoneNumber: userData?.phoneNumber, 
+      //     address: userData?.address,
+      //     facebook: userData?.socials?.facebook, 
+      //     twitter: userData?.socials?.twitter,
+      //     instagram: userData?.socials?.instagram,
+      //     blog: userData?.socials?.blog
+      //   });
+      // });
     }
     else{
       console.log("loggin");
@@ -75,11 +75,11 @@ save() {
       }
     }
     console.log(updateduserData);
-    this.usersService.updateUserData(userId, updateduserData).subscribe(
-      (res: any) => {
-        console.log(res);
-        this.dialogRef.close();
-      })
+    // this.usersService.updateUserData(userId, updateduserData).subscribe(
+    //   (res: any) => {
+    //     console.log(res);
+    //     this.dialogRef.close();
+    //   })
   }else{
 
   }
