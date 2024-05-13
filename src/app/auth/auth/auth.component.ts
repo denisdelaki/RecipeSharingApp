@@ -55,73 +55,88 @@ ngOnInit(): void {
 
 //Login event handler
 login() {
-   console.log(this.loginform.valid)
-   if (this.loginform.valid) {
-      //get the user inputs
-      const userData = {
-        email: this.loginform.value.email,
-        password: this.loginform.value.password,
-      };
+  if (this.loginform.valid) {
+    const userData = {
+      email: this.loginform.value.email,
+      password: this.loginform.value.password,
+    };
 
-      //retrieve the user from the database through the auth service 
-      this.authService.login().subscribe(data => {
-        console.log(data);
-        // Check if the entered credentials match the data from the server
-        const userExists = data.find((user: any) => user.email === userData.email && user.password === userData.password);
-        if (userExists) {
-          //check its id  and assign a variable 
-          console.log(userExists.id)
-          const loggedInUserId=userExists.id
-          //store the Id in the local storage 
-          localStorage.setItem('loggedInUserId', loggedInUserId.toString());
-          //emit the isLoggedInChange event
+    this.authService.login(userData.email, userData.password)
+      .subscribe(
+        (userCredential) => {
+          // Upon successful login, you can directly access the user information from the userCredential
+          const loggedInUser = userCredential.user;
+
+          // Store the user ID in local storage
+          localStorage.setItem('loggedInUserId', loggedInUser.uid);
+
+          // Emit the isLoggedInChange event
           this.dataTransmitService.transmitIsLoggedIn(true);
-          //open snackbar
+
+          // Open snackbar
           this.openSnackBar('Logged in successfully', 'success-notification');
-          //navigate to the my profile page
+
+          // Navigate to the my profile page
           this.router.navigate(['/features/myprofile']);
+        },
+        (error) => {
+          // Handle error
+          console.error(error);
+
+          // Check Firebase error codes to determine the type of error
+          if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password') {
+            this.openSnackBar('Invalid email or password', 'error-notification');
+          } else {
+            this.openSnackBar('Login failed', 'error-notification');
+          }
         }
-        else {
-          this.openSnackBar('The User Does not exist', 'error-notification');
-        }
-      });
-    }
-    else {
-      this.openSnackBar('Please fill all the fields', 'error-notification');
-    }
- }
+      );
+  } else {
+    this.openSnackBar('Please fill all the fields', 'error-notification');
+  }
+}
+
 
 //signup event handler 
-    registerUser() {
-      if (this.signupform.valid) {
-        //get the user inputs 
-        const userData = {
-          email: this.signupform.value.email,
-          password: this.signupform.value.password,
-        };
+registerUser() {
+  if (this.signupform.valid) {
+    const userData = {
+      email: this.signupform.value.email,
+      password: this.signupform.value.password,
+    };
 
-        console.log("Regitered Data", userData);
-        //pass the data to the service for signing up
-        this.authService.signup(userData).subscribe(
-          (res: any)=>{
-            //check its id  and assign a variable 
-          console.log(res.id)
-          const loggedInUserId=res.id
+    this.authService.signup(userData.email, userData.password)
+      .subscribe(
+        (userCredential) => {
+          // You can access the user's ID from the userCredential
+          const loggedInUserId = userCredential.user.uid;
 
-          //store the Id in the local storage 
-          localStorage.setItem('loggedInUserId', loggedInUserId.toString());
+          // Store the ID in local storage
+          localStorage.setItem('loggedInUserId', loggedInUserId);
 
-          //emit the isLoggedInChange event
+          // Emit the isLoggedInChange event
           this.dataTransmitService.transmitIsLoggedIn(true);
 
-          this.openSnackBar('Registered  successfully', 'success-notification');
-           //navigate to the my profile page
-           this.router.navigate(['/features/myprofile']);
-          });
-       
-      }
-      else {
-        this.openSnackBar('Please fill all the fields', 'error-notification');
-      }
-    }
+          this.openSnackBar('Registered successfully', 'success-notification');
+
+          // Navigate to the my profile page
+          this.router.navigate(['/features/myprofile']);
+        },
+        (error) => {
+          // Handle error
+          console.error(error);
+
+          // Check Firebase error codes to determine the type of error
+          if (error.code === 'auth/email-already-in-use') {
+            this.openSnackBar('Email is already in use', 'error-notification');
+          } else {
+            this.openSnackBar('Registration failed', 'error-notification');
+          }
+        }
+      );
+  } else {
+    this.openSnackBar('Please fill all the fields', 'error-notification');
+  }
+}
+
 }

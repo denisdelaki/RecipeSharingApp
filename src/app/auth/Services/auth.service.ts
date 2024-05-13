@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, map, Observable, tap, throwError } from 'rxjs';
+import { BehaviorSubject, catchError,pipe, map, Observable, tap, throwError, from } from 'rxjs';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,10 @@ export class AuthService {
   private isSignupSource = new BehaviorSubject<boolean>(false);
   isSignup$ = this.isSignupSource.asObservable();
 
-  constructor(private http: HttpClient, private snackBar: MatSnackBar) { }
+  constructor(
+    private afAuth: AngularFireAuth,
+    private http: HttpClient, 
+    private snackBar: MatSnackBar) { }
 
   openSnackBar(message: string, panelClass: string): void {
     this.snackBar.open(message, 'Close', { duration: 2000, panelClass: [panelClass] });
@@ -25,40 +29,43 @@ export class AuthService {
     this.isSignupSource.next(isSignup);
   }
 
-  //login of the user
-  login(userId?: string): Observable<any> {
-    const url = userId ? `${this.apiUrl}${userId}` : this.apiUrl;
-    const errorMessage = userId ? 'Failed to log in' : 'Failed to fetch users';
   
-    return this.http.get<any>(url).pipe(
-      tap((response: any) => {
-        // Success
-        this.isAuthenticated = true;
-        
-      }),
-      catchError((error: HttpErrorResponse) => {
-        // Error
-        this.showErrorMessage(errorMessage);
+///firebase login
+login(email: string, password: string): Observable<any> {
+  return from(this.afAuth.signInWithEmailAndPassword(email, password)).pipe(
+    tap(() => {
+      this.isAuthenticated = true;
+      this.openSnackBar('Successfully logged in', 'success-snackbar'); 
+    }),
+    catchError(error => {
+      let errorMessage = 'Failed to log in';
+      if (error.code === 'auth/wrong-password') {
+        errorMessage = 'Incorrect password';
+      } else if (error.code === 'auth/internal-error') {
+        errorMessage = 'Server error, please try again later';
+      }
+      this.openSnackBar(errorMessage, 'error-snackbar'); 
+      return throwError(() => new Error(error));
+    })
+  );
+}
+
+
+//firebase signup
+signup(email: string, password: string): Observable<any> {
+  return from(this.afAuth.createUserWithEmailAndPassword(email, password))
+    .pipe(
+      catchError((error) => {
+        // Check if the error is due to email already being in use
+        if (error.code === 'auth/email-already-in-use') {
+          this.openSnackBar('User already exists', 'error-snackbar');
+        } else {
+          // For other errors, re-throw the error
+          throw error;
+        }
         return throwError(error);
       })
     );
-  }
-  
-
-
-  //signup of the user 
-signup(userData: any): Observable<any> {
-  // Check if the user already exists in the database
-  return this.http.get<any[]>(`${this.apiUrl}`).pipe(
-    map(users => {
-      if (users.some(user => user.email === userData.email)) {
-        this.showErrorMessage('User already exists');
-        // throw new Error('User already exists');
-      }
-      // If the user does not exist, proceed with the signup process
-      return this.http.post<any>(`${this.apiUrl}`, userData);
-    })
-  );
 }
 
   isAuthenticatedUser(): boolean {
