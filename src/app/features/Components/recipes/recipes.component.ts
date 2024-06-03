@@ -11,6 +11,7 @@ import { SearchComponent } from '../../../shared/components/search/search.compon
 import { ConfirmDialogComponent } from '../../../shared/interceptor/confirm-dialog/confirm-dialog.component';
 import { EditrecipeComponent } from '../editrecipe/editrecipe.component';
 import { NewRecipeComponent } from '../new-recipe/new-recipe.component';
+import { RecipemanagementComponent } from '../recipemanagement/recipemanagement.component';
 
 @Component({
   selector: 'app-recipes',
@@ -146,7 +147,7 @@ export class RecipesComponent implements OnInit, OnDestroy {
   //edit recipe details
   editRecipe(recipeid: any){
       console.log("edit recipe", recipeid)
-      const dialogRef = this.dialog.open(EditrecipeComponent, {
+      const dialogRef = this.dialog.open(RecipemanagementComponent, {
         width: '550px',
         // Prevent closing by clicking outside or pressing ESC
         disableClose: true,
@@ -184,7 +185,7 @@ export class RecipesComponent implements OnInit, OnDestroy {
   }
 
   newrecipe(){
-    const dialogRef = this.dialog.open(NewRecipeComponent, {
+    const dialogRef = this.dialog.open(RecipemanagementComponent, {
       width: '500px',
       // Prevent closing by clicking outside or pressing ESC
       disableClose: true

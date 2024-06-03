@@ -5,9 +5,11 @@ import { RecipesComponent } from './components/recipes/recipes.component';
 import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.component';
 import { GuardService } from '../auth/services/guard.service';
 import { FavoritesComponent } from './components/favorites/favorites.component';
+import { RecipemanagementComponent } from './components/recipemanagement/recipemanagement.component';
 const routes: Routes = [
   {path: 'myprofile', component: MyprofileComponent, canActivate: [GuardService]},
   {path: 'myrecipes', component: RecipesComponent, canActivate: [GuardService]},
+  {path: 'recipe', component: RecipemanagementComponent,canActivate: [GuardService] },
   {path: 'allrecipes', component: RecipesComponent, canActivate: [GuardService]},
   {path: 'favorites', component: FavoritesComponent, canActivate: [GuardService]},
   {path: 'recipedetail/:id', component: RecipeDetailComponent}
