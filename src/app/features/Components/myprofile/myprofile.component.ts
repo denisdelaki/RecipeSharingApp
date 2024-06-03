@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { EditProfileComponent } from '../edit-profile/edit-profile.component';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { UsersService } from '../../Services/users.service';
+import { UsersService } from '../../services/users.service';
+import { EditProfileComponent } from '../edit-profile/edit-profile.component';
 
 @Component({
   selector: 'app-myprofile',

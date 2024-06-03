@@ -65,11 +65,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthComponent } from './auth.component';
 import { By } from '@angular/platform-browser';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { DataTransmitService } from '../../shared/Services/data-transmit.service';
-import { AuthService } from '../Services/auth.service';
 import { Router } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { of, throwError } from 'rxjs';
+import { AuthService } from '../services/auth.service';
+import { DataTransmitService } from '../../shared/services/data-transmit.service';
 
 describe('AuthComponent', () => {
   let component: AuthComponent;

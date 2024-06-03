@@ -28,7 +28,7 @@
 
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { RecipeDetailComponent } from './recipe-detail.component';
-import { RecipesService } from '../../Services/recipes.service';
+import { RecipesService } from '../../services/recipes.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { MatSnackBar, MatSnackBarRef, TextOnlySnackBar} from '@angular/material/snack-bar';

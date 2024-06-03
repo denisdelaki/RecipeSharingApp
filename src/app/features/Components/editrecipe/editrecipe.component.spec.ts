@@ -2,7 +2,7 @@ import { TestBed, ComponentFixture, waitForAsync, fakeAsync, tick } from '@angul
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { EditrecipeComponent } from './editrecipe.component';
-import { RecipesService } from '../../Services/recipes.service';
+import { RecipesService } from '../../services/recipes.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations'; 
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';

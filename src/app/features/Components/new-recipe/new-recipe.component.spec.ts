@@ -1,13 +1,13 @@
 import { ComponentFixture, TestBed, async, inject } from '@angular/core/testing';
 import {  HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import { NewRecipeComponent } from './new-recipe.component';
-import { RecipesService } from '../../Services/recipes.service';
+import { RecipesService } from '../../services/recipes.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormArray, FormBuilder } from '@angular/forms';
 import { of } from 'rxjs';
+import { NewRecipeComponent } from './new-recipe.component';
 
 describe('NewRecipeComponent', () => {
   let component: NewRecipeComponent;

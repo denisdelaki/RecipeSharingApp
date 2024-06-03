@@ -8,8 +8,8 @@ import { NavigationComponent } from './navigation.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { BehaviorSubject, of } from 'rxjs';
-import { ConfirmLogoutDialogComponent } from '../../Interceptor/confirm-logout-dialog/confirm-logout-dialog.component';
-import { DataTransmitService } from '../../Services/data-transmit.service';
+import { ConfirmLogoutDialogComponent } from '../../interceptor/confirm-logout-dialog/confirm-logout-dialog.component';
+import { DataTransmitService } from '../../services/data-transmit.service';
 
 describe('NavigationComponent', () => {
   let component: NavigationComponent;

@@ -1,17 +1,17 @@
 ;
-import { InvalidrouteComponent } from './Components/invalidroute/invalidroute.component'
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PagesRoutingModule } from './pages-routing.module';
-import { LandingPageComponent } from './Components/landing-page/landing-page.component';
-import { AboutUsComponent } from './Components/about-us/about-us.component';
-import { ContactUsComponent } from './Components/contact-us/contact-us.component';
-import { PopularRecipesComponent } from './Components/popular-recipes/popular-recipes.component';
-import { TestimonialsComponent } from './Components/testimonials/testimonials.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from '../shared/shared.module';
 import { MatIconModule } from '@angular/material/icon';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { InvalidrouteComponent } from './components/invalidroute/invalidroute.component';
+import { PopularRecipesComponent } from './components/popular-recipes/popular-recipes.component';
 
 
 @NgModule({

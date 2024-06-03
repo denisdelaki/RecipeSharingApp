@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RecipesService } from '../../../features/Services/recipes.service';
+import { RecipesService } from '../../../features/services/recipes.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-popular-recipes',

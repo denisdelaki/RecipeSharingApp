@@ -4,7 +4,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { RecipesComponent } from './recipes.component';
-import { RecipesService } from '../../Services/recipes.service';
+import { RecipesService } from '../../services/recipes.service';
 import { of, Subject, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { EditrecipeComponent } from '../editrecipe/editrecipe.component';

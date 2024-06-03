@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../Services/auth.service';
-import { DataTransmitService } from '../../shared/Services/data-transmit.service';
+import { DataTransmitService } from '../../shared/services/data-transmit.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-auth',

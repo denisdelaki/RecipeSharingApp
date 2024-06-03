@@ -5,8 +5,8 @@ import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
 import { of, Subject } from 'rxjs';
-import { RecipesService } from '../../../features/Services/recipes.service';
-import { DataTransmitService } from '../../Services/data-transmit.service';
+import { DataTransmitService } from '../../services/data-transmit.service';
+import { RecipesService } from '../../../features/services/recipes.service';
 
 describe('SearchComponent', () => {
   let component: SearchComponent;

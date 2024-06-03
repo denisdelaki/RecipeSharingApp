@@ -1,11 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { EditProfileComponent } from './edit-profile.component';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { of } from 'rxjs';
-import { UsersService } from '../../Services/users.service';
+import { UsersService } from '../../services/users.service';
 import { HttpClientModule } from '@angular/common/http';
 import { fakeAsync, tick } from '@angular/core/testing';
+import { EditProfileComponent } from './edit-profile.component';
 
 describe('EditProfileComponent', () => {
   let fixture: ComponentFixture<EditProfileComponent>;

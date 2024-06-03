@@ -1,9 +1,9 @@
 import { TestBed, waitForAsync } from '@angular/core/testing';
 import { HttpClientModule, HttpErrorResponse } from '@angular/common/http';
-import { RecipesService } from './recipes.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { of } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { RecipesService } from './recipes.service';
 
 describe('RecipesService', () => {
   let service: RecipesService;

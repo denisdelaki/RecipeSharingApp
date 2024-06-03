@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { RecipesService } from '../../../features/Services/recipes.service';
-import { DataTransmitService } from '../../Services/data-transmit.service';
+import { RecipesService } from '../../../features/services/recipes.service';
+import { DataTransmitService } from '../../services/data-transmit.service';
 import { Subject, takeUntil, tap } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 

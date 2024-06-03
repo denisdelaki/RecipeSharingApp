@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { RecipesService } from '../../Services/recipes.service';
+import { RecipesService } from '../../services/recipes.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 @Component({

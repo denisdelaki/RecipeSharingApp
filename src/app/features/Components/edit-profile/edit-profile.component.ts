@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { UsersService } from '../../Services/users.service';
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-edit-profile',
