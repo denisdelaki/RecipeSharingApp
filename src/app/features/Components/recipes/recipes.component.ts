@@ -9,8 +9,6 @@ import { DataTransmitService } from '../../../shared/services/data-transmit.serv
 import { FormGroup } from '@angular/forms';
 import { SearchComponent } from '../../../shared/components/search/search.component';
 import { ConfirmDialogComponent } from '../../../shared/interceptor/confirm-dialog/confirm-dialog.component';
-import { EditrecipeComponent } from '../editrecipe/editrecipe.component';
-import { NewRecipeComponent } from '../new-recipe/new-recipe.component';
 import { RecipemanagementComponent } from '../recipemanagement/recipemanagement.component';
 
 @Component({
