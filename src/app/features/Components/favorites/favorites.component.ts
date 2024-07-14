@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { catchError, finalize, Subject, takeUntil, tap, throwError } from 'rxjs';
-import { RecipesService } from '../../Services/recipes.service';
+import { RecipesService } from '../../services/recipes.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
-import { ConfirmDialogComponent } from '../../../shared/Interceptor/confirm-dialog/confirm-dialog.component';
+import { ConfirmDialogComponent } from '../../../shared/interceptor/confirm-dialog/confirm-dialog.component';
 import { Router } from '@angular/router';
 
 @Component({

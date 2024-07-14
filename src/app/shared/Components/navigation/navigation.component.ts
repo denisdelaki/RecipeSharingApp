@@ -1,9 +1,8 @@
 import { Component, EventEmitter, Inject, OnInit, Output, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataTransmitService } from '../../Services/data-transmit.service';
+import { DataTransmitService } from '../../services/data-transmit.service';
 import { MatDialog } from '@angular/material/dialog';
-import { ConfirmLogoutDialogComponent } from '../../Interceptor/confirm-logout-dialog/confirm-logout-dialog.component';
-import { isPlatformBrowser } from '@angular/common';
+import { ConfirmLogoutDialogComponent } from '../../interceptor/confirm-logout-dialog/confirm-logout-dialog.component';
 
 @Component({
   selector: 'app-navigation',

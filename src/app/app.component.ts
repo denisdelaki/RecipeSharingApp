@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { AuthService } from './auth/Services/auth.service';
+import { AuthService } from './auth/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,7 @@ export class AppComponent {
   constructor(private authService: AuthService) {}
 
   onIsSignupChange(isSignup: boolean) {
-    console.log('isSignup changed:', isSignup);
+    console.log('isSignup chxanged:', isSignup);
     this.isSignup = isSignup;
     this.authService.setIsSignup(isSignup);
   }

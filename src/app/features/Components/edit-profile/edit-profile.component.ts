@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { UsersService } from '../../Services/users.service';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { User } from '../../model/user';
-import { map, pipe, tap } from 'rxjs';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-edit-profile',

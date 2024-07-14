@@ -1,16 +1,15 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { NewRecipeComponent } from '../new-recipe/new-recipe.component';
 import { MatDialog  } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, throwError } from 'rxjs';
-import { RecipesService } from '../../Services/recipes.service';
+import { RecipesService } from '../../services/recipes.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { catchError, finalize, takeUntil, tap } from 'rxjs/operators';
-import { EditrecipeComponent } from '../editrecipe/editrecipe.component';
-import { ConfirmDialogComponent } from '../../../shared/Interceptor/confirm-dialog/confirm-dialog.component';
-import { DataTransmitService } from '../../../shared/Services/data-transmit.service';
-import { SearchComponent } from '../../../shared/Components/search/search.component';
+import { DataTransmitService } from '../../../shared/services/data-transmit.service';
 import { FormGroup } from '@angular/forms';
+import { SearchComponent } from '../../../shared/components/search/search.component';
+import { ConfirmDialogComponent } from '../../../shared/interceptor/confirm-dialog/confirm-dialog.component';
+import { RecipemanagementComponent } from '../recipemanagement/recipemanagement.component';
 
 @Component({
   selector: 'app-recipes',
@@ -146,7 +145,7 @@ export class RecipesComponent implements OnInit, OnDestroy {
   //edit recipe details
   editRecipe(recipeid: any){
       console.log("edit recipe", recipeid)
-      const dialogRef = this.dialog.open(EditrecipeComponent, {
+      const dialogRef = this.dialog.open(RecipemanagementComponent, {
         width: '550px',
         // Prevent closing by clicking outside or pressing ESC
         disableClose: true,
@@ -184,7 +183,7 @@ export class RecipesComponent implements OnInit, OnDestroy {
   }
 
   newrecipe(){
-    const dialogRef = this.dialog.open(NewRecipeComponent, {
+    const dialogRef = this.dialog.open(RecipemanagementComponent, {
       width: '500px',
       // Prevent closing by clicking outside or pressing ESC
       disableClose: true

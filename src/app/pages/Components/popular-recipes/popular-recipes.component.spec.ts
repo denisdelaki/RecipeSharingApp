@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { PopularRecipesComponent } from './popular-recipes.component';
-import { RecipesService } from '../../../features/Services/recipes.service';
+import { RecipesService } from '../../../features/services/recipes.service';
 import { of } from 'rxjs';
 import { Router } from '@angular/router';
 

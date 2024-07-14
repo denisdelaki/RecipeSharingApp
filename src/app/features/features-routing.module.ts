@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MyprofileComponent } from './Components/myprofile/myprofile.component';
-import { RecipesComponent } from './Components/recipes/recipes.component';
-import { RecipeDetailComponent } from './Components/recipe-detail/recipe-detail.component';
-import { GuardService } from '../auth/Services/guard.service';
-import { FavoritesComponent } from './Components/favorites/favorites.component';
+import { MyprofileComponent } from './components/myprofile/myprofile.component';
+import { RecipesComponent } from './components/recipes/recipes.component';
+import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.component';
+import { GuardService } from '../auth/services/guard.service';
+import { FavoritesComponent } from './components/favorites/favorites.component';
+import { RecipemanagementComponent } from './components/recipemanagement/recipemanagement.component';
 const routes: Routes = [
   {path: 'myprofile', component: MyprofileComponent, canActivate: [GuardService]},
   {path: 'myrecipes', component: RecipesComponent, canActivate: [GuardService]},
+  {path: 'recipe', component: RecipemanagementComponent,canActivate: [GuardService] },
   {path: 'allrecipes', component: RecipesComponent, canActivate: [GuardService]},
   {path: 'favorites', component: FavoritesComponent, canActivate: [GuardService]},
   {path: 'recipedetail/:id', component: RecipeDetailComponent}

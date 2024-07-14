@@ -1,12 +1,11 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { MyprofileComponent } from './myprofile.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { of } from 'rxjs';
-import { EditProfileComponent } from '../edit-profile/edit-profile.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
-import { UsersService } from '../../Services/users.service';
+import { UsersService } from '../../services/users.service';
 import { Router } from '@angular/router';
+import { MyprofileComponent } from './myprofile.component';
+import { EditProfileComponent } from '../edit-profile/edit-profile.component';
 
 describe('MyprofileComponent', () => {
   let component: MyprofileComponent;

@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { EditProfileComponent } from '../edit-profile/edit-profile.component';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { UsersService } from '../../Services/users.service';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { User } from '../../model/user';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { UsersService } from '../../services/users.service';
+import { EditProfileComponent } from '../edit-profile/edit-profile.component';
+
 @Component({
   selector: 'app-myprofile',
   templateUrl: './myprofile.component.html',
